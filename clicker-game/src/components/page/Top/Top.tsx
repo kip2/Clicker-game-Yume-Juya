@@ -32,8 +32,9 @@ const Top = () => {
                 >
                 </Button>
                 <Button 
-                    text="遊び方">
+                    text="遊び方"
                     onButtonClick={onHowToButton}
+                >
                 </Button>
             </div>
             <div>
