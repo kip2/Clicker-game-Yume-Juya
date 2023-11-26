@@ -5,7 +5,9 @@ const Top = () => {
     return(
         <div className="top-background">
             <div>
-                <h1 className="top-title">せっかち夢十夜第一夜</h1>
+                <h1 className="top-title top-font outlined-text">
+                    せっかち夢十夜第一夜
+                </h1>
             </div>
             <div className="top-buttons">
                 <Button text="始める"></Button>
@@ -13,10 +15,10 @@ const Top = () => {
                 <Button text="遊び方"></Button>
             </div>
             <div>
-                <p>
+                <p className="outlined-text">
                     ユーザー名: ユーザー1
                 </p>
-                <p>
+                <p className="outlined-text">
                     ユーザーID: 1111111
                 </p>
             </div>

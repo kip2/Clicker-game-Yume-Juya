@@ -19,3 +19,16 @@ button {
     background-size: cover;
     background-position: center;
 }
+
+.top-font {
+    color: white;
+}
+
+.outlined-text {
+    color: black;
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+}
