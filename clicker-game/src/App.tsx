@@ -1,12 +1,11 @@
 import './App.css'
 import "sanitize.css"
+import Top from './components/page/Top/Top'
 
 function App() {
   return (
     <>
-      <p className="read-the-docs">
-        せっかち夢十夜
-      </p>
+      <Top />
     </>
   )
 }
