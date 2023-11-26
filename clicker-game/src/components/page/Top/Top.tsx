@@ -13,14 +13,14 @@ const Top = () => {
                 <h1 className="top-title-sekkachi top-font outlined-text">
                     せっかち
                 </h1>
-                <h1 className="top-title top-font outlined-text">
+                <h1 className="top-title top-font outlined-text top-anime">
                     夢十夜
                 </h1>
-                <h1 className="top-title-daiichiya top-font outlined-text">
+                <h1 className="top-title-daiichiya top-font outlined-text top-anime">
                     第一夜
                 </h1>
             </div>
-            <div className="top-buttons">
+            <div className="top-buttons top-anime">
                 <Button 
                     text="始める"
                     onButtonClick={onStartButton}
@@ -37,7 +37,7 @@ const Top = () => {
                 >
                 </Button>
             </div>
-            <div>
+            <div className="top-anime">
                 <p className="outlined-text top-p">
                     ユーザー名: ユーザー1
                 </p>
