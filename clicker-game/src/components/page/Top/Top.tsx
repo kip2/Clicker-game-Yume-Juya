@@ -12,6 +12,7 @@ const Top = () => {
                 <Button text="あらすじ"></Button>
                 <Button text="遊び方"></Button>
             </div>
+            <img src="../img/top.png"/>
             <div>
                 <p>
                     ユーザー名: ユーザー1
