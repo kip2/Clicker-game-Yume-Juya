@@ -11,3 +11,11 @@
 button {
     margin: auto;
 }
+
+.top-background {
+    height: 90vh;
+    width: 100%;
+    background-image: url('./img/top.png');
+    background-size: cover;
+    background-position: center;
+}
