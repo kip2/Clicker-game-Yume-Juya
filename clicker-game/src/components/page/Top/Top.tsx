@@ -15,10 +15,10 @@ const Top = () => {
                 <Button text="遊び方"></Button>
             </div>
             <div>
-                <p className="outlined-text">
+                <p className="outlined-text top-p">
                     ユーザー名: ユーザー1
                 </p>
-                <p className="outlined-text">
+                <p className="outlined-text top-p">
                     ユーザーID: 1111111
                 </p>
             </div>

@@ -1,0 +1,10 @@
+.button-layout {
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 15rem;
+    font-size: 2rem;
+}
+
+.button-layout:hover {
+    background-color: #dddddd;
+}

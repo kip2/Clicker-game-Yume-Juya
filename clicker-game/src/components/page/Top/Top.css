@@ -24,11 +24,15 @@ button {
     color: white;
 }
 
+.top-p {
+    font-size: 1.2rem;
+}
+
 .outlined-text {
     color: black;
     text-shadow:
-        -1px -1px 0 #fff,
-        1px -1px 0 #fff,
-        -1px 1px 0 #fff,
-        1px 1px 0 #fff;
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff;
 }

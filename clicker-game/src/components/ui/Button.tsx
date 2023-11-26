@@ -1,3 +1,5 @@
+import "./Button.css"
+
 type ButtonProps = {
     text: string
 }
@@ -5,7 +7,9 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({ text }) => {
     return(
         <>
-            <button>{ text }</button>
+            <button className="button-layout">
+                { text }
+            </button>
         </>
     )
 }
