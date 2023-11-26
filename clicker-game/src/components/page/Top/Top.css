@@ -19,6 +19,8 @@
 .top-buttons {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
 }
 
 button {
