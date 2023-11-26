@@ -1,0 +1,13 @@
+.top-title {
+    margin: auto;
+    text-align: center;
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: auto;
+}

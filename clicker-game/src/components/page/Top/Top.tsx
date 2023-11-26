@@ -5,9 +5,9 @@ const Top = () => {
     return(
         <>
             <div>
-                <h1>せっかち夢十夜第一夜</h1>
+                <h1 className="top-title">せっかち夢十夜第一夜</h1>
             </div>
-            <div>
+            <div className="top-buttons">
                 <Button text="始める"></Button>
                 <Button text="あらすじ"></Button>
                 <Button text="遊び方"></Button>
