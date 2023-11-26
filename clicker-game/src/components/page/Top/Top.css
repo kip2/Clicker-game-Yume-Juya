@@ -1,6 +1,19 @@
+.top-title-sekkachi {
+    font-size: 3.5rem;
+    margin: 2rem 2rem 0 5rem ;
+    transform: rotate(-5deg);
+}
+
+.top-title-daiichiya {
+    font-size: 4rem;
+    text-align: right;
+    margin: 0 5rem 0 0;
+}
+
 .top-title {
     margin: auto;
     text-align: center;
+    font-size: 7rem;
 }
 
 .top-buttons {
@@ -14,10 +27,10 @@ button {
 
 .top-background {
     height: 90vh;
-    width: 100%;
     background-image: url('./img/top.png');
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .top-font {
