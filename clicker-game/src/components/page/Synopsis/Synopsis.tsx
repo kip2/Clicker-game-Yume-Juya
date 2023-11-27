@@ -1,12 +1,13 @@
 import Button from "../../ui/Button"
 import "./Synopsis.css"
+import "../../../index.css"
 
 // todo: 機能をあとで追加する
 const returnTop = () => {}
 
 const Synopsis = () => {
     return(
-        <div className="synopsis-background">
+        <div className="synopsis-background outlined-text">
             <p>
                 女は静かな調子を一段張り上げて、「百年待っていて下さい」と思い切った声で云った。
             </p>

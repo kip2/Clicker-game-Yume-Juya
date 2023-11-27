@@ -83,12 +83,3 @@
     font-size: 1.2rem;
     font-weight: bold;
 }
-
-.outlined-text {
-    color: black;
-    text-shadow:
-        -2px -2px 0 #fff,
-        2px -2px 0 #fff,
-        -2px 2px 0 #fff,
-        2px 2px 0 #fff;
-}

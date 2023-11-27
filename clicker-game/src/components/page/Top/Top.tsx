@@ -1,5 +1,6 @@
 import "./Top.css"
 import Button from "../../ui/Button"
+import "../../../index.css"
 
 // todo: あとで内容を実装する
 const onStartButton = () => {}
