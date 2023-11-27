@@ -1,0 +1,37 @@
+.how-to-play-title {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.how-to-play-text {
+    margin-top: 4rem;
+    font-weight: bold;
+}
+
+.how-to-play-p {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: auto;
+}
+
+.how-to-play-ijo {
+    font-size: 3rem;
+    position: relative;
+    bottom: -20px;
+    left: 76%;
+    font-weight: bold;
+}
+
+.how-to-play-return-button {
+    position: relative;
+    bottom: -10px;
+    left: 68%;
+}
+
+.how-to-play-background {
+    height: 820px;
+    background-image: url('./img/howToPlay.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}

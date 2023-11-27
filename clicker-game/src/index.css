@@ -7,3 +7,12 @@
         -2px 2px 0 #fff,
         2px 2px 0 #fff;
 }
+
+.outlined-text-red {
+    color: black;
+    text-shadow:
+        -2px -2px 0 #facdcd,
+        2px -2px 0 #facdcd,
+        -2px 2px 0 #facdcd,
+        2px 2px 0 #facdcd;
+}
