@@ -1,0 +1,7 @@
+.synopsis-background {
+    height: 90vh;
+    background-image: url('./img/synopsis.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
