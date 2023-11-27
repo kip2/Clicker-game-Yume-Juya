@@ -1,7 +1,36 @@
 .synopsis-background {
-    height: 90vh;
+    height: 820px;
     background-image: url('./img/synopsis.png');
     background-size: cover;
     background-position: center;
     overflow: hidden;
+}
+
+.mt {
+    margin-top: 1.5rem;
+}
+
+.synopsis-large-p {
+    font-size: 4rem;
+    text-align: right;
+    margin:auto;
+    font-weight: bold;
+}
+
+.synopsis-p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: auto;
+}
+
+.synopsis-text {
+    display: flex;
+    flex-direction: column;
+    gap: 9rem;
+}
+
+.return-button {
+    position: relative;
+    bottom: -40px;
+    left: 68%;
 }
