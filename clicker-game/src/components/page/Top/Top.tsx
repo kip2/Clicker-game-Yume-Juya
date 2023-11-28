@@ -1,13 +1,22 @@
 import "./Top.css"
 import Button from "../../ui/Button"
 import "../../../index.css"
+import { useCustomNavigate } from "../../functional/CustomNavigate"
 
 // todo: あとで内容を実装する
 const onStartButton = () => {}
-const onStoryButton = () => {}
-const onHowToButton = () => {}
 
-const Top = () => {
+function Top() {
+    const { navigateToPage } = useCustomNavigate()
+
+    const handleNavigateSynopsis = () => {
+        navigateToPage("/synopsis")
+    }
+
+    const handleNavigateHowToPlay = () => {
+        navigateToPage("/howToPlay")
+    }
+
     return(
         <div className="top-background">
             <div>
@@ -29,12 +38,12 @@ const Top = () => {
                 </Button>
                 <Button 
                     text="あらすじ"
-                    onButtonClick={onStoryButton}
+                    onButtonClick={handleNavigateSynopsis}
                 >
                 </Button>
                 <Button 
                     text="遊び方"
-                    onButtonClick={onHowToButton}
+                    onButtonClick={handleNavigateHowToPlay}
                 >
                 </Button>
             </div>
