@@ -1,11 +1,15 @@
 import Button from "../../ui/Button"
 import "./HowToPlay.css"
 import "../../../index.css"
+import { useCustomNavigate } from "../../functional/CustomNavigate"
 
-// todo: 機能をあとで追加する
-const returnTop = () => {}
+function HowToPlay() {
+    const { navigateToPage } = useCustomNavigate()
 
-const HowToPlay = () => {
+    const handleNavigateTop = () => {
+        navigateToPage("/")
+    }
+    
     return(
         <div className="how-to-play-background">
             <h1 className="how-to-play-title outlined-text">
@@ -39,7 +43,7 @@ const HowToPlay = () => {
             <div className="how-to-play-return-button">
                 <Button
                     text="戻る"
-                    onButtonClick={returnTop}
+                    onButtonClick={handleNavigateTop}
                 />
             </div>
         </div>
