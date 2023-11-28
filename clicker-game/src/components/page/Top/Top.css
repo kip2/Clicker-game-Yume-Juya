@@ -1,10 +1,12 @@
 .top-title-sekkachi {
+    font-size: 3.5rem;
+    margin: 2rem 2rem 0 5rem ;
+}
+
+.top-title-sekkachi-anime {
     opacity: 0;
     animation: text-pop 2s forwards;
     animation-delay: 0.1s;
-    font-size: 3.5rem;
-    margin: 2rem 2rem 0 5rem ;
-    transform: rotate(-5deg);
     transform: translate(-50%, -50%);
 }
 

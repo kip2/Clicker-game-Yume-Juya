@@ -2,12 +2,14 @@ import "./Top.css"
 import Button from "../../ui/Button"
 import "../../../index.css"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
+import { useState } from "react"
 
 // todo: あとで内容を実装する
 const onStartButton = () => {}
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()
+    const [isAnimating, setIsAnimating] = useState(true)
 
     const handleNavigateSynopsis = () => {
         navigateToPage("/synopsis")
@@ -17,20 +19,47 @@ function Top() {
         navigateToPage("/howToPlay")
     }
 
+    const handleClick = () => {
+        setIsAnimating(false)
+    }
+
     return(
-        <div className="top-background">
+        <div className="top-background"
+            onClick={handleClick}
+        >
             <div>
-                <h1 className="top-title-sekkachi top-font outlined-text">
+                <h1 
+                    className={`${isAnimating 
+                        ?
+                        "top-title-sekkachi-anime top-title-sekkachi top-font outlined-text" 
+                        :
+                        "top-title-sekkachi top-font outlined-text" 
+                }`}
+                >
                     せっかち
                 </h1>
-                <h1 className="top-title top-font outlined-text top-anime">
+                <h1 
+                    className={`${isAnimating
+                    ?
+                    "top-title top-font outlined-text top-anime"
+                    :
+                    "top-title top-font outlined-text"
+                    }`}>
                     夢十夜
                 </h1>
-                <h1 className="top-title-daiichiya top-font outlined-text top-anime">
+                <h1 
+                    className={`${isAnimating
+                    ?
+                    "top-title-daiichiya top-font outlined-text top-anime"
+                    :
+                    "top-title-daiichiya top-font outlined-text"
+                    }`}>
                     第一夜
                 </h1>
             </div>
-            <div className="top-buttons top-anime">
+            <div 
+                className={`${isAnimating ? 'top-anime top-buttons' : 'top-buttons'}`}
+            >
                 <Button 
                     text="始める"
                     onButtonClick={onStartButton}
@@ -47,7 +76,12 @@ function Top() {
                 >
                 </Button>
             </div>
-            <div className="top-anime">
+            <div 
+                className={`${isAnimating
+                ? "top-anime"
+                :
+                ""
+            }`}>
                 <p className="outlined-text top-p">
                     ユーザー名: ユーザー1
                 </p>
