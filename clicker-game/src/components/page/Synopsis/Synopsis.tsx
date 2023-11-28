@@ -1,11 +1,15 @@
 import Button from "../../ui/Button"
 import "./Synopsis.css"
 import "../../../index.css"
+import { useCustomNavigate } from "../../functional/CustomNavigate"
 
-// todo: 機能をあとで追加する
-const returnTop = () => {}
+function Synopsis () {
+    const { navigateToPage } = useCustomNavigate()
 
-const Synopsis = () => {
+    const handleNavigateTop = () => {
+        navigateToPage("/")
+    }
+
     return(
         <div className="synopsis-background outlined-text">
             <div className="synopsis-text">
@@ -32,7 +36,7 @@ const Synopsis = () => {
             <div className="return-button">
                 <Button
                     text="戻る"
-                    onButtonClick={returnTop}
+                    onButtonClick={handleNavigateTop}
                 />
             </div>
         </div>
