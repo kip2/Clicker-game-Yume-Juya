@@ -7,7 +7,7 @@ function Game () {
                 <div className="game-left-window">
                     <div className="remaining-time">
                         <p className="remaining-time-header">残</p>
-                        <p>99年9999時間9999分9999秒</p>
+                        <p className="remaining-time-counter">99年9999時間9999分9999秒</p>
                         <p>秒間25秒ずつ</p>
                     </div>
                     <div>

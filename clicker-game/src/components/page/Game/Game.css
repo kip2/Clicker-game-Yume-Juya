@@ -68,6 +68,17 @@
     text-align: center;
 }
 
+.remaining-time-counter {
+    font-size: 1.5rem;
+    margin: 10px 0 0 0;
+    color: yellow;
+    text-shadow: 
+    2px 2px 2px #000,
+    -2px -2px 2px #000,
+    2px -2px 2px #000,
+    -2px 2px 2px #000;  
+}
+
 .remaining-time-header {
     margin: 0;
     text-align: center;
