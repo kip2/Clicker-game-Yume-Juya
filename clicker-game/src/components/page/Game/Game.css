@@ -4,4 +4,51 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    display: flex;
+}
+
+.game-left-window {
+    opacity: 90%;
+    border: solid;
+    background-color: white;
+    height: 95%;
+    width: 50%;
+    margin: 20px 0 20px 10px;
+}
+
+.game-right-window {
+    height: 100%;
+    width: 50%;
+    padding: 20px 5px 5px 5px;
+}
+
+.game-right-window > * + * {
+    margin-top: 10px;
+}
+
+.game-right-upper-window {
+    height: 20%;
+    width: 100%;
+    opacity: 90%;
+    border: solid;
+    background-color: white;
+}
+
+.game-right-middle-window {
+    height: 60%;
+    width: 100%;
+    opacity: 90%;
+    border: solid;
+    background-color: white;
+
+}
+
+.game-right-bottom-window {
+    height: 15%;
+    width: 100%;
+    opacity: 90%;
+    border: solid;
+    background-color: white;
+
+
 }
