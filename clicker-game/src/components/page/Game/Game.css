@@ -49,6 +49,13 @@
     opacity: 90%;
     border: solid;
     background-color: white;
+}
 
+.click-moon {
+    width: 100%;
+    clip-path: circle(33% at center);
+}
 
+.click-moon:hover {
+    transform: scale(1.1);
 }

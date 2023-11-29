@@ -5,7 +5,15 @@ function Game () {
         <>
             <div className="game-background">
                 <div className="game-left-window">
-                    左
+                    <div>
+                        残り時間
+                    </div>
+                    <div>
+                        <img 
+                            className="click-moon"
+                            src="./img/clickmoon.png"
+                        />
+                    </div>
                 </div>
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
