@@ -4,9 +4,6 @@ import "../../../index.css"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
 
-// todo: あとで内容を実装する
-const onStartButton = () => {}
-
 function Top() {
     const { navigateToPage } = useCustomNavigate()
     const [isAnimating, setIsAnimating] = useState(true)
