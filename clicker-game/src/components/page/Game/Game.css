@@ -22,7 +22,7 @@
     padding: 20px 5px 5px 5px;
 }
 
-.game-right-window > * + * {
+.game-right-window > *:not(:first-child) {
     margin-top: 10px;
 }
 
@@ -53,9 +53,30 @@
 
 .click-moon {
     width: 100%;
+    margin: 50px 0;
     clip-path: circle(33% at center);
 }
 
 .click-moon:hover {
     transform: scale(1.1);
+}
+
+.remaining-time {
+    height: 25%;
+    margin: 5px;
+    background-color: rgb(204, 201, 201);
+    text-align: center;
+}
+
+.remaining-time-header {
+    margin: 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 
+    2px 2px 2px #000,
+    -2px -2px 2px #000,
+    2px -2px 2px #000,
+    -2px 2px 2px #000;  
 }

@@ -5,8 +5,10 @@ function Game () {
         <>
             <div className="game-background">
                 <div className="game-left-window">
-                    <div>
-                        残り時間
+                    <div className="remaining-time">
+                        <p className="remaining-time-header">残</p>
+                        <p>99年9999時間9999分9999秒</p>
+                        <p>秒間25秒ずつ</p>
                     </div>
                     <div>
                         <img 
