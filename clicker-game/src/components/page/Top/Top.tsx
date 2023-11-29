@@ -19,6 +19,10 @@ function Top() {
         navigateToPage("/howToPlay")
     }
 
+    const handleNavigateGame = () => {
+        navigateToPage("/game")
+    }
+
     const handleClick = () => {
         setIsAnimating(false)
     }
@@ -62,7 +66,7 @@ function Top() {
             >
                 <Button 
                     text="始める"
-                    onButtonClick={onStartButton}
+                    onButtonClick={handleNavigateGame}
                 >
                 </Button>
                 <Button 
