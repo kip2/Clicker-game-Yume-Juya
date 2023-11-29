@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
+
 html {
-    display: block;
+    font-family: 'Hina Mincho', serif;display: block;
     box-sizing: border-box;
     font-size: 16px;
     background-color: azure;

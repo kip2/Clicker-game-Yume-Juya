@@ -1,18 +1,20 @@
 
 .outlined-text {
     color: black;
+    font-weight: bold;
     text-shadow:
-        -2px -2px 0 #fff,
-        2px -2px 0 #fff,
-        -2px 2px 0 #fff,
-        2px 2px 0 #fff;
+        -1.5px -1.5px 0 #fff,
+        1.5px -1.5px 0 #fff,
+        -1.5px 1.5px 0 #fff,
+        1.5px 1.5px 0 #fff;
 }
 
 .outlined-text-red {
     color: black;
+    font-weight: bold;
     text-shadow:
-        -2px -2px 0 #facdcd,
-        2px -2px 0 #facdcd,
-        -2px 2px 0 #facdcd,
-        2px 2px 0 #facdcd;
+        -1.5px -1.5px 0 #facdcd,
+        1.5px -1.5px 0 #facdcd,
+        -1.5px 1.5px 0 #facdcd,
+        1.5px 1.5px 0 #facdcd;
 }
