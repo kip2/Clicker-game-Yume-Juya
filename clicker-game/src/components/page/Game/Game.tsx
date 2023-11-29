@@ -1,8 +1,11 @@
+import "./Game.css"
 
 function Game () {
     return (
         <>
-            <h1>Game</h1>
+            <div className="game-background">
+                <h1>Game</h1>
+            </div>
         </>
     )
 }
