@@ -1,6 +1,8 @@
 import "./Game.css"
 import Button from "../../ui/Button"
 
+// todo: 戻るボタンと、データの保存ボタンを設置したので、後で内部ロジックを実装する
+
 function Game () {
     return (
         <>
