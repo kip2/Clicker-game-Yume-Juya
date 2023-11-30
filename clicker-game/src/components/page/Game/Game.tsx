@@ -3,6 +3,7 @@ import Button from "../../ui/Button"
 import Item from "./Item"
 
 // todo: 戻るボタンと、データの保存ボタンを設置したので、後で内部ロジックを実装する
+// todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
 
 function Game () {
     return (
@@ -24,10 +25,10 @@ function Game () {
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
                         <div className="game-name-space">
-                            あなたの名
+                            ア・ナターノ・ナ・マエー
                         </div>
                         <div className="game-remaining-time-amount">
-                            使える刻:9999999刻
+                            使える刻 ： 9999999刻
                         </div>
                     </div>
                     <div className="game-right-middle-window">

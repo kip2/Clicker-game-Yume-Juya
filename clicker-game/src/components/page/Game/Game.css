@@ -68,6 +68,12 @@
     margin: 5px;
     background-color: rgb(204, 201, 201);
     text-align: center;
+    color: rgb(185, 246, 185);
+    text-shadow: 
+    2px 2px 2px #000,
+    -2px -2px 2px #000,
+    2px -2px 2px #000,
+    -2px 2px 2px #000;  
 }
 
 .game-name-space {
@@ -76,6 +82,13 @@
     height: 40%;
     margin: 10px;
     line-height: 60px;
+    font-size: 1.4rem;
+    color: rgb(185, 246, 185);
+    text-shadow: 
+    2px 2px 2px #000,
+    -2px -2px 2px #000,
+    2px -2px 2px #000,
+    -2px 2px 2px #000;  
 }
 
 .game-remaining-time-amount {
@@ -84,6 +97,13 @@
     height: 40%;
     margin: 10px;
     line-height: 60px;
+    font-size: 1.2rem;
+    color: skyblue;
+    text-shadow: 
+    1px 1px 1px #000,
+    -1px -1px 1px #000,
+    1px -1px 1px #000,
+    -1px 1px 1px #000;  
 }
 
 .remaining-time-counter {
