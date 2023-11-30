@@ -40,6 +40,8 @@
     opacity: 90%;
     border: solid;
     background-color: white;
+    text-align: center;
+    overflow-y: auto;
 
 }
 

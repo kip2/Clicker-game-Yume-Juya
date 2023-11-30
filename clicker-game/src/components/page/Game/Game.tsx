@@ -1,5 +1,6 @@
 import "./Game.css"
 import Button from "../../ui/Button"
+import Item from "./Item"
 
 // todo: 戻るボタンと、データの保存ボタンを設置したので、後で内部ロジックを実装する
 
@@ -30,7 +31,12 @@ function Game () {
                         </div>
                     </div>
                     <div className="game-right-middle-window">
-                        アイテム
+                        購入可能アイテム
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
                     </div>
                     <div className="game-right-bottom-window">
                         <div className="button-center">
