@@ -68,6 +68,22 @@
     text-align: center;
 }
 
+.game-name-space {
+    background-color: rgb(204, 201, 201);
+    text-align: center;
+    height: 40%;
+    margin: 10px;
+    line-height: 60px;
+}
+
+.game-remaining-time-amount {
+    background-color: rgb(204, 201, 201);
+    text-align: center;
+    height: 40%;
+    margin: 10px;
+    line-height: 60px;
+}
+
 .remaining-time-counter {
     font-size: 1.5rem;
     margin: 10px 0 0 0;

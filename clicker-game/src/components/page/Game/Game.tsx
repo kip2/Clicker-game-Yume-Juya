@@ -19,7 +19,12 @@ function Game () {
                 </div>
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
-                        右上
+                        <div className="game-name-space">
+                            あなたの名
+                        </div>
+                        <div className="game-remaining-time-amount">
+                            使える刻:9999999刻
+                        </div>
                     </div>
                     <div className="game-right-middle-window">
                         アイテム
