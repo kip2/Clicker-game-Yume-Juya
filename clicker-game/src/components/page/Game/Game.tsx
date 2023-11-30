@@ -1,4 +1,5 @@
 import "./Game.css"
+import Button from "../../ui/Button"
 
 function Game () {
     return (
@@ -30,7 +31,18 @@ function Game () {
                         アイテム
                     </div>
                     <div className="game-right-bottom-window">
-                        ボタン
+                        <div className="button-center">
+                            <Button 
+                                text="状態保存"
+                                onButtonClick={() => {}}
+                            />
+                        </div>
+                        <div className="button-center">
+                            <Button 
+                                text="戻る"
+                                onButtonClick={() => {}}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

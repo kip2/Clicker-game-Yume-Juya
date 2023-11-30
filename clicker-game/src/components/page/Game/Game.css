@@ -107,3 +107,8 @@
     2px -2px 2px #000,
     -2px 2px 2px #000;  
 }
+
+.button-center {
+    display: flex;
+    justify-content: center;
+}
