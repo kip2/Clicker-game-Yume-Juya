@@ -1,11 +1,18 @@
 import "./Game.css"
 import Button from "../../ui/Button"
 import Item from "./Item"
+import { useCustomNavigate } from "../../functional/CustomNavigate"
 
 // todo: 戻るボタンと、データの保存ボタンを設置したので、後で内部ロジックを実装する
 // todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
 
 function Game () {
+    const { navigateToPage } = useCustomNavigate()
+
+    const handleNavigateTop = () => {
+        navigateToPage("/")
+    }
+
     return (
         <>
             <div className="game-background">
@@ -49,7 +56,7 @@ function Game () {
                         <div className="button-center">
                             <Button 
                                 text="戻る"
-                                onButtonClick={() => {}}
+                                onButtonClick={handleNavigateTop}
                             />
                         </div>
                     </div>
