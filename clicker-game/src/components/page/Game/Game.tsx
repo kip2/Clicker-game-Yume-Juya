@@ -21,6 +21,11 @@ function Game () {
         navigateToPage("/")
     }
 
+    // todo: 一旦、ダミーとしてトップ画面への遷移として作成した。あとで、商品ページへの遷移として作成し直すこと
+    const handleOnItemBarClick = () => {
+        navigateToPage("/")
+    }
+
     return (
         <>
             <div className="game-background">
@@ -51,7 +56,7 @@ function Game () {
                         {[...Array(5)].map(() => (
                             <ItemBar 
                                 name={item.name}
-                                onBarClick={() => console.log("test")}
+                                onBarClick={handleOnItemBarClick}
                             />
                         ))}
                     </div>
