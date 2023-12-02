@@ -6,6 +6,13 @@ import { useCustomNavigate } from "../../functional/CustomNavigate"
 // todo: 戻るボタンと、データの保存ボタンを設置したので、後で内部ロジックを実装する
 // todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
 
+const item = {
+    name: "健さんのパナマの帽子",
+    remainingPurchaseQuantity: 100,
+    reduceTime: 3000,
+    price: 2000000
+}
+
 function Game () {
     const { navigateToPage } = useCustomNavigate()
 
