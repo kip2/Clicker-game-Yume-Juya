@@ -1,6 +1,10 @@
-import "./Item.css"
+import "./ItemBar.css"
 
-function Item () {
+type ItemBarProps = {
+    name: string
+}
+
+function ItemBar ({ name }: ItemBarProps) {
     return(
         <>
             <div className="item-bar">
@@ -11,7 +15,8 @@ function Item () {
                     />
                 </div>
                 <p className="itembar-item-name">
-                    健さんのパナマの帽子
+                    {name}
+                    {/* 健さんのパナマの帽子 */}
                 </p>
                 <div className="number-of-item-box">
                     所持
@@ -23,4 +28,4 @@ function Item () {
     )
 }
 
-export default Item
+export default ItemBar

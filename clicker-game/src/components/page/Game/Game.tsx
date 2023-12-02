@@ -1,16 +1,17 @@
 import "./Game.css"
 import Button from "../../ui/Button"
-import Item from "./Item"
+import ItemBar from "./ItemBar"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 
-// todo: 戻るボタンと、データの保存ボタンを設置したので、後で内部ロジックを実装する
+// todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
 // todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
 
 const item = {
     name: "健さんのパナマの帽子",
     remainingPurchaseQuantity: 100,
     reduceTime: 3000,
-    price: 2000000
+    price: 2000000,
+    description: "description"
 }
 
 function Game () {
@@ -47,11 +48,11 @@ function Game () {
                     </div>
                     <div className="game-right-middle-window">
                         購入可能アイテム
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
+                        {[...Array(5)].map(() => (
+                            <ItemBar 
+                                name={item.name}
+                            />
+                        ))}
                     </div>
                     <div className="game-right-bottom-window">
                         <div className="button-center">
