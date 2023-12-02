@@ -9,6 +9,13 @@
     background-color: rgb(204, 201, 201);
     text-align: center;
     margin: 10px 0;
+    border: thick double #b5b8f6;
+    border-width: 3px;
+    transition: all 0.2s ease 0s;
+}
+
+.item-bar:hover {
+    transform: translateY(-0.1875em);
 }
 
 .item-box {
@@ -21,7 +28,7 @@
     align-items: center;
     width: 25%;
     border: solid;
-    background-color: yellow;
+    background-color: rgb(233, 233, 190);
 }
 
 .itembar-item-name {
