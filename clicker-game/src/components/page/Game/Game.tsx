@@ -46,7 +46,10 @@ function Game () {
                             使える刻 ： 9999999刻
                         </div>
                     </div>
-                    <div className="game-right-middle-window">
+                    <div 
+                        className="game-right-middle-window"
+                        onClick={() => {console.log("test")}}
+                    >
                         購入可能アイテム
                         {[...Array(5)].map(() => (
                             <ItemBar 
