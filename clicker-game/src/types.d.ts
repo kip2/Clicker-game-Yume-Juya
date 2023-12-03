@@ -3,5 +3,6 @@ type Item = {
     remainingPurchaseQuantity: number,
     reduceTime: number,
     price: number,
-    description: string
+    description: string,
+    imgUrl: string
 }
