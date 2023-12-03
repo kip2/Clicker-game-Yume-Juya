@@ -32,6 +32,8 @@ function Game () {
         const timer = setInterval(() => {
             setTotalSeconds((prevSeconds) => Math.max(prevSeconds - decrement, 0))
         }, 1000)
+
+        return () => clearInterval(timer)
     })
 
     return (
