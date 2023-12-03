@@ -1,7 +1,7 @@
 .item-image {
     height: 100%;
     width: 100%;
-    border: solid;
+    border: 1px solid;
 }
 
 .item-bar {
@@ -9,7 +9,7 @@
     background-color: rgb(204, 201, 201);
     text-align: center;
     margin: 10px 0;
-    border: thick double #b5b8f6;
+    border: thick double #000000;
     border-width: 3px;
     transition: all 0.2s ease 0s;
 }
@@ -27,7 +27,7 @@
     justify-content: center;
     align-items: center;
     width: 25%;
-    border: solid;
+    border: 1px solid;
     background-color: rgb(233, 233, 190);
 }
 

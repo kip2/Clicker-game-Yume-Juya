@@ -63,6 +63,7 @@ function Game () {
                         ?
                             <ItemPurchase 
                                 {...item}
+                                backButton={handleItemBackButton}
                             />
                         :
                             <>
