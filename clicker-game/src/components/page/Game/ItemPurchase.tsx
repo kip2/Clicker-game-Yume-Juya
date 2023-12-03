@@ -23,7 +23,7 @@ function ItemPurchase ({
 }: ItemPurchaseProps) {
     return (
         <>
-            <h2> 購 入 細 目 </h2>
+            <h2> 細 目 </h2>
             <div className="purchase-information">
                 <div className="purchase-information-description">
                     <p>{name}</p>
@@ -45,7 +45,7 @@ function ItemPurchase ({
                 type="number"
                 max={remainingPurchaseQuantity}
                 min="1"
-                placeholder="幾つ購う？"
+                placeholder="幾ら購う？"
             ></input>
             <div className="display-price-box">
                 <p className="display-price-description">購入時の対価</p>

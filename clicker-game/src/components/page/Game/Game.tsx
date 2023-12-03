@@ -52,7 +52,7 @@ function Game () {
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
                         <div className="game-name-space">
-                            ア・ナターノ・ナ・マエー
+                            名無しの飲兵衛
                         </div>
                         <div className="game-remaining-time-amount">
                             使える刻 ： 9999999刻
