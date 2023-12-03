@@ -16,6 +16,9 @@ function Game () {
     // todo: 秒数を計算してから最初に渡すロジックがいる
     const [totalSeconds, setTotalSeconds] = useState(100 * 365 * 24 * 60 * 60)
     const [decrement, setDecrement] = useState(25)
+    const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
+    const [showNumber, setShowNumber] = useState(false)
+    const [clickDecrement, setClickDecrement] = useState(25)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -29,8 +32,15 @@ function Game () {
         setSelectedItem(item)
     }
 
-    const handleMoonClick = () => {
-        setTotalSeconds(totalSeconds - 25)
+    const handleMoonClick = (e) => {
+        const { clientX, clientY } = e;
+        setClickPosition({ x: clientX - 20, y: clientY + 50})
+        setShowNumber(true)
+        setTotalSeconds(totalSeconds - clickDecrement)
+
+        setTimeout(() => {
+            setShowNumber(false)
+        }, 100)
     }
 
     useEffect(() => {
@@ -55,7 +65,16 @@ function Game () {
                             onClick={handleMoonClick}
                             className="click-moon"
                             src="./img/clickmoon.png"
+                            draggable="false"
                         />
+                        {showNumber && (
+                            <span
+                                className="animatedNumber"
+                                style={{ left: clickPosition.x, top: clickPosition.y}}
+                            >
+                                {clickDecrement}
+                            </span>
+                        )}
                     </div>
                     <p className="decreases-click">クリックごとに25秒ずつ</p>
                 </div>
@@ -77,7 +96,7 @@ function Game () {
                             />
                         :
                             <>
-                                <p>購入可能アイテム</p>
+                                <p className="game-oshinagaki"> 御 品 書 </p>
                                 {items.map((item, i) => {
                                     return(
                                         <ItemBar
