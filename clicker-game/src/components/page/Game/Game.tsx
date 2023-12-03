@@ -13,7 +13,8 @@ const item: Item = {
     remainingPurchaseQuantity: 100,
     reduceTime: 3000,
     price: 2000000,
-    description: "description"
+    description: "description",
+    imgUrl: "./img/panamaHat.png"
 }
 
 function Game () {

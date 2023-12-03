@@ -7,6 +7,7 @@ type ItemPurchaseProps = {
     reduceTime: number
     price: number
     description: string
+    imgUrl: string
     backButton?: () => void
 }
 
@@ -17,6 +18,7 @@ function ItemPurchase ({
     reduceTime, 
     price, 
     description,
+    imgUrl,
     backButton
 }: ItemPurchaseProps) {
     return (
@@ -34,7 +36,7 @@ function ItemPurchase ({
                 </div>
                 <img
                     className="purchase-image"
-                    src="./img/panamaHat.png"
+                    src={imgUrl}
                 >
                 </img>
             </div>
