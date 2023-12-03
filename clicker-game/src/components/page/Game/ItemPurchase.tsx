@@ -24,7 +24,7 @@ function ItemPurchase ({
 }: ItemPurchaseProps) {
     const [inputValue, setInputValue] = useState("");
 
-    const handleInputValue = (e) => {
+    const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
         setInputValue(value)
     }
