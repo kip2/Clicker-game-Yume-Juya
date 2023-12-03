@@ -8,3 +8,15 @@
 .button-layout:hover {
     background-color: #dddddd;
 }
+
+.button-layout-purchase {
+    background-color: rgb(75, 75, 237);
+    color: white;
+    border-radius: 5px;
+    width: 15rem;
+    font-size: 2rem;
+}
+
+.button-layout-purchase:hover {
+    background-color: rgb(38, 178, 196);
+}

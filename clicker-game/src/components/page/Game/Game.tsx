@@ -28,7 +28,6 @@ function Game () {
         navigateToPage("/")
     }
 
-    // todo: 一旦、ダミーとしてトップ画面への遷移として作成した。あとで、商品ページへの遷移として作成し直すこと
     const handleOnItemBarClick = (item: Item ) => {
         setSelectedItem(item)
     }

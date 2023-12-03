@@ -2,14 +2,21 @@ import "./Button.css"
 
 type ButtonProps = {
     text: string
+    color?: string | null
     onButtonClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ text , onButtonClick }) => {
+const Button: React.FC<ButtonProps> = ({ text , color, onButtonClick }) => {
     return(
         <>
             <button 
-                className="button-layout"
+                className={
+                    color
+                ?
+                    "button-layout-purchase"
+                :
+                    "button-layout"
+                }
                 onClick={onButtonClick}
             >
                 { text }

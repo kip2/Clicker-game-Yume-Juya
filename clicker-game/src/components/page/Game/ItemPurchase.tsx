@@ -1,4 +1,5 @@
 import Button from "../../ui/Button"
+import "./ItemPurchase.css"
 
 type ItemPurchaseProps = {
     name: string
@@ -21,10 +22,20 @@ function ItemPurchase ({
     return (
         <>
             <h1>ItemPurchase</h1>
-            <Button 
-                text="戻る"
-                onButtonClick={backButton}
-            />
+            <div>
+
+            </div>
+            <div className="purchase-information-buttons">
+                <Button 
+                    text="戻る"
+                    onButtonClick={backButton}
+                />
+                <Button
+                    text="購入"
+                    color="blue"
+                    onButtonClick={()=>{}}
+                />
+            </div>
         </>
     )
 
