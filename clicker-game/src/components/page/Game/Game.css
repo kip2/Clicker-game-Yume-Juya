@@ -155,7 +155,7 @@
 
 @keyframes floatUp {
     0% { 
-        color: red;
+        color: rgb(246, 153, 153);
         transform: translateY(0);
         opacity: 1;
     }
@@ -169,4 +169,9 @@
     position: absolute;
     font-size: 2rem;
     animation: floatUp 1s ease-out;
+    text-shadow: 
+    2px 2px 2px #000,
+    -2px -2px 2px #000,
+    2px -2px 2px #000,
+    -2px 2px 2px #000;  
 }

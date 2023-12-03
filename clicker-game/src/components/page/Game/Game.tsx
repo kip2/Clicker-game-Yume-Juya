@@ -18,6 +18,7 @@ function Game () {
     const [decrement, setDecrement] = useState(25)
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
     const [showNumber, setShowNumber] = useState(false)
+    const [showClickNumber, setShowClickNumber] = useState(false)
     const [clickDecrement, setClickDecrement] = useState(25)
     const [totalMoney, setTotalMoney] = useState(0)
 
@@ -36,19 +37,25 @@ function Game () {
     const handleMoonClick = (e) => {
         const { clientX, clientY } = e;
         setClickPosition({ x: clientX - 20, y: clientY - 60})
-        setShowNumber(true)
+        setShowClickNumber(true)
         setTotalSeconds(totalSeconds - clickDecrement)
         setTotalMoney(totalMoney + clickDecrement)
 
         setTimeout(() => {
-            setShowNumber(false)
+            setShowClickNumber(false)
         }, 100)
     }
 
     useEffect(() => {
         const timer = setInterval(() => {
+            setShowNumber(true)
             setTotalSeconds((prevSeconds) => Math.max(prevSeconds - decrement, 0))
+            setTotalMoney(totalMoney + decrement)
         }, 1000)
+
+        setTimeout(() => {
+            setShowNumber(false)
+        }, 500)
 
         return () => clearInterval(timer)
     })
@@ -60,6 +67,14 @@ function Game () {
                     <div className="remaining-time">
                         <p className="remaining-time-header">残</p>
                         <p className="remaining-time-counter">{TimeFormatter(totalSeconds)}</p>
+                        {showNumber && (
+                            <span
+                                className="animatedNumber"
+                                style={{ left: 400, top: 110}}
+                            >
+                                {decrement}
+                            </span>
+                        )}
                         <p>秒間25秒ずつ</p>
                     </div>
                     <div>
@@ -69,7 +84,7 @@ function Game () {
                             src="./img/clickmoon.png"
                             draggable="false"
                         />
-                        {showNumber && (
+                        {showClickNumber && (
                             <span
                                 className="animatedNumber"
                                 style={{ left: clickPosition.x, top: clickPosition.y}}
