@@ -38,7 +38,7 @@ function ItemPurchase ({
                     <p>残り購入数:{remainingPurchaseQuantity}</p>
                     <p>購入によって得る力</p>
                     <p>毎秒 {reduceTime}秒 追加</p>
-                    <div className="purchase-information-item-description">
+                    <div className="purchase-information-item-description outlined-text">
                         {description}
                     </div>
                 </div>

@@ -53,13 +53,13 @@
     display: none;
     position: absolute;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     z-index: 10;
     top: 320px;
     height: 190px;
     width: 38%;
     background-color: bisque;
-    opacity: 70% ;
+    opacity: 90% ;
 }
 
 .purchase-information:hover .purchase-information-item-description {

@@ -2,12 +2,13 @@ import "./ItemBar.css"
 
 type ItemBarProps = {
     name: string
+    imgUrl: string,
     onBarClick?: () => void
 }
 
 // todo: 所持数がハードコード
 
-function ItemBar ({ name, onBarClick }: ItemBarProps) {
+function ItemBar ({ name, imgUrl, onBarClick }: ItemBarProps) {
     return(
         <>
             <div 
@@ -18,7 +19,7 @@ function ItemBar ({ name, onBarClick }: ItemBarProps) {
                 className="item-box">
                     <img 
                         className="item-image"
-                        src="./img/items/panamaHat.png"
+                        src={imgUrl}
                     />
                 </div>
                 <p className="itembar-item-name">
