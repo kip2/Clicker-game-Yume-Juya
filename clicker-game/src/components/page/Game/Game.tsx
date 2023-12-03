@@ -19,6 +19,7 @@ function Game () {
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
     const [showNumber, setShowNumber] = useState(false)
     const [clickDecrement, setClickDecrement] = useState(25)
+    const [totalMoney, setTotalMoney] = useState(0)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -34,9 +35,10 @@ function Game () {
 
     const handleMoonClick = (e) => {
         const { clientX, clientY } = e;
-        setClickPosition({ x: clientX - 20, y: clientY + 50})
+        setClickPosition({ x: clientX - 20, y: clientY - 60})
         setShowNumber(true)
         setTotalSeconds(totalSeconds - clickDecrement)
+        setTotalMoney(totalMoney + clickDecrement)
 
         setTimeout(() => {
             setShowNumber(false)
@@ -84,7 +86,7 @@ function Game () {
                             名無しの飲兵衛
                         </div>
                         <div className="game-remaining-time-amount">
-                            使える刻 ： 9999999刻
+                            使える刻 ： {totalMoney}
                         </div>
                     </div>
                     <div className="game-right-middle-window">
