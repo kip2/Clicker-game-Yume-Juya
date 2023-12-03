@@ -1,5 +1,6 @@
 .purchase-information-buttons {
     display: flex;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
@@ -36,9 +37,25 @@
 
 .purchase-information-description {
     width: 50%;
+    text-align: left;
 }
 
 .purchase-image {
     width: 50%;
     border: 1px solid;
+}
+
+.purchase-information-item-description {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 320px;
+    height: 19%;
+    width: 38%;
+    background-color: bisque;
+    opacity: 70% ;
+}
+
+.purchase-information:hover .purchase-information-item-description {
+    display: block;
 }

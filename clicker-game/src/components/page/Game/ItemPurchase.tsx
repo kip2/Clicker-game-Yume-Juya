@@ -24,13 +24,19 @@ function ItemPurchase ({
             <h2> 購 入 細 目 </h2>
             <div className="purchase-information">
                 <div className="purchase-information-description">
-                    <p>purchase</p>
+                    <p>{name}</p>
+                    <p>残り購入数:{remainingPurchaseQuantity}</p>
+                    <p>購入によって得る力</p>
+                    <p>毎秒{reduceTime}秒追加</p>
+                    <div className="purchase-information-item-description">
+                        {description}
+                    </div>
                 </div>
                 <img
                     className="purchase-image"
                     src="./img/panamaHat.png"
-                ></img>
-
+                >
+                </img>
             </div>
             <input
                 className="purchase-input"
