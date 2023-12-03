@@ -15,7 +15,7 @@ function Game () {
     const { navigateToPage } = useCustomNavigate()
     // todo: 秒数を計算してから最初に渡すロジックがいる
     const [totalSeconds, setTotalSeconds] = useState(100 * 365 * 24 * 60 * 60)
-    const decrement = 25
+    const [decrement, setDecrement] = useState(25)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
