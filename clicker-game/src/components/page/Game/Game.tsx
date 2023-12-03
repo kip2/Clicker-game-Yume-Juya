@@ -6,12 +6,15 @@ import { useState } from "react"
 import ItemPurchase from "./ItemPurchase"
 import TimeFormatter from "../../functional/TimeFormatter"
 import items from "../../../json/itemList.json"
+import { useEffect } from "react"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
 
 function Game () {
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
+    const [totalSeconds, setTotalSeconds] = useState(100 * 365 * 24 * 60 * 60)
+    const decrement = 25
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -25,7 +28,11 @@ function Game () {
         setSelectedItem(item)
     }
 
-    const totalSeconds = 100 * 365 * 24 * 60 * 60
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTotalSeconds((prevSeconds) => Math.max(prevSeconds - decrement, 0))
+        }, 1000)
+    })
 
     return (
         <>
