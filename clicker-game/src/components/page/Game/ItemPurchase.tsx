@@ -29,7 +29,7 @@ function ItemPurchase ({
                     <p>{name}</p>
                     <p>残り購入数:{remainingPurchaseQuantity}</p>
                     <p>購入によって得る力</p>
-                    <p>毎秒{reduceTime}秒追加</p>
+                    <p>毎秒 {reduceTime}秒 追加</p>
                     <div className="purchase-information-item-description">
                         {description}
                     </div>
@@ -43,6 +43,7 @@ function ItemPurchase ({
             <input
                 className="purchase-input"
                 type="number"
+                max={remainingPurchaseQuantity}
                 min="1"
                 placeholder="幾つ購う？"
             ></input>

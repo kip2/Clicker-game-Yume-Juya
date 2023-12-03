@@ -2,7 +2,11 @@
     display: flex;
     position: relative;
     width: 100%;
-    bottom: 0;
+}
+
+.purchase-information-buttons > * {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .purchase-input {
