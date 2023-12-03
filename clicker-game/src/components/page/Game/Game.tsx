@@ -4,6 +4,7 @@ import ItemBar from "./ItemBar"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
 import ItemPurchase from "./ItemPurchase"
+import TimeFormatter from "../../functional/TimeFormatter"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
 // todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
@@ -33,13 +34,15 @@ function Game () {
         setSelectedItem(item)
     }
 
+    const totalSeconds = 100 * 365 * 24 * 60 * 60
+
     return (
         <>
             <div className="game-background">
                 <div className="game-left-window">
                     <div className="remaining-time">
                         <p className="remaining-time-header">残</p>
-                        <p className="remaining-time-counter">99年9999時間9999分9999秒</p>
+                        <p className="remaining-time-counter">{TimeFormatter(totalSeconds)}</p>
                         <p>秒間25秒ずつ</p>
                     </div>
                     <div>
