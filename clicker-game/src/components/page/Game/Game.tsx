@@ -13,6 +13,7 @@ import { useEffect } from "react"
 function Game () {
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
+    // todo: 秒数を計算してから最初に渡すロジックがいる
     const [totalSeconds, setTotalSeconds] = useState(100 * 365 * 24 * 60 * 60)
     const decrement = 25
 
@@ -26,6 +27,10 @@ function Game () {
 
     const handleOnItemBarClick = (item: Item ) => {
         setSelectedItem(item)
+    }
+
+    const handleMoonClick = () => {
+        setTotalSeconds(totalSeconds - 25)
     }
 
     useEffect(() => {
@@ -47,10 +52,12 @@ function Game () {
                     </div>
                     <div>
                         <img 
+                            onClick={handleMoonClick}
                             className="click-moon"
                             src="./img/clickmoon.png"
                         />
                     </div>
+                    <p className="decreases-click">クリックごとに25秒ずつ</p>
                 </div>
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
