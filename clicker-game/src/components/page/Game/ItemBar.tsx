@@ -5,6 +5,8 @@ type ItemBarProps = {
     onBarClick?: () => void
 }
 
+// todo: 所持数がハードコード
+
 function ItemBar ({ name, onBarClick }: ItemBarProps) {
     return(
         <>
@@ -12,7 +14,8 @@ function ItemBar ({ name, onBarClick }: ItemBarProps) {
                 className="item-bar"
                 onClick={onBarClick}
             >
-                <div className="item-box">
+                <div 
+                className="item-box">
                     <img 
                         className="item-image"
                         src="./img/panamaHat.png"

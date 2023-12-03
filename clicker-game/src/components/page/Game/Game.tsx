@@ -2,11 +2,13 @@ import "./Game.css"
 import Button from "../../ui/Button"
 import ItemBar from "./ItemBar"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
+import { useState } from "react"
+import ItemPurchase from "./ItemPurchase"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
 // todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
 
-const item = {
+const item: Item = {
     name: "健さんのパナマの帽子",
     remainingPurchaseQuantity: 100,
     reduceTime: 3000,
@@ -15,15 +17,20 @@ const item = {
 }
 
 function Game () {
+    const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
+
+    const handleItemBackButton = () => {
+        setSelectedItem(null)
+    }
 
     const handleNavigateTop = () => {
         navigateToPage("/")
     }
 
     // todo: 一旦、ダミーとしてトップ画面への遷移として作成した。あとで、商品ページへの遷移として作成し直すこと
-    const handleOnItemBarClick = () => {
-        navigateToPage("/")
+    const handleOnItemBarClick = (item: Item ) => {
+        setSelectedItem(item)
     }
 
     return (
@@ -52,13 +59,23 @@ function Game () {
                         </div>
                     </div>
                     <div className="game-right-middle-window">
-                        購入可能アイテム
-                        {[...Array(5)].map(() => (
-                            <ItemBar 
-                                name={item.name}
-                                onBarClick={handleOnItemBarClick}
+                        { selectedItem
+                        ?
+                            <ItemPurchase 
+                                {...item}
                             />
-                        ))}
+                        :
+                            <>
+                                <p>購入可能アイテム</p>
+                                {[...Array(5)].map((_, i) => (
+                                    <ItemBar 
+                                        key={i}
+                                        name={item.name}
+                                        onBarClick={() => handleOnItemBarClick(item)}
+                                    />
+                                ))}
+                            </>
+                        }
                     </div>
                     <div className="game-right-bottom-window">
                         <div className="button-center">
