@@ -5,29 +5,9 @@ import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
 import ItemPurchase from "./ItemPurchase"
 import TimeFormatter from "../../functional/TimeFormatter"
+import items from "../../../json/itemList.json"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
-// todo: アイテムの一覧をダミーで生成しているので、配列で値を渡す様に変更する
-
-const items: Item[] =[
-{
-    name: "健さんのパナマの帽子",
-    remainingPurchaseQuantity: 100,
-    reduceTime: 3000,
-    price: 2000000,
-    description: "町内一の好男子、庄太郎のお気に入りの帽子。庄太郎は豚に舐められ倒れてしまった。健さんは庄太郎のパナマの帽子が貰いたいと云っていた。庄太郎は助かるまい。パナマは健さんのものだろう。",
-    imgUrl: "./img/items/panamaHat.png"
-},
-{
-    name: "大きな真珠貝",
-    remainingPurchaseQuantity: 500,
-    reduceTime: 500,
-    price: 2000,
-    description: "「死んだら、埋めて下さい。大きな真珠貝で穴を掘って」 大きな滑かな縁の鋭どい貝。月の光が差してきらきらする。",
-    imgUrl: "./img/items/perlOyster.png"
-
-}
-];
 
 function Game () {
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
