@@ -18,7 +18,7 @@ function ItemBar ({ name, onBarClick }: ItemBarProps) {
                 className="item-box">
                     <img 
                         className="item-image"
-                        src="./img/panamaHat.png"
+                        src="./img/items/panamaHat.png"
                     />
                 </div>
                 <p className="itembar-item-name">
