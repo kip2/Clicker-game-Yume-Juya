@@ -1,5 +1,6 @@
 import Button from "../../ui/Button"
 import "./ItemPurchase.css"
+import { useState } from "react"
 
 type ItemPurchaseProps = {
     name: string
@@ -21,6 +22,13 @@ function ItemPurchase ({
     imgUrl,
     backButton
 }: ItemPurchaseProps) {
+    const [inputValue, setInputValue] = useState("");
+
+    const handleInputValue = (e) => {
+        const value = e.target.value
+        setInputValue(value)
+    }
+
     return (
         <>
             <h2> 細 目 </h2>
@@ -43,14 +51,17 @@ function ItemPurchase ({
             <input
                 className="purchase-input"
                 type="number"
+                value={inputValue}
+                onChange={handleInputValue}
                 max={remainingPurchaseQuantity}
-                min="1"
+                min="0"
                 placeholder="幾ら購う？"
             ></input>
             <div className="display-price-box">
                 <p className="display-price-description">購入時の対価</p>
                 <p className="display-price-price">
-                    2000000 刻
+                    { Number(inputValue) <= 0 ? 0 :
+                    price * Number(inputValue)} 刻
                 </p>
             </div>
             <div className="purchase-information-buttons">
