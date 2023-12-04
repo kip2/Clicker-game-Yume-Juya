@@ -4,6 +4,11 @@
     width: 100%;
 }
 
+.purchase-title {
+    margin: 0;
+    font-size: 2.3rem;
+}
+
 .purchase-information-buttons > * {
     margin-left: 10px;
     margin-right: 10px;
@@ -13,6 +18,7 @@
     width: 90%;
     height: 3rem;
     padding: 0 10px 0 10px;
+    margin-top: 10px;
     font-size: 1.5rem;
     text-align: right;
 }
@@ -37,6 +43,8 @@
 .purchase-information {
     display: flex;
     padding: 5px;
+    border: 1px solid;
+    margin: 5px;
 }
 
 .purchase-information-description {
@@ -55,9 +63,9 @@
     text-align: center;
     font-size: 1rem;
     z-index: 10;
-    top: 320px;
-    height: 190px;
-    width: 36%;
+    top: 305px;
+    height: 185px;
+    width: 365px;
     background-color: bisque;
     opacity: 90% ;
 }

@@ -31,7 +31,7 @@ function ItemPurchase ({
 
     return (
         <>
-            <h2> 細 目 </h2>
+            <h2 className="purchase-title"> 細 目 </h2>
             <div className="purchase-information">
                 <div className="purchase-information-description">
                     <p>{name}</p>
