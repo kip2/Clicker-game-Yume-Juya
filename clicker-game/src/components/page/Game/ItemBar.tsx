@@ -3,12 +3,13 @@ import "./ItemBar.css"
 type ItemBarProps = {
     name: string
     imgUrl: string,
+    userPossession: number
     onBarClick?: () => void
 }
 
 // todo: 所持数がハードコード
 
-function ItemBar ({ name, imgUrl, onBarClick }: ItemBarProps) {
+function ItemBar ({ name, imgUrl, userPossession, onBarClick }: ItemBarProps) {
     return(
         <>
             <div 
@@ -28,7 +29,7 @@ function ItemBar ({ name, imgUrl, onBarClick }: ItemBarProps) {
                 <div className="number-of-item-box">
                     所持
                     <br/>
-                    2個
+                    {userPossession} 個
                 </div>
             </div>
         </>
