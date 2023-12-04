@@ -74,7 +74,7 @@ function Game () {
                                 {decrement}
                             </span>
                         )}
-                        <p>秒間25秒ずつ</p>
+                        <p>秒間{decrement}秒ずつ</p>
                     </div>
                     <div>
                         <img 
@@ -92,7 +92,7 @@ function Game () {
                             </span>
                         )}
                     </div>
-                    <p className="decreases-click">クリックごとに25秒ずつ</p>
+                    <p className="decreases-click">クリックごとに{clickDecrement}秒ずつ</p>
                 </div>
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
