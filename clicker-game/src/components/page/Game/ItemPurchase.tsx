@@ -10,6 +10,7 @@ type ItemPurchaseProps = {
     description: string
     imgUrl: string
     backButton?: () => void
+    purchaseButton?: () => void
 }
 
 
@@ -20,7 +21,8 @@ function ItemPurchase ({
     price, 
     description,
     imgUrl,
-    backButton
+    backButton,
+    purchaseButton
 }: ItemPurchaseProps) {
     const [inputValue, setInputValue] = useState("");
 
@@ -72,7 +74,7 @@ function ItemPurchase ({
                 <Button
                     text="購入"
                     color="blue"
-                    onButtonClick={()=>{}}
+                    onButtonClick={() => purchaseButton(Number(inputValue))}
                 />
             </div>
         </>

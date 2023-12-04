@@ -55,6 +55,11 @@ function Game () {
         setSelectedItem(item)
     }
 
+    const handlePurchaseButton = (item: string) => (purchaseNumber: number) => {
+        console.log(purchaseNumber)
+        userData.items[item] += Number(purchaseNumber)
+    }
+
     const handleMoonClick = (e) => {
         const { clientX, clientY } = e;
         setClickPosition({ x: clientX - 20, y: clientY - 60})
@@ -130,6 +135,7 @@ function Game () {
                             <ItemPurchase 
                                 {...selectedItem}
                                 backButton={handleItemBackButton}
+                                purchaseButton={handlePurchaseButton(selectedItem.name)}
                             />
                         :
                             <>
