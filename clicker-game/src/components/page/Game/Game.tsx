@@ -38,7 +38,7 @@ function Game () {
         const { clientX, clientY } = e;
         setClickPosition({ x: clientX - 20, y: clientY - 60})
         setShowClickNumber(true)
-        setTotalSeconds(totalSeconds - clickDecrement)
+        setTotalSeconds(Math.max(totalSeconds - clickDecrement, 0))
         setTotalMoney(totalMoney + clickDecrement)
 
         setTimeout(() => {
@@ -50,15 +50,14 @@ function Game () {
         const timer = setInterval(() => {
             setShowNumber(true)
             setTotalSeconds((prevSeconds) => Math.max(prevSeconds - decrement, 0))
-            setTotalMoney(totalMoney + decrement)
+            setTotalMoney((prevMoney) => prevMoney + decrement)
+            setTimeout(() => {
+                setShowNumber(false)
+            }, 500)
+
         }, 1000)
-
-        setTimeout(() => {
-            setShowNumber(false)
-        }, 500)
-
         return () => clearInterval(timer)
-    })
+    }, [])
 
     return (
         <>
