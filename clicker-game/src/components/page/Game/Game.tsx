@@ -10,17 +10,38 @@ import { useEffect } from "react"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
 
+const userData = {
+    name: "名無しの権兵衛",
+    money: 0,
+    decrementPerSecond: 25,
+    decrementPerClick: 25,
+    remainingTime: 100 * 365 * 24 * 60 * 60,
+    items: {
+        "健さんのパナマの帽子": 0,
+        "大きな真珠貝":0,
+        "隣の床の間の置き時計":0,
+        "豆腐屋のラッパ":0,
+        "掘り損ねた仁王像":0,
+        "真鍮で拵えた飴屋の笛":0,
+        "檳榔樹のステッキ":0,
+        "行き先不明の船":0,
+        "運慶の仁王像":0,
+        "祈りの八幡宮":0,
+        "侍の悟り":0,
+    }
+}
+
 function Game () {
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
     // todo: 秒数を計算してから最初に渡すロジックがいる
-    const [totalSeconds, setTotalSeconds] = useState(100 * 365 * 24 * 60 * 60)
-    const [decrement, setDecrement] = useState(25)
+    const [totalSeconds, setTotalSeconds] = useState(userData.remainingTime)
+    const [decrement, setDecrement] = useState(userData.decrementPerSecond)
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
     const [showNumber, setShowNumber] = useState(false)
     const [showClickNumber, setShowClickNumber] = useState(false)
-    const [clickDecrement, setClickDecrement] = useState(25)
-    const [totalMoney, setTotalMoney] = useState(0)
+    const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
+    const [totalMoney, setTotalMoney] = useState(userData.money)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -97,7 +118,7 @@ function Game () {
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
                         <div className="game-name-space">
-                            名無しの飲兵衛
+                            {userData.name}
                         </div>
                         <div className="game-remaining-time-amount">
                             使える刻 ： {totalMoney}
