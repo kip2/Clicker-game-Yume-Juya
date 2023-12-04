@@ -65,7 +65,7 @@ function Game () {
             <div className="game-background">
                 <div className="game-left-window">
                     <div className="remaining-time">
-                        <p className="remaining-time-header">残</p>
+                        <p className="remaining-time-header">百 年 迄</p>
                         <p className="remaining-time-counter">{TimeFormatter(totalSeconds)}</p>
                         {showNumber && (
                             <span
