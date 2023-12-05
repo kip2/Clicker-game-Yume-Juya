@@ -5,7 +5,7 @@ import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
 import ItemPurchase from "./ItemPurchase"
 import TimeFormatter from "../../functional/TimeFormatter"
-import items from "../../../json/itemList.json"
+import data from "../../../json/itemList.json"
 import { useEffect } from "react"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
@@ -43,6 +43,8 @@ function Game () {
     const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
     const [totalMoney, setTotalMoney] = useState(userData.money)
 
+    const items: Item[] = data
+
     const handleItemBackButton = () => {
         setSelectedItem(null)
     }
@@ -57,8 +59,9 @@ function Game () {
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         const item = items.find(element => element.name === itemName)
+        const totalPrice = item.price * Number(purchaseNumber)
         console.log("money:", totalMoney)
-        if (totalMoney > item.price){
+        if (totalMoney > totalPrice){
             userData.items[item] += Number(purchaseNumber)
             setSelectedItem(null)
         } else {
