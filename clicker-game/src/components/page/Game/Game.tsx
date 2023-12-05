@@ -17,7 +17,7 @@ const userData = {
     decrementPerClick: 25,
     remainingTime: 100 * 365 * 24 * 60 * 60,
     items: {
-        "健さんのパナマの帽子": 1,
+        "健さんのパナマの帽子": 0,
         "大きな真珠貝":0,
         "隣の床の間の置き時計":0,
         "豆腐屋のラッパ":0,

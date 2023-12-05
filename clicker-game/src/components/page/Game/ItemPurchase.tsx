@@ -45,6 +45,11 @@ function ItemPurchase ({
                     <div className="purchase-information-item-description outlined-text">
                         {description}
                     </div>
+                    {
+                        remainingPurchaseQuantity - numberOfItemsUserHas === 0
+                        ? <div className="sold-out-banner">完売御礼</div>
+                        : <div></div>
+                    }
                 </div>
                 <img
                     className="purchase-image"
