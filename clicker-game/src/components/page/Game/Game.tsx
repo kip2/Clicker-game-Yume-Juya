@@ -170,6 +170,7 @@ function Game () {
                                             name={item.name}
                                             imgUrl={item.imgUrl}
                                             userPossession={userData.items[item.name]}
+                                            remainingPurchaseQuantity={item.remainingPurchaseQuantity}
                                             onBarClick={()=> handleOnItemBarClick(item)}
                                         />
                                     )

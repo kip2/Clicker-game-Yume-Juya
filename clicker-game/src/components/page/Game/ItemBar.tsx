@@ -4,10 +4,17 @@ type ItemBarProps = {
     name: string
     imgUrl: string,
     userPossession: number
+    remainingPurchaseQuantity: number
+    numberOfItemsUserHas: number
     onBarClick?: () => void
 }
 
-function ItemBar ({ name, imgUrl, userPossession, onBarClick }: ItemBarProps) {
+function ItemBar ({ 
+    name, 
+    imgUrl, 
+    userPossession, 
+    remainingPurchaseQuantity,
+    onBarClick }: ItemBarProps) {
     return(
         <>
             <div 
@@ -29,6 +36,11 @@ function ItemBar ({ name, imgUrl, userPossession, onBarClick }: ItemBarProps) {
                     <br/>
                     {userPossession} 個
                 </div>
+                {
+                    remainingPurchaseQuantity - userPossession === 0
+                    ? <div className="item-bar-sold-out-banner">完売御礼</div>
+                    : <div></div>
+                }
             </div>
         </>
     )
