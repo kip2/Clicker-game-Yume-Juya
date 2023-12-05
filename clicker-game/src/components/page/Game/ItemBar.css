@@ -47,4 +47,5 @@
     color: red;
     border: 6px solid red;
     padding: 5px;
+    transform: rotate(-15deg);
 }
