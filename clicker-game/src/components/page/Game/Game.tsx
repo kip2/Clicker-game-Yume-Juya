@@ -18,10 +18,10 @@ const userData = {
     remainingTime: 100 * 365 * 24 * 60 * 60,
     items: {
         "健さんのパナマの帽子": 1,
-        "大きな真珠貝":2,
-        "隣の床の間の置き時計":3,
-        "豆腐屋のラッパ":4,
-        "掘り損ねた仁王像":2,
+        "大きな真珠貝":0,
+        "隣の床の間の置き時計":0,
+        "豆腐屋のラッパ":0,
+        "掘り損ねた仁王像":0,
         "真鍮で拵えた飴屋の笛":0,
         "檳榔樹のステッキ":0,
         "行き先不明の船":0,
@@ -55,9 +55,16 @@ function Game () {
         setSelectedItem(item)
     }
 
-    const handlePurchaseButton = (item: string) => (purchaseNumber: number) => {
-        userData.items[item] += Number(purchaseNumber)
-        setSelectedItem(null)
+    const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
+        const item = items.find(element => element.name === itemName)
+        console.log("money:", totalMoney)
+        if (totalMoney > item.price){
+            userData.items[item] += Number(purchaseNumber)
+            setSelectedItem(null)
+        } else {
+            console.log(item.price)
+            console.log("到達していません")
+        }
     }
 
     const handleMoonClick = (e) => {

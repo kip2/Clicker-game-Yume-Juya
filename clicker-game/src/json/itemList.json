@@ -1,9 +1,9 @@
 [
     {
         "name": "健さんのパナマの帽子",
-        "remainingPurchaseQuantity": 100,
+        "remainingPurchaseQuantity": 1000,
         "reduceTime": 3000,
-        "price": 2000000,
+        "price": 1200,
         "description": "町内一の好男子、庄太郎のお気に入りの帽子。庄太郎は豚に舐められ倒れてしまった。健さんは庄太郎のパナマの帽子が貰いたいと云っていた。庄太郎は助かるまい。パナマは健さんのものだろう。",
         "imgUrl": "./img/items/panamaHat.png"
     },
@@ -18,9 +18,9 @@
     },
     {
         "name": "隣の床の間の置き時計",
-        "remainingPurchaseQuantity": 100,
-        "reduceTime": 3000,
-        "price": 2000000,
+        "remainingPurchaseQuantity": 500,
+        "reduceTime": 30000,
+        "price": 120000,
         "description": "隣の広間の床に据えてある置き時計。次の刻を打つまでには、きっと悟ってみせる。悟れなければ自刃すると決めている。自分は侍である。",
         "imgUrl": "./img/items/clock.png"
     },
@@ -74,17 +74,17 @@
     },
     {
         "name": "祈りの八幡宮",
-        "remainingPurchaseQuantity": 100,
-        "reduceTime": 3000,
-        "price": 2000000,
+        "remainingPurchaseQuantity": 10,
+        "reduceTime": 30000000,
+        "price": 10000000,
         "description": "戦の世、家には若い母と三つになる子供がいる。父はどこかへ行った。父がどこかへ行ったのは、月の出ていない夜中であった。父はそれきり帰って来なかった。御百度を何度も踏み直し、子を負うた母は一心不乱に夫の無事を八幡宮に祈る。",
         "imgUrl": "./img/items/hatimangu.png"
     },
     {
         "name": "侍の悟り",
-        "remainingPurchaseQuantity": 100,
-        "reduceTime": 3000,
-        "price": 2000000,
+        "remainingPurchaseQuantity": 1,
+        "reduceTime": 400000000,
+        "price": 100000000,
         "description": "趙州曰く無。無とは何だ。そうしてぼうっと考えていると、周りの行灯も画も、何もかも有って無いような、無くってあるような。しかし無は現前しない。隣の時計の音でハッと気づいた。自分は侍である。",
         "imgUrl": "./img/items/enlightenment.png"
     }
