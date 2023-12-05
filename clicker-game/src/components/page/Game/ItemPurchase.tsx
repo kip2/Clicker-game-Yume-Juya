@@ -9,6 +9,7 @@ type ItemPurchaseProps = {
     price: number
     description: string
     imgUrl: string
+    numberOfItemsUserHas: number
     backButton?: () => void
     purchaseButton?: () => void
 }
@@ -21,6 +22,7 @@ function ItemPurchase ({
     price, 
     description,
     imgUrl,
+    numberOfItemsUserHas,
     backButton,
     purchaseButton
 }: ItemPurchaseProps) {
@@ -37,7 +39,7 @@ function ItemPurchase ({
             <div className="purchase-information">
                 <div className="purchase-information-description">
                     <p>{name}</p>
-                    <p>残り購入数:{remainingPurchaseQuantity}</p>
+                    <p>残り購入数:{remainingPurchaseQuantity - numberOfItemsUserHas}</p>
                     <p>購入によって得る力</p>
                     <p>毎秒 {reduceTime}秒 追加</p>
                     <div className="purchase-information-item-description outlined-text">

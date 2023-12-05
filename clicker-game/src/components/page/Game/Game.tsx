@@ -58,16 +58,28 @@ function Game () {
     }
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
-        const item = items.find(element => element.name === itemName)
+        // 購入数が0なら
+        if (purchaseNumber === 0) return
+
+        const item = items.find(element => element.name === itemName)!
+
+        // 購入数が、アイテムの数より多い場合は購入できない
+        if (purchaseNumber >  item.remainingPurchaseQuantity - userData.items[itemName]) return
+    
+        
         const totalPrice = item.price * Number(purchaseNumber)
-        console.log("money:", totalMoney)
         if (totalMoney > totalPrice){
-            userData.items[item] += Number(purchaseNumber)
+            userData.items[itemName] += Number(purchaseNumber)
+            // お金を減らす
+            setTotalMoney(totalMoney - totalPrice)
+
+            // 残り秒数を増やす
+            setTotalSeconds(totalSeconds + totalPrice)
+
+            // 秒間に減る秒数を追加
+            setDecrement(decrement + item.reduceTime * Number(purchaseNumber))
             setSelectedItem(null)
-        } else {
-            console.log(item.price)
-            console.log("到達していません")
-        }
+        } 
     }
 
     const handleMoonClick = (e) => {
@@ -89,11 +101,11 @@ function Game () {
             setTotalMoney((prevMoney) => prevMoney + decrement)
             setTimeout(() => {
                 setShowNumber(false)
-            }, 500)
+            }, 700)
 
         }, 1000)
         return () => clearInterval(timer)
-    }, [])
+    }, [decrement])
 
     return (
         <>
@@ -105,9 +117,9 @@ function Game () {
                         {showNumber && (
                             <span
                                 className="animatedNumber"
-                                style={{ left: 400, top: 110}}
+                                style={{ left: 300, top: 110}}
                             >
-                                {decrement}
+                                {decrement}秒
                             </span>
                         )}
                         <p>秒間{decrement}秒ずつ</p>
@@ -144,6 +156,7 @@ function Game () {
                         ?
                             <ItemPurchase 
                                 {...selectedItem}
+                                numberOfItemsUserHas={userData.items[selectedItem.name]}
                                 backButton={handleItemBackButton}
                                 purchaseButton={handlePurchaseButton(selectedItem.name)}
                             />
