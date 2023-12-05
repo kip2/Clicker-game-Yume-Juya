@@ -56,8 +56,8 @@ function Game () {
     }
 
     const handlePurchaseButton = (item: string) => (purchaseNumber: number) => {
-        console.log(purchaseNumber)
         userData.items[item] += Number(purchaseNumber)
+        setSelectedItem(null)
     }
 
     const handleMoonClick = (e) => {
