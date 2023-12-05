@@ -84,10 +84,7 @@ function Top() {
                 ""
             }`}>
                 <p className="outlined-text top-p">
-                    ユーザー名: ユーザー1
-                </p>
-                <p className="outlined-text top-p">
-                    ユーザーID: 1111111
+                    ユーザー名：ユーザー1
                 </p>
             </div>
         </div>
