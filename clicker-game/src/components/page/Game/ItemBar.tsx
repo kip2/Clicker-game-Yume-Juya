@@ -7,8 +7,6 @@ type ItemBarProps = {
     onBarClick?: () => void
 }
 
-// todo: 所持数がハードコード
-
 function ItemBar ({ name, imgUrl, userPossession, onBarClick }: ItemBarProps) {
     return(
         <>

@@ -73,3 +73,15 @@
 .purchase-information:hover .purchase-information-item-description {
     display: block;
 }
+
+.purchase-sold-out-banner {
+    position: absolute;
+    top: 360px;
+    right: 220px;
+    font-size: 3rem;
+    background-color: white;
+    color: red;
+    border: 6px solid red;
+    padding: 5px;
+    transform: rotate(-15deg);
+}

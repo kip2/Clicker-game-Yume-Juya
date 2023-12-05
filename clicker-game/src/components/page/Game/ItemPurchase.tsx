@@ -47,7 +47,7 @@ function ItemPurchase ({
                     </div>
                     {
                         remainingPurchaseQuantity - numberOfItemsUserHas === 0
-                        ? <div className="sold-out-banner">完売御礼</div>
+                        ? <div className="purchase-sold-out-banner">完売御礼</div>
                         : <div></div>
                     }
                 </div>
