@@ -1,4 +1,4 @@
-function formatSeconds(totalSeconds) {
+function formatSeconds(totalSeconds: number) {
     const secondsPerMinute = 60;
     const minutesPerHour = 60;
     const hoursPerDay = 24;
@@ -18,7 +18,7 @@ function formatSeconds(totalSeconds) {
     return `${years}年${hours}時間${minutes}分${seconds}秒`;
 }
 
-function TimeFormatter(totalSeconds) {
+function TimeFormatter(totalSeconds: number) {
     const formattenTime = formatSeconds(totalSeconds)
 
     return formattenTime
