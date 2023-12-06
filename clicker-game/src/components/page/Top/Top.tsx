@@ -4,11 +4,34 @@ import "../../../index.css"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
 import Modal from "./Modal"
+import { useNavigate } from "react-router-dom"
+
+const userData = {
+    name: "名無しの権兵衛",
+    money: 0,
+    decrementPerSecond: 25,
+    decrementPerClick: 25,
+    remainingTime: 100 * 365 * 24 * 60 * 60,
+    items: {
+        "健さんのパナマの帽子": 0,
+        "大きな真珠貝":0,
+        "隣の床の間の置き時計":0,
+        "豆腐屋のラッパ":0,
+        "掘り損ねた仁王像":0,
+        "真鍮で拵えた飴屋の笛":0,
+        "檳榔樹のステッキ":0,
+        "行き先不明の船":0,
+        "運慶の仁王像":0,
+        "祈りの八幡宮":0,
+        "侍の悟り":0,
+    }
+}
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()
     const [isAnimating, setIsAnimating] = useState(true)
     const [modalOpen, setModalOpen] = useState(false)
+    const navigate = useNavigate()
 
     const handleNavigateSynopsis = () => {
         navigateToPage("/synopsis")
@@ -19,7 +42,7 @@ function Top() {
     }
 
     const handleNavigateGame = () => {
-        navigateToPage("/game")
+        navigate("/game", { state: userData })
     }
 
     const handleClick = () => {
@@ -86,7 +109,7 @@ function Top() {
                 ""
             }`}>
                 <p className="outlined-text top-p">
-                    ユーザー名：ユーザー1
+                    ユーザー名：{userData.name}
                 </p>
             </div>
             <div>

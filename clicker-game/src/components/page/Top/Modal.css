@@ -1,11 +1,23 @@
 .modal {
     position: fixed;
-    top: 50%;
+    top: -100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 500px;
+    /* transform: translate(-50%, -50%); */
+    transform: translateX(-50%);
     background-color: white;
+    opacity: 0;
     padding: 0 10px;
     z-index: 1000;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        top: 20%;
+        opacity: 1;
+    }
 }
 
 .modal-close-button {

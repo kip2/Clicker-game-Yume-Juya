@@ -7,34 +7,16 @@ import ItemPurchase from "./ItemPurchase"
 import TimeFormatter from "../../functional/TimeFormatter"
 import data from "../../../json/itemList.json"
 import { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 
 // todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
 
-const userData = {
-    name: "名無しの権兵衛",
-    money: 0,
-    decrementPerSecond: 25,
-    decrementPerClick: 25,
-    remainingTime: 100 * 365 * 24 * 60 * 60,
-    items: {
-        "健さんのパナマの帽子": 0,
-        "大きな真珠貝":0,
-        "隣の床の間の置き時計":0,
-        "豆腐屋のラッパ":0,
-        "掘り損ねた仁王像":0,
-        "真鍮で拵えた飴屋の笛":0,
-        "檳榔樹のステッキ":0,
-        "行き先不明の船":0,
-        "運慶の仁王像":0,
-        "祈りの八幡宮":0,
-        "侍の悟り":0,
-    }
-}
 
 function Game () {
+    const location = useLocation()
+    const userData = location.state
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
-    // todo: 秒数を計算してから最初に渡すロジックがいる
     const [totalSeconds, setTotalSeconds] = useState(userData.remainingTime)
     const [decrement, setDecrement] = useState(userData.decrementPerSecond)
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
@@ -69,11 +51,6 @@ function Game () {
         localStorage.setItem('yumejuuya', JSON.stringify(saveData))
     }
 
-    // const handleLoadButton = () => {
-    //     const storedData = localStorage.getItem('yumejuuya')
-    //     const myData = storedData ? JSON.parse(storedData) : null
-    //     console.log(myData)
-    // }
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         // 購入数が0なら
