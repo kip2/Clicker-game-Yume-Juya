@@ -94,11 +94,8 @@ function Top() {
                 {modalOpen && (
                     <>
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>
-                        <Modal 
-                            onClose={()=> setModalOpen(false)}
-                        >
+                        <Modal onClose={()=> setModalOpen(false)}>
                             <div>
-                                test
                                 <h1>TEST!</h1>
                             </div>
                         </Modal>

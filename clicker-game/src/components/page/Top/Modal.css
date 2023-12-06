@@ -4,6 +4,22 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 20px;
+    padding: 0 10px;
     z-index: 1000;
+}
+
+.modal-close-button {
+    float: right;
+    font-size: 1.5rem;
+    margin: 0;
+    width: fit-content;
+    color: rgb(176, 176, 176);
+}
+
+.modal-close-button:hover {
+    color: rgb(74, 74, 74);
+}
+
+.blank-space {
+    height: 2rem;
 }
