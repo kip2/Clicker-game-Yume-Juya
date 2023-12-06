@@ -9,9 +9,6 @@ import data from "../../../json/itemList.json"
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
-// todo: データの保存ボタンを設置したので、後で内部ロジックを実装する
-
-
 function Game () {
     const location = useLocation()
     const userData = location.state
