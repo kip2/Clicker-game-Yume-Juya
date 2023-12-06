@@ -92,14 +92,17 @@ function Top() {
             <div>
                 <button onClick={() => setModalOpen(true)}>ポップアップを開く</button>
                 {modalOpen && (
-                    <Modal 
-                        onClose={()=> setModalOpen(false)}
-                    >
-                        <div>
-                            test
-                            <h1>TEST!</h1>
-                        </div>
-                    </Modal>
+                    <>
+                        <div className="overlay" onClick={() => setModalOpen(false)}></div>
+                        <Modal 
+                            onClose={()=> setModalOpen(false)}
+                        >
+                            <div>
+                                test
+                                <h1>TEST!</h1>
+                            </div>
+                        </Modal>
+                    </>
                 )}
             </div>
         </div>
