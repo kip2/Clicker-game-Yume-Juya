@@ -57,6 +57,24 @@ function Game () {
         setSelectedItem(item)
     }
 
+    const handleSaveButton = () => {
+        const saveData = {
+            name: userData.name,
+            money: totalMoney,
+            decrementPerSecond: decrement,
+            decrementPerClick: clickDecrement,
+            remainingTime: totalSeconds,
+            items: userData.items
+        }
+        localStorage.setItem('yumejuuya', JSON.stringify(saveData))
+    }
+
+    // const handleLoadButton = () => {
+    //     const storedData = localStorage.getItem('yumejuuya')
+    //     const myData = storedData ? JSON.parse(storedData) : null
+    //     console.log(myData)
+    // }
+
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         // 購入数が0なら
         if (purchaseNumber === 0) return
@@ -136,7 +154,7 @@ function Game () {
                                 className="animatedNumber"
                                 style={{ left: clickPosition.x, top: clickPosition.y}}
                             >
-                                {clickDecrement}
+                                {clickDecrement}秒
                             </span>
                         )}
                     </div>
@@ -182,13 +200,14 @@ function Game () {
                         <div className="button-center">
                             <Button 
                                 text="状態保存"
-                                onButtonClick={() => {}}
+                                onButtonClick={handleSaveButton}
                             />
                         </div>
                         <div className="button-center">
                             <Button 
                                 text="戻る"
                                 onButtonClick={handleNavigateTop}
+                                // onButtonClick={handleLoadButton}
                             />
                         </div>
                     </div>
