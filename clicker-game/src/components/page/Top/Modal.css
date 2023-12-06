@@ -18,6 +18,7 @@
 
 .modal-close-button:hover {
     color: rgb(74, 74, 74);
+    cursor: pointer;
 }
 
 .blank-space {
