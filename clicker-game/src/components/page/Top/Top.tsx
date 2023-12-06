@@ -3,10 +3,12 @@ import Button from "../../ui/Button"
 import "../../../index.css"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
+import Modal from "./Modal"
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()
     const [isAnimating, setIsAnimating] = useState(true)
+    const [modalOpen, setModalOpen] = useState(false)
 
     const handleNavigateSynopsis = () => {
         navigateToPage("/synopsis")
@@ -86,6 +88,19 @@ function Top() {
                 <p className="outlined-text top-p">
                     ユーザー名：ユーザー1
                 </p>
+            </div>
+            <div>
+                <button onClick={() => setModalOpen(true)}>ポップアップを開く</button>
+                {modalOpen && (
+                    <Modal 
+                        onClose={()=> setModalOpen(false)}
+                    >
+                        <div>
+                            test
+                            <h1>TEST!</h1>
+                        </div>
+                    </Modal>
+                )}
             </div>
         </div>
     )
