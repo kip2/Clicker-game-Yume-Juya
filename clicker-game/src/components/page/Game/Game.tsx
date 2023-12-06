@@ -122,7 +122,7 @@ function Game () {
                                 {decrement}秒
                             </span>
                         )}
-                        <p>秒間{decrement}秒ずつ</p>
+                        <p>秒間 {decrement} 秒ずつ</p>
                     </div>
                     <div>
                         <img 
