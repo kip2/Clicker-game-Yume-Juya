@@ -13,7 +13,7 @@ function SaveDataExistsModal () {
             </div>
             <div>
                 <ModalButton
-                    text="別のゲームを登録する"
+                    text="別のデータを登録する"
                     onButtonClick={()=>{}}
                 />
             </div>
