@@ -3,7 +3,7 @@ import Button from "../../ui/Button"
 import "../../../index.css"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
-import Modal from "./Modal"
+import Modal from "../Modal/Modal"
 import { useNavigate } from "react-router-dom"
 
 const userData = {

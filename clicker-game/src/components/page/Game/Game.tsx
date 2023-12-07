@@ -181,7 +181,6 @@ function Game () {
                             <Button 
                                 text="戻る"
                                 onButtonClick={handleNavigateTop}
-                                // onButtonClick={handleLoadButton}
                             />
                         </div>
                     </div>
