@@ -123,8 +123,8 @@ function Top() {
                         <Modal onClose={()=> setModalOpen(false)}>
                             <div>
                                 {/* <SaveDataExistsModal /> */}
-                                {/* <SignUpModal /> */}
-                                <SaveDataNotExistsModal />
+                                <SignUpModal />
+                                {/* <SaveDataNotExistsModal /> */}
                             </div>
                         </Modal>
                     </>
