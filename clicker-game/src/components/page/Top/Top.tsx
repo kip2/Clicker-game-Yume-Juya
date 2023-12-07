@@ -5,6 +5,7 @@ import { useCustomNavigate } from "../../functional/CustomNavigate"
 import { useState } from "react"
 import Modal from "../Modal/Modal"
 import { useNavigate } from "react-router-dom"
+import SaveDataExistsModal from "../Modal/SaveDataExistsModal"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -119,7 +120,7 @@ function Top() {
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>
                         <Modal onClose={()=> setModalOpen(false)}>
                             <div>
-                                <h1>TEST!</h1>
+                                <SaveDataExistsModal />
                             </div>
                         </Modal>
                     </>
