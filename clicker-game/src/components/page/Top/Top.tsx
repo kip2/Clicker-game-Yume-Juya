@@ -6,6 +6,8 @@ import { useState } from "react"
 import Modal from "../Modal/Modal"
 import { useNavigate } from "react-router-dom"
 import SaveDataExistsModal from "../Modal/SaveDataExistsModal"
+import SignUpModal from "../Modal/SignUpModal"
+import SaveDataNotExistsModal from "../Modal/SaveDataNotExistsModal"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -120,7 +122,9 @@ function Top() {
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>
                         <Modal onClose={()=> setModalOpen(false)}>
                             <div>
-                                <SaveDataExistsModal />
+                                {/* <SaveDataExistsModal /> */}
+                                {/* <SignUpModal /> */}
+                                <SaveDataNotExistsModal />
                             </div>
                         </Modal>
                     </>
