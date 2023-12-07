@@ -4,7 +4,6 @@
     left: 50%;
     height: 500px;
     width: 500px;
-    /* transform: translate(-50%, -50%); */
     transform: translateX(-50%);
     background-color: white;
     opacity: 0;
@@ -35,4 +34,25 @@
 
 .blank-space {
     height: 2rem;
+}
+
+.modal-text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-link {
+    display: block;
+    float: right;
+    font-size: 0.8rem;
+    color: rgb(145, 145, 249);
+    width: fit-content;
+    text-align: right;
+    margin-right: 50px;
+    margin-top: 0;
+}
+
+.modal-link:hover {
+    color: rgb(6, 6, 241);
 }

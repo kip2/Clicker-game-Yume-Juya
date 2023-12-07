@@ -3,8 +3,8 @@ import ModalButton from "../../ui/ModalButton"
 function SaveDataExistsModal () {
     return (
         <>
-            <p>データの読み込みが完了しました</p>
-            <p>こちらのデータでゲームを開始しますか？</p>
+            <p className="modal-text">データの読み込みが完了しました</p>
+            <p className="modal-text">こちらのデータでゲームを開始しますか？</p>
             <div>
                 <ModalButton
                     text="ゲームを始める"
@@ -17,7 +17,7 @@ function SaveDataExistsModal () {
                     onButtonClick={()=>{}}
                 />
             </div>
-            <p>ユーザーデータを消去する</p>
+            <p className="modal-link">ユーザーデータを消去する</p>
         </>
     )
 }
