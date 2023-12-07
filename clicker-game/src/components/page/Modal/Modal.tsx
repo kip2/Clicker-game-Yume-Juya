@@ -1,6 +1,11 @@
 import "./Modal.css"
 
-function Modal ({children, onClose}) {
+type ModalProps = {
+    children: React.ReactNode,
+    onClose?: () => void
+}
+
+function Modal ({children, onClose}:ModalProps) {
     return(
         <div className="modal">
             <p className="modal-close-button"
