@@ -1,13 +1,11 @@
-import "./Top.css"
-import Button from "../../ui/Button"
-import "../../../index.css"
-import { useCustomNavigate } from "../../functional/CustomNavigate"
-import { useState } from "react"
-import Modal from "../Modal/Modal"
 import { useNavigate } from "react-router-dom"
-import SaveDataExistsModal from "../Modal/SaveDataExistsModal"
+import { useState } from "react"
+import { useCustomNavigate } from "../../functional/CustomNavigate"
+import Modal from "../Modal/Modal"
+import Button from "../../ui/Button"
 import SignUpModal from "../Modal/SignUpModal"
-import SaveDataNotExistsModal from "../Modal/SaveDataNotExistsModal"
+import "../../../index.css"
+import "./Top.css"
 
 const userData = {
     name: "名無しの権兵衛",
