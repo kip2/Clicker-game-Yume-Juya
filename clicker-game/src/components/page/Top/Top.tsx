@@ -4,8 +4,11 @@ import { useCustomNavigate } from "../../functional/CustomNavigate"
 import Modal from "../Modal/Modal"
 import Button from "../../ui/Button"
 import SignUpModal from "../Modal/SignUpModal"
+import SaveDataExistsModal from "../Modal/SaveDataExistsModal"
+import SaveDataNotExistsModal from "../Modal/SaveDataNotExistsModal"
 import "../../../index.css"
 import "./Top.css"
+import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -121,8 +124,9 @@ function Top() {
                         <Modal onClose={()=> setModalOpen(false)}>
                             <div>
                                 {/* <SaveDataExistsModal /> */}
-                                <SignUpModal />
+                                {/* <SignUpModal /> */}
                                 {/* <SaveDataNotExistsModal /> */}
+                                <ConfirmSaveDataDeletion/>
                             </div>
                         </Modal>
                     </>
