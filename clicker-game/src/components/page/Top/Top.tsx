@@ -49,8 +49,13 @@ function Top() {
         navigateToPage("/howToPlay")
     }
 
+    // todo: gameスタートを別のモーダル画面に権限を委譲すること
     const handleNavigateGame = () => {
         navigate("/game", { state: userData })
+    }
+
+    const handleStartButton = () => {
+        setModalOpen(true)
     }
 
     const handleClick = () => {
@@ -99,7 +104,7 @@ function Top() {
             >
                 <Button 
                     text="始める"
-                    onButtonClick={handleNavigateGame}
+                    onButtonClick={handleStartButton}
                 >
                 </Button>
                 <Button 
@@ -124,7 +129,6 @@ function Top() {
                 </p>
             </div>
             <div>
-                <button onClick={() => setModalOpen(true)}>ポップアップを開く</button>
                 {modalOpen && (
                     <>
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>

@@ -6,12 +6,17 @@ type SaveDataExistsModalProps = {
 }
 
 function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
+
     const handleGemeStartButton = () => {
         setModalState(ModalState.ExistsSaveDataModal)
     }
 
     const handleRegistrationButton = () => {
         setModalState(ModalState.SignUpModal)
+    }
+
+    const handleUserDeleteParagraph = () => {
+        setModalState(ModalState.ConfirmDeleteSaveDataModal)
     }
 
     return (
@@ -30,7 +35,10 @@ function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
                     onButtonClick={handleRegistrationButton}
                 />
             </div>
-            <p className="modal-link">ユーザーデータを消去する</p>
+            <p 
+                className="modal-link"
+                onClick={handleUserDeleteParagraph}
+            >ユーザーデータを消去する</p>
         </>
     )
 }
