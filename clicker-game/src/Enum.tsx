@@ -1,4 +1,4 @@
-export enum ModalSate {
+export enum ModalState {
     ExistsSaveDataModal,
     NotExistsSaveDataModal,
     SignUpModal,

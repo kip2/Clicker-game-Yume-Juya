@@ -1,6 +1,11 @@
 import ModalButton from "../../ui/ModalButton";
+import { ModalState } from "../../../Enum";
 
-function ConfirmSaveDataDeletion() {
+type ConfirmSaveDataDeletionProps = {
+    setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+}
+
+function ConfirmSaveDataDeletion({ setModalState }:ConfirmSaveDataDeletionProps) {
     return(
         <>
             <div className="blank-space"></div>

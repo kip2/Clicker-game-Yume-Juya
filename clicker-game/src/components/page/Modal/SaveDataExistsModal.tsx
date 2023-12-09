@@ -1,6 +1,15 @@
 import ModalButton from "../../ui/ModalButton"
+import { ModalState } from "../../../Enum"
 
-function SaveDataExistsModal () {
+type SaveDataExistsModalProps = {
+    setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+}
+
+function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
+    const handleGemeStartButton = () => {
+        setModalState(ModalState.ExistsSaveDataModal)
+    }
+
     return (
         <>
             <p className="modal-text">データの読み込みが完了しました</p>

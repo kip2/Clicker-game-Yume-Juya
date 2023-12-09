@@ -1,6 +1,11 @@
 import ModalButton from "../../ui/ModalButton";
+import { ModalState } from "../../../Enum";
 
-function AfterSaveDataDeletion() {
+type AfterSaveDataDeletionProps = {
+    setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+}
+
+function AfterSaveDataDeletion({ setModalState }: AfterSaveDataDeletionProps) {
     return(
         <>
             <div className="blank-space"></div>

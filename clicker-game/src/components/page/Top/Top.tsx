@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import Modal from "../Modal/Modal"
 import Button from "../../ui/Button"
@@ -10,7 +10,7 @@ import "../../../index.css"
 import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
-import { ModalSate } from "../../../Enum"
+import { ModalState } from "../../../Enum"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -38,7 +38,7 @@ function Top() {
     const [isAnimating, setIsAnimating] = useState(true)
     const [modalOpen, setModalOpen] = useState(false)
     // defaultはセーブデータないという想定
-    const [modalState, setModalState] = useState<ModalSate>(ModalSate.NotExistsSaveDataModal)
+    const [modalState, setModalState] = useState<ModalState>(ModalState.NotExistsSaveDataModal)
     const navigate = useNavigate()
 
     const handleNavigateSynopsis = () => {
@@ -55,10 +55,6 @@ function Top() {
 
     const handleClick = () => {
         setIsAnimating(false)
-    }
-
-    const handleModalState = (newModalState: ModalSate) => {
-        setModalState(newModalState)
     }
 
     // todo: userdataをローディングする動作が必要
@@ -134,22 +130,32 @@ function Top() {
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>
                         <Modal onClose={()=> setModalOpen(false)}>
                             <div>
-                                {modalState === ModalSate.NotExistsSaveDataModal && 
-                                    <SaveDataNotExistsModal/>
+                                {modalState === ModalState.NotExistsSaveDataModal && 
+                                    <SaveDataNotExistsModal
+                                        setModalState={setModalState}
+                                    />
                                 }
-                                {modalState === ModalSate.ExistsSaveDataModal &&
-                                    <SaveDataExistsModal />
+                                {modalState === ModalState.ExistsSaveDataModal &&
+                                    <SaveDataExistsModal 
+                                        setModalState={setModalState}
+                                    />
                                 }
-                                {modalState === ModalSate.ConfirmDeleteSaveDataModal &&
-                                    <ConfirmSaveDataDeletion />
+                                {modalState === ModalState.ConfirmDeleteSaveDataModal &&
+                                    <ConfirmSaveDataDeletion 
+                                        setModalState={setModalState}
+                                    />
                                 }
-                                {modalState === ModalSate.AfterDeleteSaveDataModal &&
-                                    <AfterSaveDataDeletion />
+                                {modalState === ModalState.AfterDeleteSaveDataModal &&
+                                    <AfterSaveDataDeletion 
+                                        setModalState={setModalState}
+                                    />
                                 }
-                                {modalState === ModalSate.SignUpModal &&
-                                    <SignUpModal />
+                                {modalState === ModalState.SignUpModal &&
+                                    <SignUpModal 
+                                        setModalState={setModalState}
+                                    />
                                 }
-                                {modalState === ModalSate.LoadingJsonModal
+                                {modalState === ModalState.LoadingJsonModal
                                 }
                             </div>
                         </Modal>

@@ -1,7 +1,13 @@
 import InputBox from "../../ui/InputBox"
 import ModalButton from "../../ui/ModalButton"
+import { ModalState } from "../../../Enum"
 
-function SignUpModal() {
+type SignUpModalProps = {
+    setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+}
+
+
+function SignUpModal({ setModalState }: SignUpModalProps) {
     return(
         <>
             <div className="blank-space"></div>
