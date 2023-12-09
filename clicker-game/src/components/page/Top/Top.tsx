@@ -9,6 +9,7 @@ import SaveDataNotExistsModal from "../Modal/SaveDataNotExistsModal"
 import "../../../index.css"
 import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
+import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -126,7 +127,8 @@ function Top() {
                                 {/* <SaveDataExistsModal /> */}
                                 {/* <SignUpModal /> */}
                                 {/* <SaveDataNotExistsModal /> */}
-                                <ConfirmSaveDataDeletion/>
+                                {/* <ConfirmSaveDataDeletion/> */}
+                                <AfterSaveDataDeletion/>
                             </div>
                         </Modal>
                     </>
