@@ -10,6 +10,10 @@ function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
         setModalState(ModalState.ExistsSaveDataModal)
     }
 
+    const handleRegistrationButton = () => {
+        setModalState(ModalState.SignUpModal)
+    }
+
     return (
         <>
             <p className="modal-text">データの読み込みが完了しました</p>
@@ -23,7 +27,7 @@ function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
             <div>
                 <ModalButton
                     text="別のデータを登録する"
-                    onButtonClick={()=>{}}
+                    onButtonClick={handleRegistrationButton}
                 />
             </div>
             <p className="modal-link">ユーザーデータを消去する</p>

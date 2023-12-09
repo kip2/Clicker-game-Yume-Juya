@@ -6,6 +6,16 @@ type ConfirmSaveDataDeletionProps = {
 }
 
 function ConfirmSaveDataDeletion({ setModalState }:ConfirmSaveDataDeletionProps) {
+
+    const handleYesButton = () => {
+        // todo: ユーザーデータを削除する処理
+        setModalState(ModalState.AfterDeleteSaveDataModal)
+    }
+
+    const handleNoButton = () => {
+        setModalState(ModalState.ExistsSaveDataModal)
+    }
+
     return(
         <>
             <div className="blank-space"></div>
@@ -14,13 +24,13 @@ function ConfirmSaveDataDeletion({ setModalState }:ConfirmSaveDataDeletionProps)
             <div>
                 <ModalButton
                     text="はい"
-                    onButtonClick={()=>{}}
+                    onButtonClick={handleYesButton}
                 />
             </div>
             <div>
                 <ModalButton
                     text="いいえ"
-                    onButtonClick={()=>{}}
+                    onButtonClick={handleNoButton}
                 />
             </div>
         </>

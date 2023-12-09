@@ -6,6 +6,11 @@ type AfterSaveDataDeletionProps = {
 }
 
 function AfterSaveDataDeletion({ setModalState }: AfterSaveDataDeletionProps) {
+
+    const handleReturnButton = () => {
+        setModalState(ModalState.NotExistsSaveDataModal)
+    }
+    
     return(
         <>
             <div className="blank-space"></div>
@@ -16,7 +21,7 @@ function AfterSaveDataDeletion({ setModalState }: AfterSaveDataDeletionProps) {
             <div>
                 <ModalButton
                     text="戻る"
-                    onButtonClick={()=>{}}
+                    onButtonClick={handleReturnButton}
                 />
             </div>
         </>
