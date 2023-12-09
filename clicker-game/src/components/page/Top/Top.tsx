@@ -10,6 +10,7 @@ import "../../../index.css"
 import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
+import { ModalSate } from "../../../Enum"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -30,15 +31,6 @@ const userData = {
         "祈りの八幡宮":0,
         "侍の悟り":0,
     }
-}
-
-enum ModalSate {
-    ExistsSaveDataModal,
-    NotExistsSaveDataModal,
-    SignUpModal,
-    LoadingJsonModal,
-    ConfirmDeleteSaveDataModal,
-    AfterDeleteSaveDataModal
 }
 
 function Top() {
