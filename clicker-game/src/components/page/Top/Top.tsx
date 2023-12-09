@@ -36,15 +36,17 @@ enum ModalSate {
     ExistsSaveDataModal,
     NotExistsSaveDataModal,
     SignUpModal,
-    LoadingJson,
-    ConfirmDeleteSaveData,
-    AfterDeleteSaveData
+    LoadingJsonModal,
+    ConfirmDeleteSaveDataModal,
+    AfterDeleteSaveDataModal
 }
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()
     const [isAnimating, setIsAnimating] = useState(true)
     const [modalOpen, setModalOpen] = useState(false)
+    // defaultはセーブデータないという想定
+    const [modalState, setModalState] = useState<ModalSate>(ModalSate.NotExistsSaveDataModal)
     const navigate = useNavigate()
 
     const handleNavigateSynopsis = () => {
@@ -62,6 +64,13 @@ function Top() {
     const handleClick = () => {
         setIsAnimating(false)
     }
+
+    const handleModalState = (newModalState: ModalSate) => {
+        setModalState(newModalState)
+    }
+
+    // todo: userdataをローディングする動作が必要
+    // todo: jsonロードの画面を作成する(jsonをドラッグアンドロップしたら読み込むようにする)
 
     return(
         <div className="top-background"
@@ -133,11 +142,23 @@ function Top() {
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>
                         <Modal onClose={()=> setModalOpen(false)}>
                             <div>
-                                {/* <SaveDataExistsModal /> */}
-                                {/* <SignUpModal /> */}
-                                {/* <SaveDataNotExistsModal /> */}
-                                {/* <ConfirmSaveDataDeletion/> */}
-                                <AfterSaveDataDeletion/>
+                                {modalState === ModalSate.NotExistsSaveDataModal && 
+                                    <SaveDataNotExistsModal/>
+                                }
+                                {modalState === ModalSate.ExistsSaveDataModal &&
+                                    <SaveDataExistsModal />
+                                }
+                                {modalState === ModalSate.ConfirmDeleteSaveDataModal &&
+                                    <ConfirmSaveDataDeletion />
+                                }
+                                {modalState === ModalSate.AfterDeleteSaveDataModal &&
+                                    <AfterSaveDataDeletion />
+                                }
+                                {modalState === ModalSate.SignUpModal &&
+                                    <SignUpModal />
+                                }
+                                {modalState === ModalSate.LoadingJsonModal
+                                }
                             </div>
                         </Modal>
                     </>
