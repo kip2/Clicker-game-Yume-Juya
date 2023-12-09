@@ -6,8 +6,11 @@ type SignUpModalProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>
 }
 
-
 function SignUpModal({ setModalState }: SignUpModalProps) {
+    const handleUserRegistrationButton = () => {
+        setModalState(ModalState.ExistsSaveDataModal)
+    }
+
     return(
         <>
             <div className="blank-space"></div>
@@ -17,7 +20,7 @@ function SignUpModal({ setModalState }: SignUpModalProps) {
             <div className="blank-space"></div>
             <ModalButton
                 text="登録する"
-                onButtonClick={()=> {}}
+                onButtonClick={handleUserRegistrationButton}
             />
         </>
     )
