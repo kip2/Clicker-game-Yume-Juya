@@ -4,7 +4,7 @@ function ConfirmSaveDataDeletion() {
     return(
         <>
             <div className="blank-space"></div>
-            <p className="modal-text">ユーザーデータを消去しますか？</p>
+            <p className="modal-text">ユーザーデータを削除しますか？</p>
             <div className="blank-space"></div>
             <div>
                 <ModalButton

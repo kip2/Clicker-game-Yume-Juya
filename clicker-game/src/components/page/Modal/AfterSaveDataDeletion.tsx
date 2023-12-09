@@ -6,7 +6,7 @@ function AfterSaveDataDeletion() {
             <div className="blank-space"></div>
             <div className="blank-space"></div>
             <div className="blank-space"></div>
-            <p className="modal-text">ユーザーデータを消去しました</p>
+            <p className="modal-text">ユーザーデータを削除しました</p>
             <div className="blank-space"></div>
             <div>
                 <ModalButton
