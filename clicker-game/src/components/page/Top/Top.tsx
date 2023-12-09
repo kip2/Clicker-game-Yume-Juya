@@ -32,6 +32,15 @@ const userData = {
     }
 }
 
+enum ModalSate {
+    ExistsSaveDataModal,
+    NotExistsSaveDataModal,
+    SignUpModal,
+    LoadingJson,
+    ConfirmDeleteSaveData,
+    AfterDeleteSaveData
+}
+
 function Top() {
     const { navigateToPage } = useCustomNavigate()
     const [isAnimating, setIsAnimating] = useState(true)
