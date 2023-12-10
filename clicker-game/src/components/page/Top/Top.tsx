@@ -11,27 +11,7 @@ import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
 import { ModalState } from "../../../Enum"
-
-const userData = {
-    name: "名無しの権兵衛",
-    money: 0,
-    decrementPerSecond: 25,
-    decrementPerClick: 25,
-    remainingTime: 100 * 365 * 24 * 60 * 60,
-    items: {
-        "健さんのパナマの帽子": 0,
-        "大きな真珠貝":0,
-        "隣の床の間の置き時計":0,
-        "豆腐屋のラッパ":0,
-        "掘り損ねた仁王像":0,
-        "真鍮で拵えた飴屋の笛":0,
-        "檳榔樹のステッキ":0,
-        "行き先不明の船":0,
-        "運慶の仁王像":0,
-        "祈りの八幡宮":0,
-        "侍の悟り":0,
-    }
-}
+import { loadingLocalData } from "../../functional/UserLodalData"
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()
@@ -40,6 +20,7 @@ function Top() {
     // defaultはセーブデータないという想定
     const [modalState, setModalState] = useState<ModalState>(ModalState.NotExistsSaveDataModal)
     const navigate = useNavigate()
+    const [userData, setUserData] = useState(loadingLocalData())
 
     const handleNavigateSynopsis = () => {
         navigateToPage("/synopsis")
@@ -67,16 +48,6 @@ function Top() {
     const handleClick = () => {
         setIsAnimating(false)
     }
-
-    const loadingLocalData = () => {
-        const data = localStorage.getItem("yumejuuya")
-        if (data) {
-            const userSaveData = JSON.parse(data)
-            return userSaveData
-        }
-        return null
-    }
-
 
     return(
         <div className="top-background"
@@ -138,7 +109,10 @@ function Top() {
                 ""
             }`}>
                 <p className="outlined-text top-p">
-                    ユーザー名：{userData.name}
+                    { userData === null ?
+                    "ユーザー情報がありません"
+                    :
+                    "ユーザー名：" + userData.name}
                 </p>
             </div>
             <div>
