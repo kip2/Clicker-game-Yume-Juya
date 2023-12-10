@@ -24,7 +24,7 @@ function Game () {
     const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
     const [totalMoney, setTotalMoney] = useState(userData.money)
     const [showPopup, setShowPopup] = useState(false)
-    const [showGameClear, setShowGameClear] = useState(false)
+    const [gameClear, setGameClear] = useState(false)
     const timerId = useRef<number>(null as unknown as number)
 
     const items: Item[] = data
@@ -111,7 +111,7 @@ function Game () {
 
     useEffect(() => {
         if (totalSeconds <= 0) {
-            setShowGameClear(true)
+            setGameClear(true)
             setTotalSeconds(0)
             clearInterval(timerId.current)
         }
@@ -205,7 +205,7 @@ function Game () {
                     </div>
                 </div>
             </div>
-            {showGameClear && 
+            {gameClear && 
                 <>
                     <div className="game-overlay"></div>
                     <div className="confetti">

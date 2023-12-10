@@ -7,7 +7,7 @@ type PrivateRouteProps = {
 }
 
 const PrivateRoute = ({ children, isAuthenticated, path }: PrivateRouteProps) => {
-    return isAuthenticated ? children : <Navigate to={path} />;
+    return isAuthenticated ? children : <Navigate to={path} /> ;
 };
 
 export default PrivateRoute
