@@ -1,6 +1,6 @@
 .game-background {
     height: 820px;
-    background-image: url('./img/game.png');
+    background-image: url('/img/game.png');
     background-size: cover;
     background-position: center;
     overflow: hidden;

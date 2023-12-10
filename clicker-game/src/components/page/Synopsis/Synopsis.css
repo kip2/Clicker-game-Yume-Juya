@@ -1,6 +1,6 @@
 .synopsis-background {
     height: 820px;
-    background-image: url('./img/synopsis.png');
+    background-image: url('/img/synopsis.png');
     background-size: cover;
     background-position: center;
     overflow: hidden;
