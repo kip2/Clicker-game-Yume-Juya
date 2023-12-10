@@ -2,7 +2,7 @@ import "./Game.css"
 import Button from "../../ui/Button"
 import ItemBar from "./ItemBar"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import ItemPurchase from "./ItemPurchase"
 import TimeFormatter from "../../functional/TimeFormatter"
 import data from "../../../json/itemList.json"
@@ -92,8 +92,10 @@ function Game () {
         }, 100)
     }
 
+    const timerId = useRef<number|any>(null)
+
     useEffect(() => {
-        const timer = setInterval(() => {
+        timerId.current = setInterval(() => {
             setShowNumber(true)
             setTotalSeconds((prevSeconds) => Math.max(prevSeconds - decrement, 0))
             setTotalMoney((prevMoney) => prevMoney + decrement)
@@ -102,8 +104,16 @@ function Game () {
             }, 700)
 
         }, 1000)
-        return () => clearInterval(timer)
+        return () => clearInterval(timerId.current)
     }, [decrement])
+
+    useEffect(() => {
+        if (totalSeconds <= 0) {
+            console.log("全ての時間が終了しました！")
+            setTotalSeconds(0)
+            clearInterval(timerId.current)
+        }
+    }, [totalSeconds])
 
     return (
         <>
