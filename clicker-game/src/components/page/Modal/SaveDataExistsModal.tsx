@@ -21,18 +21,15 @@ function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
 
     return (
         <>
+            <div className="blank-space"></div>
+            <div className="blank-space"></div>
+            <div className="blank-space"></div>
             <p className="modal-text">データの読み込みが完了しました</p>
-            <p className="modal-text">こちらのデータでゲームを開始しますか？</p>
+            <div className="blank-space"></div>
             <div>
                 <ModalButton
                     text="ゲームを始める"
                     onButtonClick={()=>{}}
-                />
-            </div>
-            <div>
-                <ModalButton
-                    text="別のデータを登録する"
-                    onButtonClick={handleRegistrationButton}
                 />
             </div>
             <p 

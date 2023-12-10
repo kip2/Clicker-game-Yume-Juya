@@ -160,10 +160,6 @@ function Top() {
                                         setModalState={setModalState}
                                     />
                                 }
-                                {modalState === ModalState.LoadingJsonModal &&
-                                    <JsonDataLoadModal
-                                    />
-                                }
                             </div>
                         </Modal>
                     </>
