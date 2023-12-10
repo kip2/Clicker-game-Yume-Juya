@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import Modal from "../Modal/Modal"
 import Button from "../../ui/Button"
@@ -11,7 +11,6 @@ import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
 import { ModalState } from "../../../Enum"
-import JsonDataLoadModal from "../Modal/JsonDataLoadModal"
 
 const userData = {
     name: "名無しの権兵衛",
