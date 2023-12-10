@@ -176,3 +176,30 @@
     2px -2px 2px #000,
     -2px 2px 2px #000;  
 }
+
+.savebutton-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 4rem;
+    display: block;
+    padding-top: 1rem;
+    width: 200px;
+    text-align: center;
+    background-color: rgb(255, 192, 75);
+    border: 1px solid black;
+    z-index:100;
+    animation: slideUpSaveButtonPopup 0.5s ease-out;
+}
+
+@keyframes slideUpSaveButtonPopup {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}

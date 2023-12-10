@@ -22,6 +22,7 @@ function Game () {
     const [showClickNumber, setShowClickNumber] = useState(false)
     const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
     const [totalMoney, setTotalMoney] = useState(userData.money)
+    const [showPopup, setShowPopup] = useState(false)
 
     const items: Item[] = data
 
@@ -47,6 +48,10 @@ function Game () {
             items: userData.items
         }
         saveLocalData(saveData)
+        setShowPopup(true)
+        setTimeout(() => {
+            setShowPopup(false)
+        }, 2000)
     }
 
 
@@ -173,6 +178,7 @@ function Game () {
                     </div>
                     <div className="game-right-bottom-window">
                         <div className="button-center">
+                            {showPopup && <div className="savebutton-popup">データを保存しました</div>}
                             <Button 
                                 text="状態保存"
                                 onButtonClick={handleSaveButton}
