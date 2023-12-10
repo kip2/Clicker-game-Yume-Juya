@@ -12,6 +12,10 @@ function SaveDataNotExistsModal({ setModalState }: SaveDataNotExistsModalProps) 
         setModalState(ModalState.SignUpModal)
     }
 
+    const handleJsonDataRegistration = () => {
+        setModalState(ModalState.LoadingJsonModal)
+    }
+
     // todo: userDataJSON呼び出しの画面がまだ
     
     return(
@@ -23,7 +27,7 @@ function SaveDataNotExistsModal({ setModalState }: SaveDataNotExistsModalProps) 
             />
             <ModalButton
                 text="JSONデータで登録する"
-                onButtonClick={()=>{}}
+                onButtonClick={handleJsonDataRegistration}
             />
         </div>
     )
