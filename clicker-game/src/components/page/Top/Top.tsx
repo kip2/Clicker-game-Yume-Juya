@@ -134,6 +134,7 @@ function Top() {
                                 {modalState === ModalState.ConfirmDeleteSaveDataModal &&
                                     <ConfirmSaveDataDeletion 
                                         setModalState={setModalState}
+                                        setUserData={setUserData}
                                     />
                                 }
                                 {modalState === ModalState.AfterDeleteSaveDataModal &&
@@ -144,6 +145,7 @@ function Top() {
                                 {modalState === ModalState.SignUpModal &&
                                     <SignUpModal 
                                         setModalState={setModalState}
+                                        setUserData={setUserData}
                                     />
                                 }
                             </div>

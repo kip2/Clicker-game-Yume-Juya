@@ -8,6 +8,7 @@ import TimeFormatter from "../../functional/TimeFormatter"
 import data from "../../../json/itemList.json"
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { saveLocalData } from "../../functional/UserLodalData"
 
 function Game () {
     const location = useLocation()
@@ -37,7 +38,7 @@ function Game () {
     }
 
     const handleSaveButton = () => {
-        const saveData = {
+        const saveData:UserData = {
             name: userData.name,
             money: totalMoney,
             decrementPerSecond: decrement,
@@ -45,7 +46,7 @@ function Game () {
             remainingTime: totalSeconds,
             items: userData.items
         }
-        localStorage.setItem('yumejuuya', JSON.stringify(saveData))
+        saveLocalData(saveData)
     }
 
 

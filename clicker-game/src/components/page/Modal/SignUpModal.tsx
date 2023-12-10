@@ -3,18 +3,20 @@ import ModalButton from "../../ui/ModalButton"
 import { ModalState } from "../../../Enum"
 import "./SignUpModal.css"
 import { useState } from "react"
+import { saveLocalData, createNewLocalData, loadingLocalData } from "../../functional/UserLodalData"
 
 type SignUpModalProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+    setUserData: React.Dispatch<React.SetStateAction<UserData>>
 }
 
-function SignUpModal({ setModalState }: SignUpModalProps) {
+function SignUpModal({ setModalState, setUserData}: SignUpModalProps) {
     const [inputValue, setInputValue] = useState("")
 
     const handleUserRegistrationButton = () => {
-        // todo: 実際にユーザーデータを登録してセーブする動作が必要
-        // todo: データのfetchをさせるのも必要になる
-        
+        saveLocalData(createNewLocalData(inputValue))
+        setInputValue("")
+        setUserData(loadingLocalData())
         setModalState(ModalState.ExistsSaveDataModal)
     }
 

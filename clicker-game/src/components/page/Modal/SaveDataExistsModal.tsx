@@ -1,11 +1,12 @@
 import ModalButton from "../../ui/ModalButton"
 import { ModalState } from "../../../Enum"
+import { loadingLocalData, removeLocalData } from "../../functional/UserLodalData"
 
 type SaveDataExistsModalProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>
 }
 
-function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
+function SaveDataExistsModal ({ setModalState}: SaveDataExistsModalProps) {
 
     const handleGemeStartButton = () => {
         setModalState(ModalState.ExistsSaveDataModal)

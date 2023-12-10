@@ -1,15 +1,17 @@
 import ModalButton from "../../ui/ModalButton";
 import { ModalState } from "../../../Enum";
-import { removeLocalData } from "../../functional/UserLodalData";
+import { loadingLocalData, removeLocalData } from "../../functional/UserLodalData";
 
 type ConfirmSaveDataDeletionProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+    setUserData: React.Dispatch<React.SetStateAction<UserData>>
 }
 
-function ConfirmSaveDataDeletion({ setModalState }:ConfirmSaveDataDeletionProps) {
+function ConfirmSaveDataDeletion({ setModalState , setUserData}:ConfirmSaveDataDeletionProps) {
 
     const handleYesButton = () => {
         removeLocalData()
+        setUserData(loadingLocalData())
         setModalState(ModalState.AfterDeleteSaveDataModal)
     }
 
