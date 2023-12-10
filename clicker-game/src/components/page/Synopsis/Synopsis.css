@@ -18,19 +18,36 @@
 }
 
 .synopsis-p {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.5rem;
+    text-align: left;
     margin: auto;
 }
 
 .synopsis-text {
     display: flex;
     flex-direction: column;
-    gap: 9rem;
+    gap: 7rem;
 }
 
 .return-button {
     position: relative;
     bottom: -40px;
     left: 68%;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+.shaking-text {
+    display: inline-block; 
+    animation: shake 0.8s infinite; 
 }

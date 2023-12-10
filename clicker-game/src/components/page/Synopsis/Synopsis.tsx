@@ -25,7 +25,7 @@ function Synopsis () {
                     男は云った。
                 </p>
 
-                <p className="synopsis-large-p">
+                <p className="shaking-text synopsis-large-p">
                     「そんなに待てるか！」
                 </p>
 
