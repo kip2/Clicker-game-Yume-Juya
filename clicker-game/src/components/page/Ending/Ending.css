@@ -5,3 +5,51 @@
     background-position: center;
     overflow: hidden;
 }
+
+.ending-text {
+    color: rgb(254, 254, 146);
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.ending-text-last {
+    color: rgb(254, 254, 146);
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+@keyframes floatUp {
+    from {
+    transform: translateY(20px);
+    opacity: 0;
+    }
+    to {
+    transform: translateY(0);
+    opacity: 1;
+    }
+}
+
+.floating-text {
+    animation: floatUp 2s ease-out forwards;
+    opacity: 0; 
+}
+
+.outlined-text {
+    color: rgb(254, 254, 146);
+    font-weight: bold;
+    text-shadow:
+        -1.5px -1.5px 0 #808080,
+        1.5px -1.5px 0 #808080,
+        -1.5px 1.5px 0 #808080,
+        1.5px 1.5px 0 #808080;
+}
