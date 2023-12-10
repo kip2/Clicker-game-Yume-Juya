@@ -23,6 +23,7 @@ function Game () {
     const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
     const [totalMoney, setTotalMoney] = useState(userData.money)
     const [showPopup, setShowPopup] = useState(false)
+    const timerId = useRef<number>(null as unknown as number)
 
     const items: Item[] = data
 
@@ -92,7 +93,6 @@ function Game () {
         }, 100)
     }
 
-    const timerId = useRef<number|any>(null)
 
     useEffect(() => {
         timerId.current = setInterval(() => {
@@ -109,7 +109,6 @@ function Game () {
 
     useEffect(() => {
         if (totalSeconds <= 0) {
-            console.log("全ての時間が終了しました！")
             setTotalSeconds(0)
             clearInterval(timerId.current)
         }
