@@ -55,6 +55,12 @@ function Top() {
     }
 
     const handleStartButton = () => {
+        const userSaveData = loadingLocalData()
+        if (userSaveData){
+            setModalState(ModalState.ExistsSaveDataModal)
+        } else {
+            setModalState(ModalState.NotExistsSaveDataModal)
+        }
         setModalOpen(true)
     }
 
@@ -62,8 +68,14 @@ function Top() {
         setIsAnimating(false)
     }
 
-    // todo: userdataをローディングする動作が必要
-    // todo: jsonロードの画面を作成する(jsonをドラッグアンドロップしたら読み込むようにする)
+    const loadingLocalData = () => {
+        const data = localStorage.getItem("yumejuuya")
+        if (data) {
+            const userSaveData = JSON.parse(data)
+            return userSaveData
+        }
+        return null
+    }
 
     return(
         <div className="top-background"

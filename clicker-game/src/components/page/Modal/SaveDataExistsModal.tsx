@@ -11,10 +11,6 @@ function SaveDataExistsModal ({ setModalState }: SaveDataExistsModalProps) {
         setModalState(ModalState.ExistsSaveDataModal)
     }
 
-    const handleRegistrationButton = () => {
-        setModalState(ModalState.SignUpModal)
-    }
-
     const handleUserDeleteParagraph = () => {
         setModalState(ModalState.ConfirmDeleteSaveDataModal)
     }
