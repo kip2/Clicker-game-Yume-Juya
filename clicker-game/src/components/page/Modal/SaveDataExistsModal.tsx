@@ -1,15 +1,17 @@
 import ModalButton from "../../ui/ModalButton"
 import { ModalState } from "../../../Enum"
-import { loadingLocalData, removeLocalData } from "../../functional/UserLodalData"
+import { useNavigate } from "react-router-dom"
 
 type SaveDataExistsModalProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>
+    userData: UserData
 }
 
-function SaveDataExistsModal ({ setModalState}: SaveDataExistsModalProps) {
+function SaveDataExistsModal ({ setModalState, userData}: SaveDataExistsModalProps) {
+    const navigate = useNavigate()
 
     const handleGemeStartButton = () => {
-        setModalState(ModalState.ExistsSaveDataModal)
+        navigate("/game", { state: userData })
     }
 
     const handleUserDeleteParagraph = () => {
@@ -26,7 +28,7 @@ function SaveDataExistsModal ({ setModalState}: SaveDataExistsModalProps) {
             <div>
                 <ModalButton
                     text="ゲームを始める"
-                    onButtonClick={()=>{}}
+                    onButtonClick={handleGemeStartButton}
                 />
             </div>
             <p 

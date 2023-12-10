@@ -19,7 +19,6 @@ function Top() {
     const [modalOpen, setModalOpen] = useState(false)
     // defaultはセーブデータないという想定
     const [modalState, setModalState] = useState<ModalState>(ModalState.NotExistsSaveDataModal)
-    const navigate = useNavigate()
     const [userData, setUserData] = useState(loadingLocalData())
 
     const handleNavigateSynopsis = () => {
@@ -30,10 +29,6 @@ function Top() {
         navigateToPage("/howToPlay")
     }
 
-    // todo: gameスタートを別のモーダル画面に権限を委譲すること
-    const handleNavigateGame = () => {
-        navigate("/game", { state: userData })
-    }
 
     const handleStartButton = () => {
         const userSaveData = loadingLocalData()
@@ -129,6 +124,7 @@ function Top() {
                                 {modalState === ModalState.ExistsSaveDataModal &&
                                     <SaveDataExistsModal 
                                         setModalState={setModalState}
+                                        userData={userData}
                                     />
                                 }
                                 {modalState === ModalState.ConfirmDeleteSaveDataModal &&
