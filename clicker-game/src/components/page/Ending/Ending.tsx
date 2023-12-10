@@ -1,8 +1,10 @@
+import "./Ending.css"
+
 function Ending () {
     return(
-        <>
-            <h1>ending!</h1>
-        </>
+        <div className="ending-background">
+            <h1>ending</h1>
+        </div>
     )
 }
 
