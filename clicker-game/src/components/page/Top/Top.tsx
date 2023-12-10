@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import Modal from "../Modal/Modal"
