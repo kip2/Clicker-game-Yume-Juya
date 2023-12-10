@@ -186,7 +186,7 @@
     padding-top: 1rem;
     width: 200px;
     text-align: center;
-    background-color: rgb(255, 192, 75);
+    background-color: skyblue;
     border: 1px solid black;
     z-index:100;
     animation: slideUpSaveButtonPopup 0.5s ease-out;
