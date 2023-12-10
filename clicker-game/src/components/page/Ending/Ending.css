@@ -50,7 +50,7 @@
     }
 }
 
-.floating-text {
+.floating-ending-text {
     animation: floatUp 2s ease-out forwards;
     opacity: 0; 
 }
