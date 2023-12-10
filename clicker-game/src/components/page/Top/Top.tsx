@@ -77,6 +77,7 @@ function Top() {
         return null
     }
 
+
     return(
         <div className="top-background"
             onClick={handleClick}

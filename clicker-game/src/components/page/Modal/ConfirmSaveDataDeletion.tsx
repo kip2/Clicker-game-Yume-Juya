@@ -7,8 +7,13 @@ type ConfirmSaveDataDeletionProps = {
 
 function ConfirmSaveDataDeletion({ setModalState }:ConfirmSaveDataDeletionProps) {
 
+    const removeLocalData = () => {
+        localStorage.removeItem("yumejuuya")
+    }
+
     const handleYesButton = () => {
         // todo: ユーザーデータを削除する処理
+        removeLocalData()
         setModalState(ModalState.AfterDeleteSaveDataModal)
     }
 
