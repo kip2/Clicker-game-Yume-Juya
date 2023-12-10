@@ -100,8 +100,8 @@ function Game () {
     useEffect(() => {
         timerId.current = setInterval(() => {
             setShowNumber(true)
-            setTotalSeconds((prevSeconds) => Math.max(prevSeconds - decrement, 0))
-            setTotalMoney((prevMoney) => prevMoney + decrement)
+            setTotalSeconds((prevSeconds: number) => Math.max(prevSeconds - decrement, 0))
+            setTotalMoney((prevMoney: number) => prevMoney + decrement)
             setTimeout(() => {
                 setShowNumber(false)
             }, 700)
