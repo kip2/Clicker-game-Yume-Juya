@@ -1,7 +1,14 @@
+import { useCustomNavigate } from "../../functional/CustomNavigate"
 import ModalButton from "../../ui/ModalButton"
 import "./ClearPopup.css"
 
 function ClearPopup() {
+    const { navigateToPage } = useCustomNavigate()
+
+    const handleEndingButton = () => {
+        navigateToPage("/ending")
+    }
+
     return (
         <div className="game-clear-popup">
             <p className="game-clear-modal-title">祝賀</p>
@@ -10,7 +17,7 @@ function ClearPopup() {
             <div className="">
                 <ModalButton
                     text="エンディングを見る"
-                    onButtonClick={()=>{}}
+                    onButtonClick={handleEndingButton}
                 />
             </div>
         </div>
