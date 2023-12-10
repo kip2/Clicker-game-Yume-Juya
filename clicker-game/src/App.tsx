@@ -11,7 +11,7 @@ import { useContext } from "react"
 import { GameContext } from "./components/model/GameContext"
 
 function App() {
-  const { gameClear, setGameClear } = useContext(GameContext)
+  const { gameClear } = useContext(GameContext)
   return (
     <>
       <div className="app-background">
