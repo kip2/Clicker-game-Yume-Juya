@@ -204,10 +204,25 @@ function Game () {
                         </div>
                     </div>
                 </div>
-                {showGameClear && 
-                    <ClearPopup />
-                }
             </div>
+            {showGameClear && 
+                <>
+                    <div className="game-overlay"></div>
+                    <div className="confetti">
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                        <span></span> <span></span> <span></span> <span></span><span></span>
+                    </div>
+                    <ClearPopup />
+                </>
+            }
         </>
     )
 }
