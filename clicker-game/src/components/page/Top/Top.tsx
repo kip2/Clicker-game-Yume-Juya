@@ -11,6 +11,7 @@ import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
 import { ModalState } from "../../../Enum"
+import JsonDataLoadModal from "../Modal/JsonDataLoadModal"
 
 const userData = {
     name: "名無しの権兵衛",
@@ -159,7 +160,9 @@ function Top() {
                                         setModalState={setModalState}
                                     />
                                 }
-                                {modalState === ModalState.LoadingJsonModal
+                                {modalState === ModalState.LoadingJsonModal &&
+                                    <JsonDataLoadModal
+                                    />
                                 }
                             </div>
                         </Modal>
