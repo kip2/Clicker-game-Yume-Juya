@@ -2,8 +2,8 @@ export const createNewLocalData = ( userName : string):UserData => {
     const newUserData = {
         name: userName,
         money: 0,
-        decrementPerSecond: 25,
-        decrementPerClick: 25,
+        decrementPerSecond: 5,
+        decrementPerClick: 5,
         remainingTime: 100 * 365 * 24 * 60 * 60,
         items: {
             "健さんのパナマの帽子": 0,

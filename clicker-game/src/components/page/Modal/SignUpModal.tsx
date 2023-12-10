@@ -24,10 +24,10 @@ function SignUpModal({ setModalState, setUserData}: SignUpModalProps) {
         <>
             <div className="blank-space"></div>
             <p className="modal-text">名前を入力してください</p>
-            <p className="modal-cation-statement">※名前は30文字まで</p>
+            <p className="modal-cation-statement">※名前は20文字まで</p>
             <div className="blank-space"></div>
             <InputBox 
-                maxLength={30}
+                maxLength={20}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
             />
