@@ -39,7 +39,7 @@
     font-weight: bold;
 }
 
-@keyframes floatUp {
+@keyframes ending-floatUp {
     from {
     transform: translateY(20px);
     opacity: 0;
@@ -51,7 +51,7 @@
 }
 
 .floating-ending-text {
-    animation: floatUp 2s ease-out forwards;
+    animation: ending-floatUp 2s ease-out forwards;
     opacity: 0; 
 }
 
