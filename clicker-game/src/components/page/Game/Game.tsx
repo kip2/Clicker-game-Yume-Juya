@@ -2,7 +2,7 @@ import "./Game.css"
 import Button from "../../ui/Button"
 import ItemBar from "./ItemBar"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
-import { useState, useRef } from "react"
+import { useState, useRef, useContext } from "react"
 import ItemPurchase from "./ItemPurchase"
 import TimeFormatter from "../../functional/TimeFormatter"
 import data from "../../../json/itemList.json"
@@ -10,6 +10,7 @@ import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { saveLocalData } from "../../functional/UserLodalData"
 import ClearPopup from "./ClearPopup"
+import { GameContext } from "../../model/GameContext"
 
 function Game () {
     const location = useLocation()
@@ -21,13 +22,13 @@ function Game () {
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
     const [showNumber, setShowNumber] = useState(false)
     const [showClickNumber, setShowClickNumber] = useState(false)
-    const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
+    const [clickDecrement] = useState(userData.decrementPerClick)
     const [totalMoney, setTotalMoney] = useState(userData.money)
     const [showPopup, setShowPopup] = useState(false)
-    const [gameClear, setGameClear] = useState(false)
+    const {gameClear, setGameClear} = useContext(GameContext)
     const timerId = useRef<number>(null as unknown as number)
-
     const items: Item[] = data
+
 
     const handleItemBackButton = () => {
         setSelectedItem(null)

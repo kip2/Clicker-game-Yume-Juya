@@ -7,8 +7,11 @@ import { Routes, Route } from "react-router-dom"
 import Game from "./components/page/Game/Game"
 import Ending from "./components/page/Ending/Ending"
 import PrivateRoute from "./components/functional/PrivateRoute"
+import { useContext } from "react"
+import { GameContext } from "./components/model/GameContext"
 
 function App() {
+  const { gameClear, setGameClear } = useContext(GameContext)
   return (
     <>
       <div className="app-background">
@@ -19,7 +22,7 @@ function App() {
           <Route path="/game" element={<Game />}/>
           <Route path="/ending" element={
             <PrivateRoute
-              isAuthenticated={false}
+              isAuthenticated={gameClear}
               path="/"
             >
               <Ending />
