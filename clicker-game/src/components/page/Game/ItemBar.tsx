@@ -5,7 +5,6 @@ type ItemBarProps = {
     imgUrl: string,
     userPossession: number
     remainingPurchaseQuantity: number
-    numberOfItemsUserHas: number
     onBarClick?: () => void
 }
 
