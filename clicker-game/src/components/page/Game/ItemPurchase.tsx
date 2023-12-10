@@ -11,7 +11,7 @@ type ItemPurchaseProps = {
     imgUrl: string
     numberOfItemsUserHas: number
     backButton?: () => void
-    purchaseButton?: () => void
+    purchaseButton?: (purchase:number) => void
 }
 
 
@@ -81,7 +81,11 @@ function ItemPurchase ({
                 <Button
                     text="購入"
                     color="blue"
-                    onButtonClick={() => purchaseButton(Number(inputValue))}
+                    onButtonClick={() => {
+                        if (purchaseButton) {
+                            purchaseButton(Number(inputValue))
+                        }
+                    }}
                 />
             </div>
         </>

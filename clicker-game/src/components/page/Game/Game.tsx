@@ -84,7 +84,7 @@ function Game () {
         } 
     }
 
-    const handleMoonClick = (e) => {
+    const handleMoonClick = (e: React.MouseEvent<HTMLElement>) => {
         const { clientX, clientY } = e;
         setClickPosition({ x: clientX - 20, y: clientY - 60})
         setShowClickNumber(true)
