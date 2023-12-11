@@ -41,7 +41,11 @@ function ItemPurchase ({
                     <p>{name}</p>
                     <p>残り：{remainingPurchaseQuantity - numberOfItemsUserHas} 個</p>
                     <p>ひとつ：{price} 刻</p>
-                    <p>毎秒 {reduceTime}秒 追加</p>
+                    { (name === "大きな真珠貝") ? 
+                        <p>ひと叩き 1割 増量</p>
+                        :
+                        <p>毎秒 {reduceTime}秒 追加</p>
+                    }
                     <div className="purchase-information-item-description outlined-text">
                         {description}
                     </div>
