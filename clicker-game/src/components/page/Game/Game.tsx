@@ -151,7 +151,7 @@ function Game () {
                             </span>
                         )}
                     </div>
-                    <p className="decreases-click">クリックごとに{clickDecrement}秒ずつ</p>
+                    <p className="decreases-click">ひと叩き {clickDecrement} 秒へる</p>
                 </div>
                 <div className="game-right-window">
                     <div className="game-right-upper-window">

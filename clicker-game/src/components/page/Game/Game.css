@@ -69,6 +69,7 @@
     background-color: rgb(204, 201, 201);
     text-align: center;
     color: rgb(185, 246, 185);
+    border: thick double #000000;
     text-shadow: 
     2px 2px 2px #000,
     -2px -2px 2px #000,
@@ -82,6 +83,7 @@
     background-color: rgb(204, 201, 201);
     text-align: center;
     color: rgb(185, 246, 185);
+    border: thick double #000000;
     text-shadow: 
     2px 2px 2px #000,
     -2px -2px 2px #000,
@@ -97,10 +99,14 @@
 .game-name-space {
     background-color: rgb(204, 201, 201);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 40%;
     margin: 10px;
     line-height: 60px;
     font-size: 1.4rem;
+    border: thick double #494949;
     color: rgb(185, 246, 185);
     text-shadow: 
     2px 2px 2px #000,
@@ -111,12 +117,16 @@
 
 .game-remaining-time-amount {
     background-color: rgb(204, 201, 201);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     height: 40%;
     margin: 10px;
     line-height: 60px;
     font-size: 1.2rem;
     color: yellow;
+    border: thick double #000000;
     text-shadow: 
     1px 1px 1px #000,
     -1px -1px 1px #000,
