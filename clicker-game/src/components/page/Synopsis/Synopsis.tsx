@@ -33,11 +33,14 @@ function Synopsis () {
                     生来のせっかちであった。
                 </p>
             </div>
-            <div className="return-button">
-                <Button
-                    text="戻る"
-                    onButtonClick={handleNavigateTop}
-                />
+            <div className="blank-space"></div>
+            <div className="return-button-parent">
+                <div className="return-button">
+                    <Button
+                        text="戻る"
+                        onButtonClick={handleNavigateTop}
+                    />
+                </div>
             </div>
         </div>
     )

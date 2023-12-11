@@ -40,11 +40,13 @@ function HowToPlay() {
             <p className="how-to-play-ijo outlined-text-red">
                 以上！
             </p>
-            <div className="how-to-play-return-button">
-                <Button
-                    text="戻る"
-                    onButtonClick={handleNavigateTop}
-                />
+            <div className="how-to-play-button-parent">
+                <div className="how-to-play-return-button">
+                    <Button
+                        text="戻る"
+                        onButtonClick={handleNavigateTop}
+                    />
+                </div>
             </div>
         </div>
     )

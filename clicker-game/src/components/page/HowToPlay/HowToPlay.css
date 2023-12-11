@@ -22,10 +22,15 @@
     font-weight: bold;
 }
 
+.how-to-play-button-parent {
+    display:flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+
 .how-to-play-return-button {
-    position: relative;
-    bottom: -10px;
-    left: 68%;
+    display: inline-block;
+    box-shadow: 0 0 0 3px #fff;
 }
 
 .how-to-play-background {

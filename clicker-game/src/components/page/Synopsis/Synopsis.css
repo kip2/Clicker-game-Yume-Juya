@@ -30,9 +30,14 @@
 }
 
 .return-button {
-    position: relative;
-    bottom: -40px;
-    left: 68%;
+    display: inline-block;
+    box-shadow: 0 0 0 3px #fff;
+}
+
+.return-button-parent {
+    display:flex;
+    justify-content: right;
+    padding-right: 20px;
 }
 
 @keyframes shake {
