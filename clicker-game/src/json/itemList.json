@@ -5,7 +5,7 @@
         "reduceTime": 5,
         "price": 100,
         "description": "町内一の好男子、庄太郎のお気に入りの帽子。庄太郎は豚に舐められ倒れてしまった。健さんは庄太郎のパナマの帽子が貰いたいと云っていた。庄太郎は助かるまい。パナマは健さんのものだろう。",
-        "imgUrl": "./img/items/panamaHat.png"
+        "imgUrl": "./img/items/panamaHat.jpg"
     },
     {
         "name": "大きな真珠貝",
@@ -13,7 +13,7 @@
         "reduceTime": 10,
         "price": 200,
         "description": "「死んだら、埋めて下さい。大きな真珠貝で穴を掘って」 大きな滑かな縁の鋭どい貝。月の光が差してきらきらする。",
-        "imgUrl": "./img/items/perlOyster.png"
+        "imgUrl": "./img/items/perlOyster.jpg"
 
     },
     {
@@ -22,7 +22,7 @@
         "reduceTime": 30,
         "price": 1200,
         "description": "隣の広間の床に据えてある置き時計。次の刻を打つまでには、きっと悟ってみせる。悟れなければ自刃すると決めている。自分は侍である。",
-        "imgUrl": "./img/items/clock.png"
+        "imgUrl": "./img/items/clock.jpg"
     },
     {
         "name": "豆腐屋のラッパ",
@@ -30,7 +30,7 @@
         "reduceTime": 50,
         "price": 1000,
         "description": "床屋で髪を切っていると、豆腐屋がラッパを吹いて通るのが見える。ほっぺたが蜂にさされたように膨れている。膨れたままで通り越したから、気がかりでたまらない。生涯蜂にさされているように思う。",
-        "imgUrl": "./img/items/bungle.png"
+        "imgUrl": "./img/items/bungle.jpg"
     },
     {
         "name": "掘り損ねた仁王像",
@@ -38,7 +38,7 @@
         "reduceTime": 100,
         "price": 2000,
         "description": "誰にでもできるだろうと、薪にした樫を掘り損ねたもの。不幸にして全てに仁王は見当たらない。どの薪も仁王は蔵（かく）していない。ついに明治の木にはとうてい仁王は埋まっていないものだと悟った。",
-        "imgUrl": "./img/items/horisokone-nioh.png"
+        "imgUrl": "./img/items/horisokone-nioh.jpg"
     },
     {
         "name": "真鍮で拵えた飴屋の笛",
@@ -46,7 +46,7 @@
         "reduceTime": 300,
         "price": 6000,
         "description": "「今にその手拭が蛇へびになるから、見ておろう。見ておろう」爺さんは柳の下でそう言い、笛を吹いた。見ておろう見ておろうと言うが一向に蛇にならない。気になってついていくうちに、爺さんは河の中へと消えていった。",
-        "imgUrl": "./img/items/ameya-whistle.png"
+        "imgUrl": "./img/items/ameya-whistle.jpg"
     },
     {
         "name": "檳榔樹のステッキ",
@@ -54,7 +54,7 @@
         "reduceTime": 900,
         "price": 18000,
         "description": "檳榔樹(びんろうじゅ)のステッキ。豚と雲右衛門が大嫌いな庄太郎が持っている装備。豚の鼻面をステッキで触ると豚を退治できる。庄太郎と豚との七日六晩の戦いのお供。",
-        "imgUrl": "./img/items/cane.png"
+        "imgUrl": "./img/items/cane.jpg"
     },
     {
         "name": "行き先不明の船",
@@ -62,7 +62,7 @@
         "reduceTime": 2000,
         "price": 600000,
         "description": "何でも大きな船に乗っている。この船が毎日毎夜すこしの絶間なく黒い煙を吐いて浪を切って進んで行く。凄じい音である。けれどもどこへ行くんだか分らない。自分は大変心細くなった。いつ陸へ上がれる事か分らない。そうしてどこへ行くのだか知れない。",
-        "imgUrl": "./img/items/ship.png"
+        "imgUrl": "./img/items/ship.jpg"
     },
     {
         "name": "運慶の仁王像",
@@ -70,7 +70,7 @@
         "reduceTime": 70000,
         "price": 2000000,
         "description": "「よくああ無造作に鑿を使って、思うような眉や鼻ができるものだな」「なに、あれは眉や鼻を鑿で作るんじゃない。あの通りの眉や鼻が木の中に埋っているのを、鑿と槌の力で掘り出すまでだ。まるで土の中から石を掘り出すようなものだからけっして間違うはずはない」",
-        "imgUrl": "./img/items/unkei-nioh.png"
+        "imgUrl": "./img/items/unkei-nioh.jpg"
     },
     {
         "name": "祈りの八幡宮",
@@ -78,7 +78,7 @@
         "reduceTime": 300000,
         "price": 90000000,
         "description": "戦の世、家には若い母と三つになる子供がいる。父はどこかへ行った。父がどこかへ行ったのは、月の出ていない夜中であった。父はそれきり帰って来なかった。御百度を何度も踏み直し、子を負うた母は一心不乱に夫の無事を八幡宮に祈る。",
-        "imgUrl": "./img/items/hatimangu.png"
+        "imgUrl": "./img/items/hatimangu.jpg"
     },
     {
         "name": "侍の悟り",
@@ -86,6 +86,6 @@
         "reduceTime": 400000000,
         "price": 100000000,
         "description": "趙州曰く無。無とは何だ。そうしてぼうっと考えていると、周りの行灯も画も、何もかも有って無いような、無くってあるような。しかし無は現前しない。隣の時計の音でハッと気づいた。自分は侍である。",
-        "imgUrl": "./img/items/enlightenment.png"
+        "imgUrl": "./img/items/enlightenment.jpg"
     }
 ]
