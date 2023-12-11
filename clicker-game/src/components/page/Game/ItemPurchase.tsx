@@ -64,7 +64,7 @@ function ItemPurchase ({
                 onChange={handleInputValue}
                 max={remainingPurchaseQuantity}
                 min="0"
-                placeholder="幾ら購う？"
+                placeholder="お幾つご入用ですか"
             ></input>
             <div className="display-price-box">
                 <p className="display-price-description">購入時の対価</p>
