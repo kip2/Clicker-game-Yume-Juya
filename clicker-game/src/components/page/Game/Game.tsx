@@ -22,7 +22,7 @@ function Game () {
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
     const [showNumber, setShowNumber] = useState(false)
     const [showClickNumber, setShowClickNumber] = useState(false)
-    const [clickDecrement] = useState(userData.decrementPerClick)
+    const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
     const [totalMoney, setTotalMoney] = useState(userData.money)
     const [showPopup, setShowPopup] = useState(false)
     const {gameClear, setGameClear} = useContext(GameContext)
@@ -68,8 +68,9 @@ function Game () {
         // 購入数が、アイテムの数より多い場合は購入できない
         if (purchaseNumber >  item.remainingPurchaseQuantity - userData.items[itemName]) return
     
-        
         const totalPrice = item.price * Number(purchaseNumber)
+
+        // それ以外
         if (totalMoney > totalPrice){
             userData.items[itemName] += Number(purchaseNumber)
             // お金を減らす
@@ -78,8 +79,12 @@ function Game () {
             // 残り秒数を増やす
             setTotalSeconds(totalSeconds + totalPrice)
 
-            // 秒間に減る秒数を追加
-            setDecrement(decrement + item.reduceTime * Number(purchaseNumber))
+            if (itemName === "大きな真珠貝"){
+                setClickDecrement(Math.ceil(clickDecrement * 1.1) * Number(purchaseNumber))
+            } else {
+                // 秒間に減る秒数を追加
+                setDecrement(decrement + item.reduceTime * Number(purchaseNumber))
+            }
             setSelectedItem(null)
         } 
     }
