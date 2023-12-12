@@ -67,10 +67,15 @@ function Game () {
 
         // 購入数が、アイテムの数より多い場合は購入できない
         if (purchaseNumber >  item.remainingPurchaseQuantity - userData.items[itemName]) return
-    
-        const totalPrice = item.price * Number(purchaseNumber)
 
-        // それ以外
+        let totalPrice = 0
+    
+        if (itemName === "大きな真珠貝") {
+            totalPrice = item.price * (Number(purchaseNumber) + userData.items[itemName]) * 1.1
+        } else {
+            totalPrice = item.price * Number(purchaseNumber)
+        }
+
         if (totalMoney > totalPrice){
             userData.items[itemName] += Number(purchaseNumber)
             // お金を減らす
@@ -179,6 +184,7 @@ function Game () {
                                 numberOfItemsUserHas={userData.items[selectedItem.name]}
                                 backButton={handleItemBackButton}
                                 purchaseButton={handlePurchaseButton(selectedItem.name)}
+                                userPossesionSinjugai={userData.items[selectedItem.name]}
                             />
                         :
                             <>

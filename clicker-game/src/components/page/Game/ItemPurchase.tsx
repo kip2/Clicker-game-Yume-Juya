@@ -10,6 +10,7 @@ type ItemPurchaseProps = {
     description: string
     imgUrl: string
     numberOfItemsUserHas: number
+    userPossesionSinjugai: number
     backButton?: () => void
     purchaseButton?: (purchase:number) => void
 }
@@ -23,6 +24,7 @@ function ItemPurchase ({
     description,
     imgUrl,
     numberOfItemsUserHas,
+    userPossesionSinjugai,
     backButton,
     purchaseButton
 }: ItemPurchaseProps) {
@@ -40,7 +42,11 @@ function ItemPurchase ({
                 <div className="purchase-information-description">
                     <p>{name}</p>
                     <p>残り：{remainingPurchaseQuantity - numberOfItemsUserHas} 個</p>
-                    <p>ひとつ：{price} 刻</p>
+                    { (name === "大きな真珠貝") ?
+                        <p>ひとつ：{price}<br></br>買う毎にお値段1割増</p>
+                    :
+                        <p>ひとつ：{price} 刻</p>
+                    }
                     { (name === "大きな真珠貝") ? 
                         <p>ひと叩き 1割 増量</p>
                         :
@@ -73,8 +79,14 @@ function ItemPurchase ({
             <div className="display-price-box">
                 <p className="display-price-description">購入時の対価</p>
                 <p className="display-price-price">
-                    { Number(inputValue) <= 0 ? 0 :
-                    price * Number(inputValue)} 刻
+                    { Number(inputValue) <= 0 ? 
+                        0 
+                    :
+                        (name === "大きな真珠貝") ?
+                        Math.ceil(price * (Number(inputValue) + userPossesionSinjugai ) * 1.1)
+                    :
+                        price * Number(inputValue)
+                    } 刻
                 </p>
             </div>
             <div className="purchase-information-buttons">
