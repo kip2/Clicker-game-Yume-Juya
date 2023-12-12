@@ -10,7 +10,7 @@
 .game-left-window {
     opacity: 90%;
     border: solid;
-    background-color: white;
+    background-color: black;
     height: 95%;
     width: 50%;
     margin: 20px 0 20px 10px;
@@ -64,6 +64,7 @@
 }
 
 .remaining-time {
+    position: relative;
     height: 25%;
     margin: 5px;
     background-color: rgb(204, 201, 201);
@@ -177,6 +178,7 @@
         opacity: 70%;
     }
 }
+
 
 .animatedNumber {
     position: absolute;

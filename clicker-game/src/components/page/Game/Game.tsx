@@ -133,7 +133,7 @@ function Game () {
                         {showNumber && (
                             <span
                                 className="animatedNumber"
-                                style={{ left: 300, top: 110}}
+                                style={{ left: 250, top: 30}}
                             >
                                 {decrement}秒
                             </span>
