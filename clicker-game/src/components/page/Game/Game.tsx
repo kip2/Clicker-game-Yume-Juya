@@ -71,7 +71,7 @@ function Game () {
         let totalPrice = 0
     
         if (itemName === "大きな真珠貝") {
-            totalPrice = item.price * (Number(purchaseNumber) + userData.items[itemName]) * 1.1
+            totalPrice = Math.ceil(item.price * (Number(purchaseNumber) + userData.items[itemName]) * 1.1)
         } else {
             totalPrice = item.price * Number(purchaseNumber)
         }
@@ -85,7 +85,7 @@ function Game () {
             setTotalSeconds(totalSeconds + totalPrice)
 
             if (itemName === "大きな真珠貝"){
-                setClickDecrement(Math.ceil(clickDecrement * 1.1) * Number(purchaseNumber))
+                setClickDecrement(Math.ceil(clickDecrement * 1.1 * Number(purchaseNumber)))
             } else {
                 // 秒間に減る秒数を追加
                 setDecrement(decrement + item.reduceTime * Number(purchaseNumber))
