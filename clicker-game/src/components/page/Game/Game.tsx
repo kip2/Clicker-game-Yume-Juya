@@ -95,8 +95,9 @@ function Game () {
     }
 
     const handleMoonClick = (e: React.MouseEvent<HTMLElement>) => {
-        const { clientX, clientY } = e;
-        setClickPosition({ x: clientX - 20, y: clientY - 60})
+        const offsetX = e.nativeEvent.offsetX
+        const offsetY = e.nativeEvent.offsetY
+        setClickPosition({ x: offsetX - 20, y: offsetY - 60})
         setShowClickNumber(true)
         setTotalSeconds(Math.max(totalSeconds - clickDecrement, 0))
         setTotalMoney(totalMoney + clickDecrement)
@@ -154,7 +155,7 @@ function Game () {
                         />
                         {showClickNumber && (
                             <span
-                                className="animatedNumber"
+                                className="animated-click-number"
                                 style={{ left: clickPosition.x, top: clickPosition.y}}
                             >
                                 {clickDecrement}秒

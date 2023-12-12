@@ -179,6 +179,18 @@
     }
 }
 
+.animated-click-number {
+    position: absolute;
+    font-size: 2rem;
+    text-align: center;
+    animation: floatUp 2s ease-out;
+    text-shadow: 
+    2px 2px 2px #000,
+    -2px -2px 2px #000,
+    2px -2px 2px #000,
+    -2px 2px 2px #000;  
+}
+
 
 .animatedNumber {
     position: absolute;
@@ -230,7 +242,7 @@
 }
 
 .game-click-window {
-    /* position: relative; */
+    position: relative;
 }
 
 .star {
