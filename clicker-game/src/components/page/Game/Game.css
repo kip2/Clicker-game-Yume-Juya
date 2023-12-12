@@ -10,7 +10,7 @@
 .game-left-window {
     opacity: 90%;
     border: solid;
-    background-color: black;
+    background-color: rgba(0,0,0, 0.9);
     height: 95%;
     width: 50%;
     margin: 20px 0 20px 10px;
@@ -227,4 +227,24 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999; 
+}
+
+.game-click-window {
+    position: relative;
+}
+
+.star {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px; 
+    left: 100px; 
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }

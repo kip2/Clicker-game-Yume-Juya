@@ -140,7 +140,7 @@ function Game () {
                         )}
                         <p>秒間 {decrement} 秒ずつ</p>
                     </div>
-                    <div>
+                    <div className="game-click-window">
                         <img 
                             onClick={handleMoonClick}
                             className="click-moon"
@@ -155,6 +155,10 @@ function Game () {
                                 {clickDecrement}秒
                             </span>
                         )}
+                        <div 
+                            className="star"
+                            onClick={()=>{console.log("click star!")}}
+                        ></div>
                     </div>
                     <p className="decreases-click">ひと叩き {clickDecrement} 秒減</p>
                 </div>
