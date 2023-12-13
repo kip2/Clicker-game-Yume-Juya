@@ -14,6 +14,15 @@
     margin-right: 10px;
 }
 
+.purchase-p {
+    text-align: center;
+    font-weight: bold;
+    /* background-color: rgb(129, 68, 8);
+    color: white; */
+    border: 1px solid;
+    margin-right: 5px;
+}
+
 .purchase-input {
     width: 90%;
     height: 3rem;

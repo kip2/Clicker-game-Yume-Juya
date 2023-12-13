@@ -40,10 +40,11 @@ function ItemPurchase ({
             <h2 className="purchase-title"> 細 目 </h2>
             <div className="purchase-information">
                 <div className="purchase-information-description">
-                    <p>{name}</p>
+                    <p className="purchase-p">{name}</p>
                     <p>残り：{remainingPurchaseQuantity - numberOfItemsUserHas} 個</p>
                     { (name === "大きな真珠貝") ?
-                        <p>ひとつ：{price}<br></br>買う毎にお値段1割増</p>
+                        <p>{price}
+                        からだんだん値上</p>
                     :
                         <p>ひとつ：{price} 刻</p>
                     }
