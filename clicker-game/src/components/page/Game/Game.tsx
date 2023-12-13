@@ -173,10 +173,10 @@ function Game () {
                                 {clickDecrement}秒
                             </span>
                         )}
-                        <div 
+                        {/* <div 
                             className="star"
                             onClick={()=>{console.log("click star!")}}
-                        ></div>
+                        ></div> */}
                     </div>
                     <p className="decreases-click">ひと叩き {clickDecrement} 秒減</p>
                 </div>
