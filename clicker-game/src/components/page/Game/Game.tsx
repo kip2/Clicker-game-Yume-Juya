@@ -74,7 +74,12 @@ function Game () {
         let totalPrice = 0
     
         if (itemName === "大きな真珠貝") {
-            totalPrice = Math.ceil(item.price * (Number(purchaseNumber) + userData.items[itemName]) * 1.1)
+            const totalPossession = (Number(purchaseNumber) + userData.items[itemName])
+            if (totalPossession === 1) {
+                totalPrice = item.price * totalPossession
+            } else {
+                totalPrice = Math.ceil(item.price * (Number(purchaseNumber) + userData.items[itemName]) * 1.1)
+            }
         } else {
             totalPrice = item.price * Number(purchaseNumber)
         }

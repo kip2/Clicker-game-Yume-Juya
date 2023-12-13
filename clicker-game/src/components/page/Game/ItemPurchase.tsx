@@ -82,8 +82,12 @@ function ItemPurchase ({
                     { Number(inputValue) <= 0 ? 
                         0 
                     :
-                        (name === "大きな真珠貝") ?
-                        Math.ceil(price * (Number(inputValue) + userPossesionSinjugai ) * 1.1)
+                        (name === "大きな真珠貝") ? (
+                            ((Number(inputValue) + userPossesionSinjugai) === 1) ?
+                            (price * Number(inputValue))
+                            :
+                            Math.ceil(price * (Number(inputValue) + userPossesionSinjugai ) * 1.1)
+                        )
                     :
                         price * Number(inputValue)
                     } 刻
