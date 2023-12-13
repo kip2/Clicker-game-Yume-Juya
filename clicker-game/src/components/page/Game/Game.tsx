@@ -252,7 +252,10 @@ function Game () {
                     <>
                         <div className="overlay" onClick={() => setReturnModalOpen(false)}></div>
                         <Modal onClose={()=> setReturnModalOpen(false)}>
-                            <ReturnTitleModal />
+                            <ReturnTitleModal 
+                                handleSaveButton={handleSaveButton}
+                                handleNavigateTop={handleNavigateTop}
+                            />
                         </Modal>
                     </>
                 )}
