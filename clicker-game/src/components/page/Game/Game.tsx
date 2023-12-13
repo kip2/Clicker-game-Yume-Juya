@@ -11,6 +11,8 @@ import { useLocation } from "react-router-dom"
 import { saveLocalData } from "../../functional/UserLodalData"
 import ClearPopup from "./ClearPopup"
 import { GameContext } from "../../model/GameContext"
+import ReturnTitleModal from "../Modal/ReturnTitleModal"
+import Modal from "../Modal/Modal"
 
 function Game () {
     const location = useLocation()
@@ -28,6 +30,7 @@ function Game () {
     const {gameClear, setGameClear} = useContext(GameContext)
     const timerId = useRef<number>(null as unknown as number)
     const items: Item[] = data
+    const [returnModalOpen, setReturnModalOpen] = useState(false)
 
 
     const handleItemBackButton = () => {
@@ -92,6 +95,10 @@ function Game () {
             }
             setSelectedItem(null)
         } 
+    }
+
+    const handleReturnButton = () => {
+        setReturnModalOpen(true)
     }
 
     const handleMoonClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -216,7 +223,7 @@ function Game () {
                         <div className="button-center">
                             <Button 
                                 text="戻る"
-                                onButtonClick={handleNavigateTop}
+                                onButtonClick={handleReturnButton}
                             />
                         </div>
                     </div>
@@ -240,6 +247,16 @@ function Game () {
                     <ClearPopup />
                 </>
             }
+            <div>
+                {returnModalOpen && (
+                    <>
+                        <div className="overlay" onClick={() => setReturnModalOpen(false)}></div>
+                        <Modal onClose={()=> setReturnModalOpen(false)}>
+                            <ReturnTitleModal />
+                        </Modal>
+                    </>
+                )}
+            </div>
         </>
     )
 }
