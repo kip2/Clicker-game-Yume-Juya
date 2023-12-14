@@ -13,6 +13,7 @@ import ClearPopup from "./ClearPopup"
 import { GameContext } from "../../model/GameContext"
 import ReturnTitleModal from "../Modal/ReturnTitleModal"
 import Modal from "../Modal/Modal"
+import ToastPopup from "./ToastPopup"
 
 function Game () {
     const location = useLocation()
@@ -32,6 +33,7 @@ function Game () {
     const items: Item[] = data
     const [returnModalOpen, setReturnModalOpen] = useState(false)
     const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
+    const [showAchievementsPopup, setShowAchievementsPopup] = useState(false)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -110,7 +112,11 @@ function Game () {
 
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
+            setShowAchievementsPopup(true)
             console.log("click100!")
+            setTimeout(() => {
+                setShowAchievementsPopup(false)
+            }, 2000)
         }
     }
 
@@ -231,6 +237,7 @@ function Game () {
                     <div className="game-right-bottom-window">
                         <div className="button-center">
                             {showPopup && <div className="savebutton-popup">データを保存しました</div>}
+                            {showAchievementsPopup && <ToastPopup />}
                             <Button 
                                 text="状態保存"
                                 onButtonClick={handleSaveButton}
