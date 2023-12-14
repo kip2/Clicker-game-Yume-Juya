@@ -26,7 +26,7 @@ export const createNewLocalData = ( userName : string):UserData => {
             click3153600000: false,
         },
         achievementStates: {
-            totalClick: 1,
+            totalClick: 0,
         }
     }
     return newUserData

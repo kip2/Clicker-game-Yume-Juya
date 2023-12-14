@@ -52,7 +52,9 @@ function Game () {
             decrementPerSecond: decrement,
             decrementPerClick: clickDecrement,
             remainingTime: totalSeconds,
-            items: userData.items
+            items: userData.items,
+            achievements: userData.achievements,
+            achievementStates: userData.achivementStates
         }
         saveLocalData(saveData)
         setShowPopup(true)
@@ -106,6 +108,12 @@ function Game () {
         setReturnModalOpen(true)
     }
 
+    const isClick100Achievements = () => {
+        if ( !userData.achievements.click100 && totalClick == 100) {
+            console.log("click100!")
+        }
+    }
+
     const handleMoonClick = (e: React.MouseEvent<HTMLElement>) => {
         const offsetX = e.nativeEvent.offsetX
         const offsetY = e.nativeEvent.offsetY
@@ -114,6 +122,7 @@ function Game () {
         setTotalSeconds(Math.max(totalSeconds - clickDecrement, 0))
         setTotalMoney(totalMoney + clickDecrement)
         setTotalClick(totalClick + 1)
+        isClick100Achievements()
         console.log(totalClick)
 
         setTimeout(() => {
