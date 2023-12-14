@@ -17,6 +17,16 @@ export const createNewLocalData = ( userName : string):UserData => {
             "運慶の仁王像":0,
             "祈りの八幡宮":0,
             "侍の悟り":0,
+        },
+        achievements: {
+            click100: false,
+            click1000: false, 
+            click10000: false, 
+            click100000: false, 
+            click3153600000: false,
+        },
+        achievementStates: {
+            totalClick: 0,
         }
     }
     return newUserData
