@@ -10,7 +10,7 @@ import "./Top.css"
 import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
 import { ModalState } from "../../../Enum"
-import { loadingLocalData } from "../../functional/UserLodalData"
+import { loadingLocalData } from "../../functional/UserLocalData"
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()

@@ -3,7 +3,7 @@ import ModalButton from "../../ui/ModalButton"
 import { ModalState } from "../../../Enum"
 import "./SignUpModal.css"
 import { useState } from "react"
-import { saveLocalData, createNewLocalData, loadingLocalData } from "../../functional/UserLodalData"
+import { saveLocalData, createNewLocalData, loadingLocalData } from "../../functional/UserLocalData"
 
 type SignUpModalProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>

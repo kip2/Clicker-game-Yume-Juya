@@ -8,7 +8,7 @@ import TimeFormatter from "../../functional/TimeFormatter"
 import data from "../../../json/itemList.json"
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
-import { saveLocalData } from "../../functional/UserLodalData"
+import { saveLocalData } from "../../functional/UserLocalData"
 import ClearPopup from "./ClearPopup"
 import { GameContext } from "../../model/GameContext"
 import ReturnTitleModal from "../Modal/ReturnTitleModal"
@@ -173,10 +173,10 @@ function Game () {
                                 {clickDecrement}秒
                             </span>
                         )}
-                        {/* <div 
+                        <div 
                             className="star"
                             onClick={()=>{console.log("click star!")}}
-                        ></div> */}
+                        ></div>
                     </div>
                     <p className="decreases-click">ひと叩き {clickDecrement} 秒減</p>
                 </div>

@@ -1,6 +1,6 @@
 import ModalButton from "../../ui/ModalButton";
 import { ModalState } from "../../../Enum";
-import { loadingLocalData, removeLocalData } from "../../functional/UserLodalData";
+import { loadingLocalData, removeLocalData } from "../../functional/UserLocalData";
 
 type ConfirmSaveDataDeletionProps = {
     setModalState : React.Dispatch<React.SetStateAction<ModalState>>
