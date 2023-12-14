@@ -31,7 +31,7 @@ function Game () {
     const timerId = useRef<number>(null as unknown as number)
     const items: Item[] = data
     const [returnModalOpen, setReturnModalOpen] = useState(false)
-
+    const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -113,6 +113,8 @@ function Game () {
         setShowClickNumber(true)
         setTotalSeconds(Math.max(totalSeconds - clickDecrement, 0))
         setTotalMoney(totalMoney + clickDecrement)
+        setTotalClick(totalClick + 1)
+        console.log(totalClick)
 
         setTimeout(() => {
             setShowClickNumber(false)
