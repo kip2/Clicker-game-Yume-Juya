@@ -34,6 +34,7 @@ function Game () {
     const [returnModalOpen, setReturnModalOpen] = useState(false)
     const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
     const [showAchievementsPopup, setShowAchievementsPopup] = useState(false)
+    const [achievementKey, setAchivementKey] = useState("")
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -121,7 +122,7 @@ function Game () {
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
             setShowAchievementsPopup(true)
-            console.log("click100!")
+            setAchivementKey("click100")
             setTimeout(() => {
                 setShowAchievementsPopup(false)
             }, 2000)
@@ -244,7 +245,7 @@ function Game () {
                             {/* 実績ポップアップ用 */}
                             {showAchievementsPopup && 
                                 <ToastPopup 
-                                    name="click100"
+                                    name={achievementKey}
                                 />
                             }
                             <Button 
