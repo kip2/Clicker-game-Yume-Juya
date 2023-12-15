@@ -190,10 +190,26 @@ function Game () {
                                 {clickDecrement}秒
                             </span>
                         )}
-                        <div 
+                        {/* <div 
                             className="star"
-                            onClick={()=>{console.log("click star!")}}
+                            // onClick={()=>{console.log("click star!")}}
                         ></div>
+                        <div 
+                            className="star1"
+                            // onClick={()=>{console.log("click star!")}}
+                        ></div>
+                        <div 
+                            className="star2"
+                            // onClick={()=>{console.log("click star!")}}
+                        ></div>
+                        <div 
+                            className="star3"
+                            // onClick={()=>{console.log("click star!")}}
+                        ></div>
+                        <div 
+                            className="star4"
+                            // onClick={()=>{console.log("click star!")}}
+                        ></div> */}
                     </div>
                     <p className="decreases-click">ひと叩き {clickDecrement} 秒減</p>
                 </div>
@@ -237,6 +253,7 @@ function Game () {
                     <div className="game-right-bottom-window">
                         <div className="button-center">
                             {showPopup && <div className="savebutton-popup">データを保存しました</div>}
+                            {/* 実績ポップアップ用 */}
                             {showAchievementsPopup && <ToastPopup />}
                             <Button 
                                 text="状態保存"

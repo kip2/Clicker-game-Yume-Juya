@@ -251,9 +251,9 @@
     background-color: yellow;
     border-radius: 50%;
     position: absolute;
-    top: 50px; 
-    left: 100px; 
-    animation: blink 2s infinite;
+    top: 270px; 
+    left: 40px; 
+    animation: blink 4s infinite;
 }
 
 @keyframes blink {
