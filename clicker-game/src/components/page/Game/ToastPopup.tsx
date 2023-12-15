@@ -6,11 +6,15 @@ import "./ToastPopup.css"
 // todo: トーストのレイアウトを考える
 // todo: userDataの方の実績をtrueにする
 
-function ToastPopup() {
+type ToastPopupProps = {
+    text: string
+}
+
+function ToastPopup({text}: ToastPopupProps) {
     return (
         <>
             <p className="toast-popup">
-                実績<br/>「あああああ」<br/>を達成しました
+                実績<br/>「{text}」<br/>を達成しました
             </p>
         </>
     )

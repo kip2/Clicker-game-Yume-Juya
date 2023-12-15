@@ -242,7 +242,11 @@ function Game () {
                         <div className="button-center">
                             {showPopup && <div className="savebutton-popup">データを保存しました</div>}
                             {/* 実績ポップアップ用 */}
-                            {showAchievementsPopup && <ToastPopup />}
+                            {showAchievementsPopup && 
+                                <ToastPopup 
+                                    text="実績テスト"
+                                />
+                            }
                             <Button 
                                 text="状態保存"
                                 onButtonClick={handleSaveButton}
