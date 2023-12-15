@@ -125,6 +125,7 @@ function Game () {
             setAchivementKey("click100")
             setTimeout(() => {
                 setShowAchievementsPopup(false)
+                setAchivementKey("")
             }, 2000)
         }
     }
