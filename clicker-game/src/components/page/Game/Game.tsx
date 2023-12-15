@@ -244,7 +244,7 @@ function Game () {
                             {/* 実績ポップアップ用 */}
                             {showAchievementsPopup && 
                                 <ToastPopup 
-                                    text="実績テスト"
+                                    name="click100"
                                 />
                             }
                             <Button 
