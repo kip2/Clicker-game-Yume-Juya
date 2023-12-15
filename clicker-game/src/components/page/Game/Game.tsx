@@ -65,6 +65,14 @@ function Game () {
         }, 2000)
     }
 
+    const testHandleToast = () => {
+        setShowAchievementsPopup(true)
+        console.log("click100!")
+        setTimeout(() => {
+            setShowAchievementsPopup(false)
+        }, 2000)
+    }
+
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         // 購入数が0なら
@@ -190,26 +198,6 @@ function Game () {
                                 {clickDecrement}秒
                             </span>
                         )}
-                        {/* <div 
-                            className="star"
-                            // onClick={()=>{console.log("click star!")}}
-                        ></div>
-                        <div 
-                            className="star1"
-                            // onClick={()=>{console.log("click star!")}}
-                        ></div>
-                        <div 
-                            className="star2"
-                            // onClick={()=>{console.log("click star!")}}
-                        ></div>
-                        <div 
-                            className="star3"
-                            // onClick={()=>{console.log("click star!")}}
-                        ></div>
-                        <div 
-                            className="star4"
-                            // onClick={()=>{console.log("click star!")}}
-                        ></div> */}
                     </div>
                     <p className="decreases-click">ひと叩き {clickDecrement} 秒減</p>
                 </div>
@@ -300,6 +288,11 @@ function Game () {
                     </>
                 )}
             </div>
+            <button
+            onClick={testHandleToast}
+            >
+                テスト用ボタン
+            </button>
         </>
     )
 }

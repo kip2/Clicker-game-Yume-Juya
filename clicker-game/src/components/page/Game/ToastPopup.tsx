@@ -1,3 +1,4 @@
+import "./ToastPopup.css"
 
 // todo: popupに文字列を引数で渡す
 // todo: 渡す文字列はenumで管理する
@@ -8,7 +9,9 @@
 function ToastPopup() {
     return (
         <>
-            <p className="savebutton-popup">toast</p>
+            <p className="toast-popup">
+                実績<br/>「あああああ」<br/>を達成しました
+            </p>
         </>
     )
 }

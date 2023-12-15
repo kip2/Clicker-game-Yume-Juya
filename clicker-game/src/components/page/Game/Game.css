@@ -256,6 +256,50 @@
     animation: blink 4s infinite;
 }
 
+.star1 {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px; 
+    left: 100px; 
+    animation: blink 10s infinite;
+}
+
+.star2 {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 450px; 
+    left: 350px; 
+    animation: blink 2s infinite;
+}
+
+.star3 {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 90px; 
+    left: 300px; 
+    animation: blink 6s infinite;
+}
+
+.star4 {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 450px; 
+    left: 150px; 
+    animation: blink 8s infinite;
+}
+
 @keyframes blink {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
