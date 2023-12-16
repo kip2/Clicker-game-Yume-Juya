@@ -112,16 +112,16 @@ function Game () {
         setReturnModalOpen(true)
     }
 
-    const isClick1000Achievements = () => {
-        if ( !userData.achievements.click1000 && totalClick == 1000) {
-            setShowAchievementsPopup(true)
-            setAchivementKey("click1000")
-            setTimeout(() => {
-                setShowAchievementsPopup(false)
-                setAchivementKey("")
-            }, 5000)
-        }
-    }
+    // const isClick1000Achievements = () => {
+    //     if ( !userData.achievements.click1000 && totalClick == 1000) {
+    //         setShowAchievementsPopup(true)
+    //         setAchivementKey("click1000")
+    //         setTimeout(() => {
+    //             setShowAchievementsPopup(false)
+    //             setAchivementKey("")
+    //         }, 5000)
+    //     }
+    // }
 
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
