@@ -66,15 +66,6 @@ function Game () {
         }, 2000)
     }
 
-    const testHandleToast = () => {
-        setShowAchievementsPopup(true)
-        console.log("click100!")
-        setTimeout(() => {
-            setShowAchievementsPopup(false)
-        }, 2000)
-    }
-
-
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         // 購入数が0なら
         if (purchaseNumber === 0) return
@@ -126,7 +117,7 @@ function Game () {
             setTimeout(() => {
                 setShowAchievementsPopup(false)
                 setAchivementKey("")
-            }, 2000)
+            }, 5000)
         }
     }
 
@@ -294,11 +285,6 @@ function Game () {
                     </>
                 )}
             </div>
-            <button
-            onClick={testHandleToast}
-            >
-                テスト用ボタン
-            </button>
         </>
     )
 }

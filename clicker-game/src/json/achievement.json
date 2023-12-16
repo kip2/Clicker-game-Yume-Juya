@@ -1,11 +1,11 @@
 [
     {
         "click100": {
-            "achivement": "100回クリックした",
+            "achievment": "100回クリックした",
             "description": "月を100回クリックした"
         },
         "click1000": {
-            "achivement": "1000回クリックした",
+            "achievment": "1000回クリックした",
             "description": "月を1000回クリックした"
         }
     }

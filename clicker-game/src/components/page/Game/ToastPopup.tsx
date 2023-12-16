@@ -1,5 +1,5 @@
 import "./ToastPopup.css"
-import achievementData from "../../../json/achievement.json"
+import achievementJsonData from "../../../json/achievement.json"
 
 // todo: 渡す文字列はenumで管理する
 // todo: こちらのコンポーネント内で実績表示用データをフェッチする
@@ -9,15 +9,32 @@ type ToastPopupProps = {
     name: string
 }
 
+const emptyAchivementData: AchievmentRecord = {
+    empty: {
+        achievment: "empty",
+        description: "empty"
+    }
+}
+
 function ToastPopup({name}: ToastPopupProps) {
-    const findDataByKey = (key: string) => {
-        const data = achievementData.find((item) => item[key])
-        return data ? data[key] : null
+    const achievementData: Achievments= achievementJsonData
+
+    const findDataByKey = (key: string): Achievment => {
+        for (let item of achievementData) {
+            if (Object.prototype.hasOwnProperty.call(item, key)) {
+                return item[key]
+            }
+        }
+        return emptyAchivementData.empty
+        // const data= achievementData.find((item:AchievmentRecord) =>   item[key]) ?? emptyAchivementData.empty
+        // console.log("findDataBykey:" ,data.achievement)
+        // return data 
     }
 
-    const handleToast = () => {
-        const achivementText = findDataByKey(name)
-        return achivementText ? achivementText.achivement : "データが見つかりません"
+    const handleToast = (): string => {
+        const achievmentRecord = findDataByKey(name) 
+        return  achievmentRecord && achievmentRecord.achievment ? achievmentRecord.achievment 
+        : "データが見つかりません"
     }
 
     return (

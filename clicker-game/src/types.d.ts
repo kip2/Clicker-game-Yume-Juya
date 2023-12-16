@@ -1,3 +1,14 @@
+type Achievments = AchievmentRecord[]
+
+type AchievmentRecord = {
+    [key:string] : Achievement
+}
+
+type Achievment = {
+    achievment: string
+    description: string
+}
+
 type Item = {
     name: string
     remainingPurchaseQuantity: number,
