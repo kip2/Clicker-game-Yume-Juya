@@ -35,6 +35,11 @@ function Game () {
     const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
     const [showAchievementsPopup, setShowAchievementsPopup] = useState(false)
     const [achievementKey, setAchivementKey] = useState("")
+    const [isClick100Achievment, setIsClick100Achievment] = useState(false)
+    const [isClick1000Achievment, setIsClick1000Achievment] = useState(false)
+    const [isClick10000Achievment, setIsClick10000Achievment] = useState(false)
+    const [isClick100000Achievment, setIsClick100000Achievment] = useState(false)
+    const [isClick3153600000Achievment, setIsClick3153600000Achievment] = useState(false)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -56,11 +61,18 @@ function Game () {
             decrementPerClick: clickDecrement,
             remainingTime: totalSeconds,
             items: userData.items,
-            achievements: userData.achievements,
+            achievements: {
+                click100: isClick100Achievment,
+                click1000: isClick1000Achievment,
+                click10000: isClick10000Achievment,
+                click100000: isClick100000Achievment,
+                click3153600000: isClick3153600000Achievment
+            },
             achievementStates: {
                 totalClick: totalClick
             }
         }
+        console.log(saveData)
         saveLocalData(saveData)
         setShowPopup(true)
         setTimeout(() => {
@@ -112,20 +124,57 @@ function Game () {
         setReturnModalOpen(true)
     }
 
-    // const isClick1000Achievements = () => {
-    //     if ( !userData.achievements.click1000 && totalClick == 1000) {
-    //         setShowAchievementsPopup(true)
-    //         setAchivementKey("click1000")
-    //         setTimeout(() => {
-    //             setShowAchievementsPopup(false)
-    //             setAchivementKey("")
-    //         }, 5000)
-    //     }
-    // }
+    const isClick3153600000Achievements = () => {
+        if ( !userData.achievements.click3153600000 && totalClick == 3153600000) {
+            setShowAchievementsPopup(true)
+            setIsClick3153600000Achievment(true)
+            setAchivementKey("click3153600000")
+            setTimeout(() => {
+                setShowAchievementsPopup(false)
+                setAchivementKey("")
+            }, 5000)
+        }
+    }
+
+    const isClick100000Achievements = () => {
+        if ( !userData.achievements.click100000 && totalClick == 100000) {
+            setShowAchievementsPopup(true)
+            setIsClick100000Achievment(true)
+            setAchivementKey("click100000")
+            setTimeout(() => {
+                setShowAchievementsPopup(false)
+                setAchivementKey("")
+            }, 5000)
+        }
+    }
+    const isClick10000Achievements = () => {
+        if ( !userData.achievements.click10000 && totalClick == 10000) {
+            setShowAchievementsPopup(true)
+            setIsClick10000Achievment(true)
+            setAchivementKey("click10000")
+            setTimeout(() => {
+                setShowAchievementsPopup(false)
+                setAchivementKey("")
+            }, 5000)
+        }
+    }
+
+    const isClick1000Achievements = () => {
+        if ( !userData.achievements.click1000 && totalClick == 1000) {
+            setShowAchievementsPopup(true)
+            setIsClick1000Achievment(true)
+            setAchivementKey("click1000")
+            setTimeout(() => {
+                setShowAchievementsPopup(false)
+                setAchivementKey("")
+            }, 5000)
+        }
+    }
 
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
             setShowAchievementsPopup(true)
+            setIsClick100Achievment(true)
             setAchivementKey("click100")
             setTimeout(() => {
                 setShowAchievementsPopup(false)
@@ -146,8 +195,17 @@ function Game () {
         // 100回クリック実績達成かを判定
         isClick100Achievements()
 
-        // 100回クリック実績達成かを判定
-        isClick100Achievements()
+        // 1000回クリック実績達成かを判定
+        isClick1000Achievements()
+
+        // 10000回クリック実績達成かを判定
+        isClick10000Achievements()
+
+        // 100000回クリック実績達成かを判定
+        isClick100000Achievements()
+
+        // 3153600000回クリック実績達成かを判定
+        isClick3153600000Achievements()
 
         console.log(totalClick)
 
