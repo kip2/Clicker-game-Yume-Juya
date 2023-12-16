@@ -2,7 +2,6 @@ import "./ToastPopup.css"
 import achievementJsonData from "../../../json/achievement.json"
 
 // todo: 渡す文字列はenumで管理する
-// todo: こちらのコンポーネント内で実績表示用データをフェッチする
 // todo: userDataの方の実績をtrueにする
 
 type ToastPopupProps = {
@@ -26,9 +25,6 @@ function ToastPopup({name}: ToastPopupProps) {
             }
         }
         return emptyAchivementData.empty
-        // const data= achievementData.find((item:AchievmentRecord) =>   item[key]) ?? emptyAchivementData.empty
-        // console.log("findDataBykey:" ,data.achievement)
-        // return data 
     }
 
     const handleToast = (): string => {

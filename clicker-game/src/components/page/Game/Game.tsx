@@ -57,7 +57,9 @@ function Game () {
             remainingTime: totalSeconds,
             items: userData.items,
             achievements: userData.achievements,
-            achievementStates: userData.achivementStates
+            achievementStates: {
+                totalClick: totalClick
+            }
         }
         saveLocalData(saveData)
         setShowPopup(true)
@@ -110,6 +112,17 @@ function Game () {
         setReturnModalOpen(true)
     }
 
+    const isClick1000Achievements = () => {
+        if ( !userData.achievements.click1000 && totalClick == 1000) {
+            setShowAchievementsPopup(true)
+            setAchivementKey("click1000")
+            setTimeout(() => {
+                setShowAchievementsPopup(false)
+                setAchivementKey("")
+            }, 5000)
+        }
+    }
+
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
             setShowAchievementsPopup(true)
@@ -129,7 +142,13 @@ function Game () {
         setTotalSeconds(Math.max(totalSeconds - clickDecrement, 0))
         setTotalMoney(totalMoney + clickDecrement)
         setTotalClick(totalClick + 1)
+
+        // 100回クリック実績達成かを判定
         isClick100Achievements()
+
+        // 100回クリック実績達成かを判定
+        isClick100Achievements()
+
         console.log(totalClick)
 
         setTimeout(() => {
