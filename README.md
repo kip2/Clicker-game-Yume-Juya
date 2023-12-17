@@ -24,7 +24,7 @@ clikerゲームです。
 
 [アクセス](https://clicker-game-yume-juya.vercel.app)
 
-# ゲームイメージ
+# プレイイメージ
 
 ![プレイイメージ](./doc/pic/gameplay1.gif)
 
