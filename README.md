@@ -24,6 +24,10 @@ clikerゲームです。
 
 [アクセス](https://clicker-game-yume-juya.vercel.app)
 
+# ゲームイメージ
+
+[プレイイメージ](./doc/pic/gameplay.gif)
+
 ---
 
 # 偉大なる元ネタ
