@@ -2,6 +2,8 @@
 
 ![Top画像](./doc/pic/top.png)
 
+---
+
 ## あらすじ
 
 ![あらすじ](./doc/pic/synopsis.gif)
@@ -21,4 +23,20 @@ clikerゲームです。
 以下のアドレスから遊べます。
 
 [アクセス](https://clicker-game-yume-juya.vercel.app)
+
+---
+
+# 素材
+
+画像は、全てchatGPT(Dall-E)で生成しました。
+
+フォントについて、下記のものをお借りしました。
+
+
+# special thanks
+
+テストプレイの協力やアイデアを提供してくれた下記の人に感謝します。
+
+Iさん
+弟氏
 
