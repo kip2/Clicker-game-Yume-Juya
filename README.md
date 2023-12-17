@@ -2,7 +2,7 @@
 
 ## あらすじ
 
-![./doc/pic/synopsis.gif]
+![あらすじ](./doc/pic/synopsis.gif)
 
 ---
 
