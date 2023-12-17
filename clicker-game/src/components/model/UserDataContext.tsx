@@ -3,7 +3,7 @@ import { loadingLocalData } from "../functional/UserLocalData";
 
 type UserDataContextType = {
     userData: UserData
-    setUserData: (newUserData: UserData) => void
+    setUserData: React.Dispatch<React.SetStateAction<UserData>>
 }
 
 export const UserDataContext = createContext<UserDataContextType>({
@@ -15,7 +15,7 @@ export const UserDataProvider = ({ children }: { children: React.ReactNode}) => 
     const [userData, setUserData] = useState<UserData>(loadingLocalData())
 
     return (
-        <UserDataContext.Provider value={{userData, setUserData}}>
+        <UserDataContext.Provider value={{ userData, setUserData }}>
             {children}
         </UserDataContext.Provider>
     )

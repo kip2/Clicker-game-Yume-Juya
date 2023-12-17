@@ -19,7 +19,7 @@ function ToastPopup({name}: ToastPopupProps) {
     const achievementData: Achievments= achievementJsonData
 
     const findDataByKey = (key: string): Achievment => {
-        for (let item of achievementData) {
+        for (const item of achievementData) {
             if (Object.prototype.hasOwnProperty.call(item, key)) {
                 return item[key]
             }

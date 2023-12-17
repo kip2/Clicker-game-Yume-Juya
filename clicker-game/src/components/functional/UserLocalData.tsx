@@ -1,5 +1,5 @@
 export const createNewLocalData = ( userName : string):UserData => {
-    const newUserData = {
+    const newUserData: UserData = {
         name: userName,
         money: 0,
         decrementPerSecond: 1,
