@@ -2,6 +2,10 @@
 
 ![Top画像](./doc/pic/top.png)
 
+# プレイイメージ
+
+![プレイイメージ](./doc/pic/gameplay1.gif)
+
 ---
 
 ## あらすじ
@@ -23,10 +27,6 @@ clikerゲームです。
 以下のアドレスから遊べます。
 
 [アクセス](https://clicker-game-yume-juya.vercel.app)
-
-# プレイイメージ
-
-![プレイイメージ](./doc/pic/gameplay1.gif)
 
 ---
 
