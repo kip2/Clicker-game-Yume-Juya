@@ -18,7 +18,6 @@ import ToastPopup from "./ToastPopup"
 function Game () {
     const location = useLocation()
     const userData = location.state
-    // const [userData, setUserData] = useContext(UserDataContext)
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
     const [totalSeconds, setTotalSeconds] = useState(userData.remainingTime)
@@ -198,7 +197,6 @@ function Game () {
             setShowAchievementsPopup(true)
             setIsClick100Achievment(true)
             setAchivementKey("click100")
-            console.log(userData)
             setTimeout(() => {
                 setShowAchievementsPopup(false)
                 setAchivementKey("")
@@ -214,7 +212,6 @@ function Game () {
         setTotalSeconds(Math.max(totalSeconds - clickDecrement, 0))
         setTotalMoney(totalMoney + clickDecrement)
         setTotalClick(totalClick + 1)
-        console.log(totalClick)
 
         // 100回クリック実績達成かを判定
         isClick100Achievements()

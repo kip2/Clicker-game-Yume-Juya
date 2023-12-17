@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { useCustomNavigate } from "../../functional/CustomNavigate"
 import Modal from "../Modal/Modal"
 import Button from "../../ui/Button"
@@ -11,7 +11,6 @@ import ConfirmSaveDataDeletion from "../Modal/ConfirmSaveDataDeletion"
 import AfterSaveDataDeletion from "../Modal/AfterSaveDataDeletion"
 import { ModalState } from "../../../Enum"
 import { loadingLocalData } from "../../functional/UserLocalData"
-import { UserDataContext } from "../../model/UserDataContext"
 
 function Top() {
     const { navigateToPage } = useCustomNavigate()
@@ -19,7 +18,7 @@ function Top() {
     const [modalOpen, setModalOpen] = useState(false)
     // defaultはセーブデータないという想定
     const [modalState, setModalState] = useState<ModalState>(ModalState.NotExistsSaveDataModal)
-    const {userData, setUserData} = useContext(UserDataContext)
+    const [userData, setUserData] = useState(loadingLocalData())
 
     const handleNavigateSynopsis = () => {
         navigateToPage("/synopsis")
