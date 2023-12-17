@@ -35,12 +35,11 @@ function Game () {
     const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
     const [showAchievementsPopup, setShowAchievementsPopup] = useState(false)
     const [achievementKey, setAchivementKey] = useState("")
-    // const [click100, setIsClick100Achievment] = useState(false)
-    // const [click1000, setIsClick1000Achievment] = useState(false)
-    // const [click10000, setIsClick10000Achievment] = useState(false)
-    // const [click100000, setIsClick100000Achievment] = useState(false)
-    // const [click3153600000, setIsClick3153600000Achievment] = useState(false)
-    let { click100, click1000, click10000, click100000, click3153600000} = userData.achievements
+    const [isClick100Achievement, setIsClick100Achievment] = useState(userData.achievements.click100)
+    const [isClick1000Achievement, setIsClick1000Achievment] = useState(userData.achievements.click1000)
+    const [isClick10000Achievement, setIsClick10000Achievment] = useState(userData.achievements.click10000)
+    const [isClick100000Achievement, setIsClick100000Achievment] = useState(userData.achievements.click100000)
+    const [isClick3153600000Achievement, setIsClick3153600000Achievment] = useState(userData.achievements.click3153600000)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -63,17 +62,16 @@ function Game () {
             remainingTime: totalSeconds,
             items: userData.items,
             achievements: {
-                click100: click100,
-                click1000: click1000,
-                click10000: click10000,
-                click100000: click100000,
-                click3153600000: click3153600000
+                click100: isClick100Achievement,
+                click1000: isClick1000Achievement,
+                click10000: isClick10000Achievement,
+                click100000: isClick100000Achievement,
+                click3153600000: isClick3153600000Achievement
             },
             achievementStates: {
                 totalClick: totalClick
             }
         }
-        console.log(saveData)
         saveLocalData(saveData)
         setShowPopup(true)
         setTimeout(() => {
@@ -81,7 +79,7 @@ function Game () {
         }, 2000)
     }
 
-    const saveWhenAchievement = () => {
+    useEffect(() => {
         const saveData:UserData = {
             name: userData.name,
             money: totalMoney,
@@ -90,23 +88,18 @@ function Game () {
             remainingTime: totalSeconds,
             items: userData.items,
             achievements: {
-                click100: click100,
-                click1000: click1000,
-                click10000: click10000,
-                click100000: click100000,
-                click3153600000: click3153600000
+                click100: isClick100Achievement,
+                click1000: isClick1000Achievement,
+                click10000: isClick10000Achievement,
+                click100000: isClick100000Achievement,
+                click3153600000: isClick3153600000Achievement
             },
             achievementStates: {
                 totalClick: totalClick
             }
         }
         saveLocalData(saveData)
-        console.log("leached")
-        // setShowAchievementsPopup(true)
-        // setTimeout(() => {
-        //     setShowPopup(false)
-        // }, 5000)
-    }
+    }, [isClick100Achievement, isClick1000Achievement, isClick10000Achievement, isClick100000Achievement, isClick3153600000Achievement])
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         // 購入数が0なら
@@ -202,8 +195,7 @@ function Game () {
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
             setShowAchievementsPopup(true)
-            saveWhenAchievement()
-            click100 = true
+            setIsClick100Achievment(true)
             setAchivementKey("click100")
             setTimeout(() => {
                 setShowAchievementsPopup(false)
@@ -235,8 +227,6 @@ function Game () {
 
         // 3153600000回クリック実績達成かを判定
         isClick3153600000Achievements()
-
-        console.log(totalClick)
 
         setTimeout(() => {
             setShowClickNumber(false)
