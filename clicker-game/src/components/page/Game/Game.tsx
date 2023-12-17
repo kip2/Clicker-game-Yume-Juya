@@ -14,34 +14,33 @@ import { GameContext } from "../../model/GameContext"
 import ReturnTitleModal from "../Modal/ReturnTitleModal"
 import Modal from "../Modal/Modal"
 import ToastPopup from "./ToastPopup"
-import { UserDataContext } from "../../model/UserDataContext"
 
 function Game () {
     const location = useLocation()
-    const userData1 = location.state
+    const userData = location.state
     // const [userData, setUserData] = useContext(UserDataContext)
     const [selectedItem, setSelectedItem] = useState<Item | null>(null)
     const { navigateToPage } = useCustomNavigate()
-    const [totalSeconds, setTotalSeconds] = useState(userData1.remainingTime)
-    const [decrement, setDecrement] = useState(userData1.decrementPerSecond)
+    const [totalSeconds, setTotalSeconds] = useState(userData.remainingTime)
+    const [decrement, setDecrement] = useState(userData.decrementPerSecond)
     const [clickPosition, setClickPosition] = useState({ x: 0, y: 0})
     const [showNumber, setShowNumber] = useState(false)
     const [showClickNumber, setShowClickNumber] = useState(false)
-    const [clickDecrement, setClickDecrement] = useState(userData1.decrementPerClick)
-    const [totalMoney, setTotalMoney] = useState(userData1.money)
+    const [clickDecrement, setClickDecrement] = useState(userData.decrementPerClick)
+    const [totalMoney, setTotalMoney] = useState(userData.money)
     const [showPopup, setShowPopup] = useState(false)
     const {gameClear, setGameClear} = useContext(GameContext)
     const timerId = useRef<number>(null as unknown as number)
     const items: Item[] = data
     const [returnModalOpen, setReturnModalOpen] = useState(false)
-    const [totalClick, setTotalClick] = useState(userData1.achievementStates.totalClick)
+    const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
     const [showAchievementsPopup, setShowAchievementsPopup] = useState(false)
     const [achievementKey, setAchivementKey] = useState("")
-    const [isClick100Achievment, setIsClick100Achievment] = useState(false)
-    const [isClick1000Achievment, setIsClick1000Achievment] = useState(false)
-    const [isClick10000Achievment, setIsClick10000Achievment] = useState(false)
-    const [isClick100000Achievment, setIsClick100000Achievment] = useState(false)
-    const [isClick3153600000Achievment, setIsClick3153600000Achievment] = useState(false)
+    const [isClick100Achievement, setIsClick100Achievment] = useState(userData.achievements.click100)
+    const [isClick1000Achievement, setIsClick1000Achievment] = useState(userData.achievements.click1000)
+    const [isClick10000Achievement, setIsClick10000Achievment] = useState(userData.achievements.click10000)
+    const [isClick100000Achievement, setIsClick100000Achievment] = useState(userData.achievements.click100000)
+    const [isClick3153600000Achievement, setIsClick3153600000Achievment] = useState(userData.achievements.click3153600000)
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -57,18 +56,18 @@ function Game () {
 
     const handleSaveButton = () => {
         const saveData:UserData = {
-            name: userData1.name,
+            name: userData.name,
             money: totalMoney,
             decrementPerSecond: decrement,
             decrementPerClick: clickDecrement,
             remainingTime: totalSeconds,
-            items: userData1.items,
+            items: userData.items,
             achievements: {
-                click100: isClick100Achievment,
-                click1000: isClick1000Achievment,
-                click10000: isClick10000Achievment,
-                click100000: isClick100000Achievment,
-                click3153600000: isClick3153600000Achievment
+                click100: isClick100Achievement,
+                click1000: isClick1000Achievement,
+                click10000: isClick10000Achievement,
+                click100000: isClick100000Achievement,
+                click3153600000: isClick3153600000Achievement
             },
             achievementStates: {
                 totalClick: totalClick
@@ -81,25 +80,27 @@ function Game () {
         }, 2000)
     }
 
-    // const saveWhenAchieved = () => {
-    //     console.log(isClick100Achievment)
-    //     const newAchievements = {
-    //         click100: isClick100Achievment,
-    //         click1000: isClick1000Achievment,
-    //         click10000: isClick10000Achievment,
-    //         click100000: isClick100000Achievment,
-    //         click3153600000: isClick3153600000Achievment
-    //     }
-        
-    //     console.log("test before:", userData)
-    //     userData = {
-    //         ...userData,
-    //         achievements: newAchievements
-    //     }
-    //     console.log("test after:", userData)
-
-    //     saveLocalData(userData)
-    // }
+    useEffect(() => {
+        const saveData:UserData = {
+            name: userData.name,
+            money: totalMoney,
+            decrementPerSecond: decrement,
+            decrementPerClick: clickDecrement,
+            remainingTime: totalSeconds,
+            items: userData.items,
+            achievements: {
+                click100: isClick100Achievement,
+                click1000: isClick1000Achievement,
+                click10000: isClick10000Achievement,
+                click100000: isClick100000Achievement,
+                click3153600000: isClick3153600000Achievement
+            },
+            achievementStates: {
+                totalClick: totalClick
+            }
+        }
+        saveLocalData(saveData)
+    }, [isClick100Achievement, isClick1000Achievement, isClick10000Achievement, isClick100000Achievement, isClick3153600000Achievement])
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
         // 購入数が0なら
@@ -108,23 +109,23 @@ function Game () {
         const item = items.find(element => element.name === itemName)!
 
         // 購入数が、アイテムの数より多い場合は購入できない
-        if (purchaseNumber >  item.remainingPurchaseQuantity - userData1.items[itemName]) return
+        if (purchaseNumber >  item.remainingPurchaseQuantity - userData.items[itemName]) return
 
         let totalPrice = 0
     
         if (itemName === "大きな真珠貝") {
-            const totalPossession = (Number(purchaseNumber) + userData1.items[itemName])
+            const totalPossession = (Number(purchaseNumber) + userData.items[itemName])
             if (totalPossession === 1) {
                 totalPrice = item.price * totalPossession
             } else {
-                totalPrice = Math.ceil(item.price * (Number(purchaseNumber) + userData1.items[itemName]) * 1.1)
+                totalPrice = Math.ceil(item.price * (Number(purchaseNumber) + userData.items[itemName]) * 1.1)
             }
         } else {
             totalPrice = item.price * Number(purchaseNumber)
         }
 
         if (totalMoney > totalPrice){
-            userData1.items[itemName] += Number(purchaseNumber)
+            userData.items[itemName] += Number(purchaseNumber)
             // お金を減らす
             setTotalMoney(totalMoney - totalPrice)
 
@@ -146,7 +147,7 @@ function Game () {
     }
 
     const isClick3153600000Achievements = () => {
-        if ( !userData1.achievements.click3153600000 && totalClick == 3153600000) {
+        if ( !userData.achievements.click3153600000 && totalClick == 3153600000) {
             setShowAchievementsPopup(true)
             setIsClick3153600000Achievment(true)
             setAchivementKey("click3153600000")
@@ -158,7 +159,7 @@ function Game () {
     }
 
     const isClick100000Achievements = () => {
-        if ( !userData1.achievements.click100000 && totalClick == 100000) {
+        if ( !userData.achievements.click100000 && totalClick == 100000) {
             setShowAchievementsPopup(true)
             setIsClick100000Achievment(true)
             setAchivementKey("click100000")
@@ -169,7 +170,7 @@ function Game () {
         }
     }
     const isClick10000Achievements = () => {
-        if ( !userData1.achievements.click10000 && totalClick == 10000) {
+        if ( !userData.achievements.click10000 && totalClick == 10000) {
             setShowAchievementsPopup(true)
             setIsClick10000Achievment(true)
             setAchivementKey("click10000")
@@ -181,7 +182,7 @@ function Game () {
     }
 
     const isClick1000Achievements = () => {
-        if ( !userData1.achievements.click1000 && totalClick == 1000) {
+        if ( !userData.achievements.click1000 && totalClick == 1000) {
             setShowAchievementsPopup(true)
             setIsClick1000Achievment(true)
             setAchivementKey("click1000")
@@ -193,13 +194,11 @@ function Game () {
     }
 
     const isClick100Achievements = () => {
-        if ( !userData1.achievements.click100 && totalClick == 100) {
+        if ( !userData.achievements.click100 && totalClick == 100) {
             setShowAchievementsPopup(true)
             setIsClick100Achievment(true)
             setAchivementKey("click100")
-            console.log("before:",userData1)
-            saveWhenAchieved()
-            console.log(userData1)
+            console.log(userData)
             setTimeout(() => {
                 setShowAchievementsPopup(false)
                 setAchivementKey("")
@@ -297,7 +296,7 @@ function Game () {
                 <div className="game-right-window">
                     <div className="game-right-upper-window">
                         <div className="game-name-space">
-                            {userData1.name}
+                            {userData.name}
                         </div>
                         <div className="game-remaining-time-amount">
                             使える刻 ： {totalMoney}
@@ -308,10 +307,10 @@ function Game () {
                         ?
                             <ItemPurchase 
                                 {...selectedItem}
-                                numberOfItemsUserHas={userData1.items[selectedItem.name]}
+                                numberOfItemsUserHas={userData.items[selectedItem.name]}
                                 backButton={handleItemBackButton}
                                 purchaseButton={handlePurchaseButton(selectedItem.name)}
-                                userPossesionSinjugai={userData1.items[selectedItem.name]}
+                                userPossesionSinjugai={userData.items[selectedItem.name]}
                             />
                         :
                             <>
@@ -322,7 +321,7 @@ function Game () {
                                             key={i}
                                             name={item.name}
                                             imgUrl={item.imgUrl}
-                                            userPossession={userData1.items[item.name]}
+                                            userPossession={userData.items[item.name]}
                                             remainingPurchaseQuantity={item.remainingPurchaseQuantity}
                                             onBarClick={()=> handleOnItemBarClick(item)}
                                         />
