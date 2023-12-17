@@ -49,7 +49,7 @@ function ItemPurchase ({
                         <p>ひとつ：{price} 刻</p>
                     }
                     { (name === "大きな真珠貝") ? 
-                        <p>ひと叩き 1割 増量</p>
+                        <p>ひと叩き 0.5割 増量</p>
                         :
                         <p>毎秒 {reduceTime}秒 追加</p>
                     }
@@ -87,7 +87,7 @@ function ItemPurchase ({
                             ((Number(inputValue) + userPossesionSinjugai) === 1) ?
                             (price * Number(inputValue))
                             :
-                            Math.ceil(price * (Number(inputValue) + userPossesionSinjugai ) * 1.1)
+                            Math.ceil(price * (Number(inputValue) + userPossesionSinjugai ) * 1.5)
                         )
                     :
                         price * Number(inputValue)
