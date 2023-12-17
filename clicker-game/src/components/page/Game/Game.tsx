@@ -35,11 +35,12 @@ function Game () {
     const [totalClick, setTotalClick] = useState(userData.achievementStates.totalClick)
     const [showAchievementsPopup, setShowAchievementsPopup] = useState(false)
     const [achievementKey, setAchivementKey] = useState("")
-    const [isClick100Achievment, setIsClick100Achievment] = useState(false)
-    const [isClick1000Achievment, setIsClick1000Achievment] = useState(false)
-    const [isClick10000Achievment, setIsClick10000Achievment] = useState(false)
-    const [isClick100000Achievment, setIsClick100000Achievment] = useState(false)
-    const [isClick3153600000Achievment, setIsClick3153600000Achievment] = useState(false)
+    // const [click100, setIsClick100Achievment] = useState(false)
+    // const [click1000, setIsClick1000Achievment] = useState(false)
+    // const [click10000, setIsClick10000Achievment] = useState(false)
+    // const [click100000, setIsClick100000Achievment] = useState(false)
+    // const [click3153600000, setIsClick3153600000Achievment] = useState(false)
+    let { click100, click1000, click10000, click100000, click3153600000} = userData.achievements
 
     const handleItemBackButton = () => {
         setSelectedItem(null)
@@ -62,11 +63,11 @@ function Game () {
             remainingTime: totalSeconds,
             items: userData.items,
             achievements: {
-                click100: isClick100Achievment,
-                click1000: isClick1000Achievment,
-                click10000: isClick10000Achievment,
-                click100000: isClick100000Achievment,
-                click3153600000: isClick3153600000Achievment
+                click100: click100,
+                click1000: click1000,
+                click10000: click10000,
+                click100000: click100000,
+                click3153600000: click3153600000
             },
             achievementStates: {
                 totalClick: totalClick
@@ -78,6 +79,33 @@ function Game () {
         setTimeout(() => {
             setShowPopup(false)
         }, 2000)
+    }
+
+    const saveWhenAchievement = () => {
+        const saveData:UserData = {
+            name: userData.name,
+            money: totalMoney,
+            decrementPerSecond: decrement,
+            decrementPerClick: clickDecrement,
+            remainingTime: totalSeconds,
+            items: userData.items,
+            achievements: {
+                click100: click100,
+                click1000: click1000,
+                click10000: click10000,
+                click100000: click100000,
+                click3153600000: click3153600000
+            },
+            achievementStates: {
+                totalClick: totalClick
+            }
+        }
+        saveLocalData(saveData)
+        console.log("leached")
+        // setShowAchievementsPopup(true)
+        // setTimeout(() => {
+        //     setShowPopup(false)
+        // }, 5000)
     }
 
     const handlePurchaseButton = (itemName: string) => (purchaseNumber: number) => {
@@ -174,7 +202,8 @@ function Game () {
     const isClick100Achievements = () => {
         if ( !userData.achievements.click100 && totalClick == 100) {
             setShowAchievementsPopup(true)
-            setIsClick100Achievment(true)
+            saveWhenAchievement()
+            click100 = true
             setAchivementKey("click100")
             setTimeout(() => {
                 setShowAchievementsPopup(false)
