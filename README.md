@@ -26,7 +26,7 @@ clikerゲームです。
 
 # ゲームイメージ
 
-[プレイイメージ](./doc/pic/gameplay1.gif)
+![プレイイメージ](./doc/pic/gameplay1.gif)
 
 ---
 
