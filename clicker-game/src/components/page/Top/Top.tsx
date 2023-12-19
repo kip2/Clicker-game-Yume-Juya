@@ -110,6 +110,9 @@ function Top() {
                 </p>
             </div>
             <div>
+                <p className="version-text">ver 1.0.0</p>
+            </div>
+            <div>
                 {modalOpen && (
                     <>
                         <div className="overlay" onClick={() => setModalOpen(false)}></div>
