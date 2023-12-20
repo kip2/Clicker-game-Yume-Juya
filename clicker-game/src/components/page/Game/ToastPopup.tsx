@@ -1,9 +1,6 @@
 import "./ToastPopup.css"
 import achievementJsonData from "../../../json/achievement.json"
 
-// todo: 渡す文字列はenumで管理する
-// todo: userDataの方の実績をtrueにする
-
 type ToastPopupProps = {
     name: string
 }
