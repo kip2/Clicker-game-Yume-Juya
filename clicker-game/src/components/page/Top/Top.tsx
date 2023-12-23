@@ -16,7 +16,6 @@ function Top() {
     const { navigateToPage } = useCustomNavigate()
     const [isAnimating, setIsAnimating] = useState(true)
     const [modalOpen, setModalOpen] = useState(false)
-    // defaultはセーブデータないという想定
     const [modalState, setModalState] = useState<ModalState>(ModalState.NotExistsSaveDataModal)
     const [userData, setUserData] = useState(loadingLocalData())
 
